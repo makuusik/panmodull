@@ -49,6 +49,11 @@ img {
   margin: 0;
 }
 
+.section-two {
+  padding-top: 100.5px;
+  padding-bottom: 100.5px;
+}
+
 .section-two p {
   color: white;
   font-weight: 300;
@@ -77,6 +82,7 @@ img {
   display: flex;
   height: 436px;
   width: 1216px;
+  gap: 25px;
 }
 
 .section-two .section-container {
@@ -107,4 +113,48 @@ img {
 
 .section-two-box .link {
   width: 627px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-two-box .link ul {
+  padding-bottom: 20px;
+}
+
+.section-two-box .link h3 {
+  padding-bottom: 28.5px;
+}
+
+.section-two-box:first-child {
+  padding-bottom: 100px;
+}
+
+.section-three .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.large-image {
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.section-three .container {
+  display: flex;
+  justify-content: center;
+}
+
+.section-two {
+  background-color: #17191b;
+}
+
+.section-three {
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background-color: #5c6b73;
 }
