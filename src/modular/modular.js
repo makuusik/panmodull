@@ -34,12 +34,23 @@ buttons.forEach((button, index) => {
 function generateHouseBlocksForAllGrids(ranges) {
   document.querySelectorAll('.options-grid').forEach((contentBox, index) => {
     const [start, end] = ranges[index];
-    const buttonCount = contentBox.querySelectorAll('button').length;
     let totalItems = end - start + 1;
+
+    // Оновлення totalItems після виключення елемента з id 14
+    if (start <= 14 && end >= 14) {
+      totalItems--; // Якщо 14-й елемент є в діапазоні, зменшуємо totalItems
+    }
+
+    const buttonCount = contentBox.querySelectorAll('button').length;
     let remainder = (totalItems + buttonCount) % 3; // Кількість елементів, які залишаються
     let rowLastDiv = null;
 
     for (let i = start; i <= end; i++) {
+      // Пропускаємо елемент з id=14
+      if (i === 14) {
+        continue; // Перехід до наступної ітерації
+      }
+
       const houseDiv = document.createElement('button');
       houseDiv.onclick = function () {
         openPage(i); // Заміни 1 на потрібний номер сторінки

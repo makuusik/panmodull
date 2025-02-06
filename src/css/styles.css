@@ -132,21 +132,33 @@ img {
   padding-bottom: 100px;
 }
 
-.section-three .image-grid {
+.container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 25% auto; /* Ліва колонка 25%, права займає решту */
+  gap: 10px; /* Відступ між великою картинкою і сіткою */
+  align-items: start;
+}
+.large-image {
+  height: 100%;
+}
+.large-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  grid-template-rows: repeat(2, auto); /* Два рядки */
   gap: 10px;
 }
 
-.large-image {
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
-}
-
-.section-three .container {
-  display: flex;
-  justify-content: center;
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .section-two {
@@ -156,5 +168,6 @@ img {
 .section-three {
   padding-bottom: 100px;
   padding-top: 100px;
+  width: 100%;
   background-color: #5c6b73;
 }
