@@ -7,13 +7,30 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 id="title"></h1>
-    <img id="image1" src="" alt="Фото 1" />
-    <img id="image2" src="" alt="Фото 2" />
-    <p id="text"></p>
-    <ul id="list"></ul>
+    <section class="hero">
+      <h1 id="title"></h1>
+    </section>
+    <section class="main-info">
+      <p id="text"></p>
+      <ul></ul>
 
-    <a href="index.html">Назад</a>
+      <div class="container">
+        <!-- Лівий блок - скролл із фото -->
+        <div class="scroll-images">
+          <img class="image1" onclick="changeMainImage(this.src)" />
+          <img id="image2" onclick="changeMainImage(this.src)" />
+          <img id="image3" onclick="changeMainImage(this.src)" />
+          <img id="image2" onclick="changeMainImage(this.src)" />
+        </div>
+
+        <!-- Центр - головне фото -->
+        <img src="https://via.placeholder.com/400" class="main-image image1" />
+
+        <!-- Правий блок - таблиця -->
+        <table class="data-table" id="table-body"></table>
+      </div>
+    </section>
+    <load src="../partials/header.html" />
 
     <script src="script.js"></script>
   </body>

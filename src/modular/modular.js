@@ -1,19 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-  let navbar = document.getElementById('navbar');
-
-  if (!navbar) {
-    console.error('Елемент #navbar не знайдено!');
-    return;
-  }
-
-  window.addEventListener('scroll', function () {
-    let scrollTop = window.scrollY;
-    let opacity = Math.min(scrollTop / 300, 0.8); // Обмежуємо прозорість до 0.8
-
-    navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-  });
-});
-
 const buttons = document.querySelectorAll('.btn');
 const indicator = document.querySelector('.indicator');
 const buttonContainer = document.querySelector('.button-container');
