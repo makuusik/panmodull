@@ -175,11 +175,12 @@ h1 {
   grid-column: 1 / -1; /* Розтягує цей ряд на всю ширину */
 }
 
-.options-grid .row-last > div {
+.options-grid .row-last > button {
   width: calc((100% - 40px * 2) / 3);
 }
 
-.options-grid div:not(.row-last) {
+.options-grid button {
+  all: unset;
   border: 1px solid rgb(255, 255, 255); /* Рамка для кожного блоку */
   display: flex;
   flex-direction: column;
@@ -219,7 +220,7 @@ h1 {
   opacity: 1; /* Плавно з'являється */
 }
 
-.options-grid div:not(.row-last):not(.image-wrapper):hover {
+.options-grid button:hover {
   scale: 1.1;
 }
 

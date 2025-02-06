@@ -50,13 +50,16 @@ buttons.forEach((button, index) => {
 function generateHouseBlocksForAllGrids(ranges) {
   document.querySelectorAll('.options-grid').forEach((contentBox, index) => {
     const [start, end] = ranges[index];
-    const divCount = contentBox.querySelectorAll('div').length;
+    const buttonCount = contentBox.querySelectorAll('button').length;
     let totalItems = end - start + 1;
-    let remainder = (totalItems - divCount) % 3; // Кількість елементів, які залишаються
+    let remainder = (totalItems + buttonCount) % 3; // Кількість елементів, які залишаються
     let rowLastDiv = null;
 
     for (let i = start; i <= end; i++) {
-      const houseDiv = document.createElement('div');
+      const houseDiv = document.createElement('button');
+      houseDiv.onclick = function () {
+        openPage(i); // Заміни 1 на потрібний номер сторінки
+      };
 
       houseDiv.innerHTML = `
         <div class="image-wrapper">
@@ -108,3 +111,7 @@ const ranges = [
 
 // Викликаємо для всіх .options-grid
 generateHouseBlocksForAllGrids(ranges);
+
+function openPage(pageNumber) {
+  window.location.href = `../info_pages/content.html?page=${pageNumber}`;
+}
