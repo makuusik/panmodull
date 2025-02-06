@@ -11,6 +11,7 @@ body {
   top: 0;
   left: 0;
   width: 100%; /* Займає всю ширину екрану */
+  height: 50px;
   color: white;
   padding: 20px 30px;
   display: flex;
@@ -20,7 +21,6 @@ body {
   gap: 128px;
   background: rgba(0, 0, 0, 0); /* Повністю прозорий */
   transition: background-color 0.3s ease-in-out;
-  height: 50px;
 }
 nav.transparent {
   background: rgba(0, 0, 0, 0); /* Повністю прозорий */
