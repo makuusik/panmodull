@@ -1,13 +1,23 @@
 * {
-  margin: 0;
-  padding: 0;
   color: white;
-  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
+}
+
+h1 {
+  font-size: 80px;
+}
+h2 {
+  font-size: 32px;
+}
+p {
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 2;
 }
 
 .hero {
@@ -19,6 +29,13 @@ body {
   padding-top: 80px; /* Відступ, щоб текст не перекривався з навбаром */
   background-color: #253237;
 }
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .container {
   display: flex;
   gap: 20px;
@@ -26,9 +43,21 @@ body {
   margin: auto;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 0;
+}
+.text-box {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 /* Блок скроллу */
 .scroll-images {
-  width: 200px;
+  min-width: 150px;
   height: 400px;
   overflow-y: auto;
   display: flex;
@@ -50,7 +79,8 @@ body {
 
 /* Велике фото */
 .main-image {
-  width: 600px;
+  width: 50%;
+  display: block;
   height: 400px;
   object-fit: contain;
   background-color: white;
@@ -58,7 +88,7 @@ body {
 
 /* Таблиця */
 .data-table {
-  width: 300px;
+  min-width: 300px;
   border-collapse: collapse;
   border: 1px solid #ddd;
 }

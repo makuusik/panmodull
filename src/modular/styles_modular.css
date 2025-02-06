@@ -5,57 +5,6 @@ body {
   margin: 0;
   padding: 0;
 }
-/* Стилізація навбару */
-.navbar {
-  position: fixed; /* Закріплюємо навбар */
-  top: 0;
-  left: 0;
-  width: 100%; /* Займає всю ширину екрану */
-  color: white;
-  padding: 20px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 1000; /* Щоб навбар був зверху */
-  gap: 128px;
-  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
-  transition: background-color 0.3s ease-in-out;
-  height: 50px;
-}
-nav.transparent {
-  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
-}
-
-/* Кольоровий навбар після прокручування */
-nav.scrolled {
-  background: #202325; /* Чорний напівпрозорий */
-}
-
-/* Логотип (зліва) */
-.logo {
-  color: white;
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-right: 20px; /* Відступ між логотипом і меню */
-}
-
-/* Меню (зліва відразу після логотипу) */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 64px;
-  margin: 0;
-  padding: 0;
-  font-weight: 400;
-}
-
-/* Посилання в меню */
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
 
 .hero {
   height: 950px; /* Висота блоку на всю висоту екрана */
@@ -221,6 +170,7 @@ h1 {
 }
 
 .options-grid button:hover {
+  cursor: pointer;
   scale: 1.1;
 }
 
