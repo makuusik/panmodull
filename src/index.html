@@ -6,18 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
+
+    <link rel="stylesheet" href="styles_modular.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <load src="./partials/header.html" />
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
-    </main>
+    <section class="section section-hero">
+      <div class="hero-container">
+        <h1 class="hero-h1">PANMODUL</h1>
+        <h2 class="hero-h2">CREATE DESIRED DREAM HOUSE</h2>
+      </div>
+    </section>
 
-    <load src="./partials/footer.html" />
+    <!-- Вторая секция -->
+    <section class="section section-two">
+      <div class="section-container">
+        <ul class="link">
+          <div class="section-two-box">
+            <div class="link">
+              <h3>MODULAR HOUSES</h3>
+              <p>
+                Modular Houses are buildings constructed from pre-made modules
+                (blocks) that are manufactured in a factory. Once produced, the
+                modules are transported to the construction site and assembled
+                into a complete structure. Advantages
+              </p>
+              <ul>
+                <li>
+                  Fast construction – buildings can be completed in a few weeks.
+                </li>
+                <li>
+                  Energy efficiency – modern insulation materials improve
+                  thermal performance.
+                </li>
+                <li>
+                  Flexible design – modules can be combined to create unique
+                  layouts.
+                </li>
+                <li>
+                  Eco-friendliness – less waste compared to traditional
+                  construction.
+                </li>
+              </ul>
+              <button class="button">VIEW OPTIONS</button>
+            </div>
+            <img
+              src="./img/media_d/dbf6812f59e5080cf420f1056bfceb66f7d6a43a8df19ace503ea70596afc0ff.jpg"
+              alt=""
+              width="564px"
+              height="436px"
+            />
+          </div>
 
-    <script type="module" src="./main.js"></script>
+          <div class="section-two-box">
+            <div class="link">
+              <h3>FRAME HOUSES</h3>
+              <p>
+                Frame Houses are buildings constructed using a wooden or metal
+                frame as the main structural support. The frame is then covered
+                with insulation and finishing materials to create a durable and
+                energy-efficient structure. Advantages
+              </p>
+              <ul>
+                <li>Fast construction – assembly takes only a few weeks.</li>
+                <li>
+                  Energy efficiency – good insulation reduces heating and
+                  cooling costs.
+                </li>
+                <li>Lightweight structure – requires a simpler foundation.</li>
+                <li>
+                  Eco-friendliness – uses natural and sustainable materials.
+                </li>
+              </ul>
+              <button class="button">VIEW OPTIONS</button>
+            </div>
+            <img
+              src="./img/media_d/dbf6812f59e5080cf420f1056bfceb66f7d6a43a8df19ace503ea70596afc0ff.jpg"
+              alt=""
+              width="564px"
+              height="436px"
+            />
+          </div>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Третья секция с флексбоксом и гридом -->
+    <section class="section section-three">
+      <div class="large-image">
+        <img src="path_to_large_image.jpg" alt="Большая картинка" />
+      </div>
+      <div class="image-grid">
+        <img src="path_to_image1.jpg" alt="Картинка 1" />
+        <img src="path_to_image2.jpg" alt="Картинка 2" />
+        <img src="path_to_image3.jpg" alt="Картинка 3" />
+        <img src="path_to_image4.jpg" alt="Картинка 4" />
+        <img src="path_to_image5.jpg" alt="Картинка 5" />
+        <img src="path_to_image6.jpg" alt="Картинка 6" />
+      </div>
+    </section>
+
+    <!-- Четвертая секция -->
+    <section class="section section-four">
+      <h2>Четвертая секция</h2>
+      <p>Здесь может быть другой контент.</p>
+    </section>
   </body>
 </html>

@@ -1,44 +1,58 @@
-.header {
-  padding: 20px 0;
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.nav {
+/* Стилізація навбару */
+.navbar {
+  position: fixed; /* Закріплюємо навбар */
+  top: 0;
+  left: 0;
+  width: 100%; /* Займає всю ширину екрану */
+  color: white;
+  padding: 20px 30px;
   display: flex;
-  justify-content: space-between;
-}
-.nav-logo {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  z-index: 1000; /* Щоб навбар був зверху */
+  gap: 128px;
+  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
+  transition: background-color 0.3s ease-in-out;
+  height: 50px;
 }
-.nav-list {
+nav.transparent {
+  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
+}
+
+/* Кольоровий навбар після прокручування */
+nav.scrolled {
+  background: #202325; /* Чорний напівпрозорий */
+}
+
+/* Логотип (зліва) */
+.logo {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px; /* Відступ між логотипом і меню */
+}
+
+/* Меню (зліва відразу після логотипу) */
+.nav-links {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
+  gap: 64px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
 }
-.nav-link {
-  position: relative;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  transition: 200ms ease-in;
-}
-.nav-link:hover,
-.nav-link:focus {
-  color: #747bff;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  width: 110%;
-  height: 4px;
-  border-radius: 4px;
-  transform-origin: center;
-  animation: stretch 400ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 200ms both;
-}
-.nav-link.active::after {
-  background: #747bff;
+
+/* Посилання в меню */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
