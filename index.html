@@ -5,126 +5,135 @@
     <link rel="icon" type="image/svg+xml" href="/panmodull/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
-    <script type="module" crossorigin src="/panmodull/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/panmodull/assets/styles-DvPDDfy5.css">
+
+    <link rel="stylesheet" href="styles_modular.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/panmodull/assets/styles-C_ybvvX0.css">
   </head>
   <body>
-    <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="/panmodull/assets/sprite-E8vg0sBb.svg#logo"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="../modular/modular.html"
-            >Page 2</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+    <link rel="stylesheet" href="../css/header.css" />
+
+<header>
+  <nav id="navbar" class="navbar">
+    <!-- Логотип -->
+    <a href="main.html" class="logo">PANMODUL</a>
+
+    <!-- Меню -->
+    <ul class="nav-links">
+      <li><a href="portfolio.html">PORTFOLIO</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="gallery.html">GALLERY</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contacts.html">CONTACTS</a></li>
+    </ul>
+  </nav>
 </header>
 
 
-    <main>
-      <!-- Loads the specified .html file -->
-      <section class="vite-promo">
-  <div class="container">
-    <div class="vite-promo-thumb">
-      <a
-        class="vite-promo-link"
-        href="https://vitejs.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Vite official website"
-        title="Vite.js  build tool"
-      >
-        <!-- Path to images as from index.html file -->
-        <img
-          class="pic"
-          src="/panmodull/assets/vite-logo-9o_aqrTe.png"
-          alt="Vite logo"
-          width="640"
-          height="640"
-        />
-      </a>
-    </div>
-    <h1 class="main-title">
-      <span class="main-title-gradient">Vite</span>
-      Template by
-      <a
-        class="main-title-link"
-        href="https://github.com/goitacademy/vanilla-app-template"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT
-      </a>
-    </h1>
-  </div>
-</section>
+    <section class="section section-hero">
+      <div class="hero-container">
+        <h1 class="hero-h1">PANMODUL</h1>
+        <h2 class="hero-h2">CREATE DESIRED DREAM HOUSE</h2>
+      </div>
+    </section>
 
-      <article class="badges">
-  <div class="container">
-    <ul class="badges-list">
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-html-inject"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HTML Inject
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/vite-plugin-full-reload"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Full Reload
-        </a>
-      </li>
-      <li class="badges-item">
-        <a
-          class="badges-link"
-          href="https://www.npmjs.com/package/postcss-sort-media-queries"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sort Media Queries
-        </a>
-      </li>
-    </ul>
-  </div>
-</article>
+    <!-- Вторая секция -->
+    <section class="section section-two">
+      <div class="section-container">
+        <ul class="link">
+          <div class="section-two-box">
+            <div class="link">
+              <h3>MODULAR HOUSES</h3>
+              <p>
+                Modular Houses are buildings constructed from pre-made modules
+                (blocks) that are manufactured in a factory. Once produced, the
+                modules are transported to the construction site and assembled
+                into a complete structure. Advantages
+              </p>
+              <ul>
+                <li>
+                  Fast construction – buildings can be completed in a few weeks.
+                </li>
+                <li>
+                  Energy efficiency – modern insulation materials improve
+                  thermal performance.
+                </li>
+                <li>
+                  Flexible design – modules can be combined to create unique
+                  layouts.
+                </li>
+                <li>
+                  Eco-friendliness – less waste compared to traditional
+                  construction.
+                </li>
+              </ul>
+              <button class="button">VIEW OPTIONS</button>
+            </div>
+            <img
+              src="/panmodull/assets/dbf6812f59e5080cf420f1056bfceb66f7d6a43a8df19ace503ea70596afc0ff-CHQfL1p1.jpg"
+              alt=""
+              width="564px"
+              height="436px"
+            />
+          </div>
 
-    </main>
+          <div class="section-two-box">
+            <div class="link">
+              <h3>FRAME HOUSES</h3>
+              <p>
+                Frame Houses are buildings constructed using a wooden or metal
+                frame as the main structural support. The frame is then covered
+                with insulation and finishing materials to create a durable and
+                energy-efficient structure. Advantages
+              </p>
+              <ul>
+                <li>Fast construction – assembly takes only a few weeks.</li>
+                <li>
+                  Energy efficiency – good insulation reduces heating and
+                  cooling costs.
+                </li>
+                <li>Lightweight structure – requires a simpler foundation.</li>
+                <li>
+                  Eco-friendliness – uses natural and sustainable materials.
+                </li>
+              </ul>
+              <button class="button">VIEW OPTIONS</button>
+            </div>
+            <img
+              src="/panmodull/assets/dbf6812f59e5080cf420f1056bfceb66f7d6a43a8df19ace503ea70596afc0ff-CHQfL1p1.jpg"
+              alt=""
+              width="564px"
+              height="436px"
+            />
+          </div>
+        </ul>
+      </div>
+    </section>
 
-    <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
+    <!-- Третья секция с флексбоксом и гридом -->
+    <section class="section section-three">
+      <div class="large-image">
+        <img src="path_to_large_image.jpg" alt="Большая картинка" />
+      </div>
+      <div class="image-grid">
+        <img src="path_to_image1.jpg" alt="Картинка 1" />
+        <img src="path_to_image2.jpg" alt="Картинка 2" />
+        <img src="path_to_image3.jpg" alt="Картинка 3" />
+        <img src="path_to_image4.jpg" alt="Картинка 4" />
+        <img src="path_to_image5.jpg" alt="Картинка 5" />
+        <img src="path_to_image6.jpg" alt="Картинка 6" />
+      </div>
+    </section>
 
-
+    <!-- Четвертая секция -->
+    <section class="section section-four">
+      <h2>Четвертая секция</h2>
+      <p>Здесь может быть другой контент.</p>
+    </section>
   </body>
 </html>
