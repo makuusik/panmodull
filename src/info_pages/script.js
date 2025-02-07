@@ -1,263 +1,75 @@
-// Об'єкт з контентом для кожної сторінки (без заголовків)
-const pagesData = {
-  7: {
-    title:
-      'Модульна дача MH-7: швидке, зручне та екологічне житло для вашої ділянки',
-    text: 'Проект Модульної дачі MH-7 – це сучасне рішення для тих, хто хоче отримати функціональне та комфортне житло в найкоротші терміни. Ця модульна дача ідеально підходить як для заміського відпочинку, так і для постійного проживання. У ній передбачені всі необхідні зони: спальня, ванна кімната, кухня-ґостиная та простора тераса для відпочинку. Компактні розміри та продумане планування дозволяють максимально ефективно використовувати простір, роблячи проживання комфортним у будь-яку пору року. Модульна дача MH-7 має ряд переваг. Завдяки модульній конструкції, вона легко транспортується та встановлюється на будь-якій ділянці, що економить час і сили. Дача відрізняється високою енергоефективністю, що знижує витрати на її експлуатацію. Швидке виробництво та установка дозволяють заселитися у найкоротші терміни. Окрім цього, індивідуальне планування робить можливим адаптувати внутрішній простір під ваші потреби, створюючи затишне та практичне середовище для проживання. Виробництво модульних дач MH-7 також передбачає широкий вибір додаткових опцій і можливостей персоналізації. Ви можете вибрати різні варіанти фасадної обробки, встановити енергозберігаючі вікна, системи клімат-контролю та сучасні системи безпеки. Ці функції роблять вашу дачу ще більш зручною та енергоефективною, що особливо актуально для тривалого проживання. Замовте модульну дачу MH-7 під ключ вже сьогодні та почніть насолоджуватися заміським життям без зайвих турбот. Зв’яжіться з нами для розрахунку вартості проекту та отримайте безкоштовну консультацію щодо всіх доступних опцій і можливостей персоналізації!',
-    list: ['16', '12', '2,2/2,4/6,76', '2', '1', '14', '2'],
-  },
-  8: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  9: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  10: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  11: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  12: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
+// Функція для завантаження JSON-файлу та оновлення сторінки
+async function loadData() {
+  try {
+    const response = await fetch('../modular_houses_data.json'); // Завантаження JSON
+    const data = await response.json();
 
-  13: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  14: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  15: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  16: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  17: {
-    text: 'Це унікальний текст для сторінки 1.',
-    list: [
-      'Пуr',
-      'Пункт 1.2',
-      'Пункт 1.3',
-      'Пуr',
-      'Пункт 1.2',
-      'Пункт 1.3',
-      'Пункт 1.3',
-    ],
-  },
-  18: {
-    text: 'Опис для сторінки 2.',
-    list: ['Пункт 2.1', 'Пункт 2.2', 'Пункт 2.3'],
-  },
-  19: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  20: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  21: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  22: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  23: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  24: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  25: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  26: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  27: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  28: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  29: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  30: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  31: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  32: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  33: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  34: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  35: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  36: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  37: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  38: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  39: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  40: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  41: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  42: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  43: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  44: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  45: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  46: {
-    text: 'Деталі для сторінки 3.',
-    list: ['Пункт 3.1', 'Пункт 3.2', 'Пункт 3.3'],
-  },
-  // Інші сторінки...
-};
-const units = ['m²', '', 'm', 'm', '', 'm²', 'miesiące'];
+    // Отримуємо номер сторінки з URL
+    const params = new URLSearchParams(window.location.search);
+    const pageId = Number(params.get('page')) || 1;
 
-// Масив властивостей
-const properties_list = [
-  'Area',
-  'Living area',
-  'Module Size',
-  'Height',
-  'Bedrooms',
-  'Terrace',
-  'Time for construction',
-];
+    // Знаходимо відповідний запис у JSON за index
+    const pageData = data.find(item => item.index === pageId);
 
-// Отримуємо номер сторінки з URL
-const params = new URLSearchParams(window.location.search);
-const pageId = Number(params.get('page')) || 1;
+    if (pageData) {
+      // Оновлення заголовків
+      document.getElementById('title').innerText = `MODULAR HOUSE MH-${pageId}`;
+      document.getElementById('title2').innerText = pageData.title;
 
-// Функція для генерування заголовка
-function generateTitle(pageId) {
-  let title = '';
+      // Оновлення основного зображення
+      const images = document.getElementsByClassName('image1');
+      const imagePath = `../img/media/modular/${pageId}.jpg`;
+      const altImagePath = `../img/media/modular_alt/${pageId}_alt.jpg`;
 
-  if (pageId >= 7 && pageId <= 16 && pageId !== 14) {
-    title = `MODULAR COTTAGE MH-${pageId}`;
-  } else if (pageId >= 17 && pageId <= 38) {
-    title = `MODULAR HOUSE MH-${pageId}`;
-  } else if ((pageId >= 40 && pageId <= 43) || pageId === 14) {
-    title = `MODULAR OFFICE MH-${pageId}`;
-  } else if (pageId >= 44 && pageId <= 46) {
-    title = `MODULAR SAUNA MH-${pageId}`;
-  }
+      for (let img of images) {
+        img.src = imagePath;
+      }
 
-  return title;
-}
+      document.getElementById('image2').src = altImagePath;
 
-// Отримуємо потрібні дані
-const pageData = pagesData[pageId];
+      // Оновлення тексту опису
+      document.getElementById('text').innerText =
+        pageData.descriptions.join('\n');
 
-function changeMainImage(newSrc) {
-  const mainImage = document.querySelector('.main-image');
-  if (mainImage) {
-    mainImage.src = newSrc;
-  }
-}
-if (pageData) {
-  // Оновлення заголовку
-  const title = generateTitle(pageId);
-  const title2 = pagesData[pageId].title;
-  document.getElementById('title').innerText = title;
-  document.getElementById('title2').innerText = title2;
+      // Оновлення таблиці характеристик
+      const tableBody = document.getElementById('table-body');
+      tableBody.innerHTML = ''; // Очищення таблиці
 
-  // Оновлення зображення на основі pageId
-  const images = document.getElementsByClassName('image1');
-  const imagePath = `../img/media/modular/${pageId}.jpg`; // Динамічний шлях до зображення
-  const altImagePath = `../img/media/modular_alt/${pageId}_alt.jpg`; // Динамічний шлях до альтернативного зображення
+      const properties_list = [
+        'Area',
+        'Living area',
+        'Module Size',
+        'Height',
+        'Bedrooms',
+        'Terrace',
+        'Time for construction',
+      ];
+      const units = ['m²', '', 'm', 'm', '', 'm²', 'months'];
 
-  if (images.length > 0) {
-    for (let i = 0; i < images.length; i++) {
-      images[i].src = imagePath; // Присвоюємо нове значення src
+      pageData.characteristics.forEach((item, index) => {
+        if (index < properties_list.length) {
+          const row = document.createElement('tr');
+
+          const firstColumn = document.createElement('td');
+          firstColumn.innerText = properties_list[index];
+          row.appendChild(firstColumn);
+
+          const secondColumn = document.createElement('td');
+          secondColumn.innerText = `${item} ${units[index]}`.trim();
+          row.appendChild(secondColumn);
+
+          tableBody.appendChild(row);
+        }
+      });
+
+      console.log('✅ Дані успішно завантажені!');
+    } else {
+      console.warn('⛔️ Дані для цієї сторінки не знайдено.');
     }
+  } catch (error) {
+    console.error('❌ Помилка завантаження JSON:', error);
   }
-
-  // Оновлення другого зображення
-  document.getElementById('image2').src = altImagePath;
-
-  // Оновлення тексту
-  document.getElementById('text').innerText = pageData.text;
-
-  // Оновлення таблиці
-  const tableBody = document.getElementById('table-body');
-  tableBody.innerHTML = ''; // Очищаємо таблицю перед додаванням нових елементів
-
-  // Заміна тільки елементів в другій колонці
-  pageData.list.forEach((item, index) => {
-    if (index < properties_list.length) {
-      const row = document.createElement('tr');
-
-      const firstColumn = document.createElement('td');
-      firstColumn.innerText = properties_list[index];
-      row.appendChild(firstColumn);
-
-      const secondColumn = document.createElement('td');
-      secondColumn.innerText = `${item} ${units[index]}`.trim(); // Додаємо одиницю виміру, якщо є
-      row.appendChild(secondColumn);
-
-      tableBody.appendChild(row);
-    }
-  });
 }
+
+// Виклик функції після завантаження сторінки
+document.addEventListener('DOMContentLoaded', loadData);
