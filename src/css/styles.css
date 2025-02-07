@@ -210,8 +210,79 @@ img {
   border: 0.5px solid #000000;
 }
 
+.section-4-cards {
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+}
+
 .cards {
   width: 355px;
   height: 415px;
   background-color: #c2dfe3;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.section-4-tittle {
+  justify-self: center;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 112px;
+  color: white;
+  margin: 0;
+  margin-bottom: 154px;
+}
+
+.section-four {
+  padding-top: 154px;
+  padding-bottom: 154px;
+  background-image: url(C:\Users\MAKUNKA\Documents\GitHub\panmodull\src\img\backgrounds\backgrounds_ornament.png);
+  background-size: cover;
+}
+
+.cards h3 {
+  color: black;
+  font-weight: 600;
+  font-size: 32px;
+
+  margin-top: 70px;
+}
+
+.cards p {
+  color: #5f5f5f;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+
+  margin-top: 20px;
+}
+
+.cards-info-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 275px;
+  height: 174px;
+}
+
+.cards:hover {
+  background-color: #202325;
+}
+
+.cards:hover .cards-info-cont h3 {
+  color: white;
+}
+
+.cards:hover .cards-info-cont p {
+  color: #bfbfbf;
 }
