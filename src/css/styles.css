@@ -87,7 +87,9 @@ img {
 
 .section-two .section-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  justify-self: center;
   align-items: normal;
 }
 
@@ -96,14 +98,18 @@ img {
   width: 627px;
   border: 0.5px solid #fff;
   padding: 10px 20px;
-  color: rgb(177, 177, 177);
+  color: rgb(255, 255, 255);
   background: transparent;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.2s ease-out, border 0.2s ease-out;
   position: relative; /* Щоб не взаємодіяли з indicator */
   z-index: 3;
   font-size: 20px;
   font-weight: 300;
+}
+.section-two-box button:hover {
+  background-color: black;
+  border: 0.5px solid #000000;
 }
 
 .section-container .link {
@@ -112,7 +118,7 @@ img {
 }
 
 .section-two-box .link {
-  width: 627px;
+  width: auto;
   height: auto;
 
   display: flex;
