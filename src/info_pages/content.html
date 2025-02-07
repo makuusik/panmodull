@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контент</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="content.css" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +30,7 @@
           </div>
 
           <!-- Центр - головне фото -->
-          <img class="main-image image1" />
+          <img id="main-image" class="main-image image1" />
 
           <!-- Правий блок - таблиця -->
           <table class="data-table" id="table-body"></table>
@@ -41,8 +41,13 @@
         </div>
       </div>
     </section>
-
-    <script src="script.js"></script>
+    <section class="details">
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1"></div>
+        <div class="details-container" id="details-container-2"></div>
+      </div>
+    </section>
+    <script src="content.js"></script>
     <script src="../partials/header_script.js"></script>
   </body>
 </html>

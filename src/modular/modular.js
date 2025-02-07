@@ -3,11 +3,14 @@ const indicator = document.querySelector('.indicator');
 const buttonContainer = document.querySelector('.button-container');
 const all_content = document.querySelectorAll('.options-grid');
 
-const firstButton = buttons[0];
-buttons[0].classList.add('active');
+// Збереження стану вибраного табу в LocalStorage
+const savedTabIndex = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
+const firstButton = buttons[savedTabIndex];
+buttons[savedTabIndex].classList.add('active');
 indicator.style.width = `${firstButton.offsetWidth}px`;
 indicator.style.transform = `translateX(${firstButton.parentElement.offsetLeft}px)`;
 
+// Відновлення вибраного табу при перезавантаженні сторінки
 buttons.forEach((button, index) => {
   button.addEventListener('click', function () {
     // Зняти клас active з усіх кнопок
@@ -28,6 +31,9 @@ buttons.forEach((button, index) => {
       content.classList.remove('active');
     });
     all_content[index].classList.add('active');
+
+    // Зберігаємо індекс вибраної вкладки
+    localStorage.setItem('activeTabIndex', index);
   });
 });
 
@@ -57,25 +63,25 @@ function generateHouseBlocksForAllGrids(ranges) {
       };
 
       houseDiv.innerHTML = `
-        <div class="image-wrapper">
-          <img
-            class="img-default"
-            src="../img/media/modular/${i}.jpg"
-            alt="House ${i}"
-            width="350"
-            height="177"
-          />
-          <img
-            class="img-hover"
-            src="../img/media/modular_alt/${i}_alt.jpg"
-            alt="House ${i}"
-            width="350"
-            height="177"
-          />
-        </div>
-        <h2>MODULE HOUSE M${i}</h2>
-        <p>Some info about house option</p>
-      `;
+          <div class="image-wrapper">
+            <img
+              class="img-default"
+              src="../img/media/modular/${i}.jpg"
+              alt="House ${i}"
+              width="350"
+              height="177"
+            />
+            <img
+              class="img-hover"
+              src="../img/media/modular_alt/${i}_alt.jpg"
+              alt="House ${i}"
+              width="350"
+              height="177"
+            />
+          </div>
+          <h2>MODULE HOUSE M${i}</h2>
+          <p>Some info about house option</p>
+        `;
 
       // Останні елементи, якщо їх кількість не кратна 3, додаємо в row-last
       if (remainder > 0 && i > end - remainder) {
