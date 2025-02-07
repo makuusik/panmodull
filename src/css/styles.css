@@ -177,3 +177,41 @@ img {
   width: 100%;
   background-color: #5c6b73;
 }
+
+.sec-3-butt-cont {
+  margin-top: 100px;
+  display: flex;
+  justify-self: center;
+}
+
+.sec-3-butt {
+  width: 317px;
+  height: 100px;
+
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 23px;
+  font-family: 'Roboto', sans-serif;
+
+  border: 0.5px solid #fff;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border 0.2s ease-out;
+  position: relative; /* Щоб не взаємодіяли з indicator */
+  z-index: 3;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.sec-3-butt:hover {
+  background-color: black;
+  border: 0.5px solid #000000;
+}
+
+.cards {
+  width: 355px;
+  height: 415px;
+  background-color: #c2dfe3;
+}
