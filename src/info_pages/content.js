@@ -81,56 +81,6 @@ async function loadData() {
       });
 
       // Оновлення details для першого блоку
-      const detailsContainer1 = document.getElementById('details-container-1');
-      detailsContainer1.innerHTML = ''; // Очищення контейнера перед додаванням нових даних
-
-      const firstDetailGroup = pageData.details[0];
-      const titleIndexes1 = [0, 6, 26, 41, 61, 75, 77, 79];
-
-      titleIndexes1.forEach((titleIndex, i) => {
-        const detailSection = document.createElement('details');
-        const summary = document.createElement('summary');
-        summary.innerText = firstDetailGroup[titleIndex]; // Заголовок з індексу
-
-        detailSection.appendChild(summary);
-
-        const startIdx = titleIndex + 1;
-        const endIdx = titleIndexes1[i + 1] || firstDetailGroup.length;
-
-        for (let j = startIdx; j < endIdx; j++) {
-          const pointElement = document.createElement('p');
-          pointElement.innerText = firstDetailGroup[j]; // Пункти
-          detailSection.appendChild(pointElement);
-        }
-
-        detailsContainer1.appendChild(detailSection);
-      });
-
-      // Оновлення details для другого блоку
-      const detailsContainer2 = document.getElementById('details-container-2');
-      detailsContainer2.innerHTML = ''; // Очищення контейнера перед додаванням нових даних
-
-      const secondDetailGroup = pageData.details[0]; // Другий масив
-      const titleIndexes2 = [81, 87, 107, 123, 143, 158, 160, 162, 164];
-
-      titleIndexes2.forEach((titleIndex, i) => {
-        const detailSection = document.createElement('details');
-        const summary = document.createElement('summary');
-        summary.innerText = secondDetailGroup[titleIndex]; // Заголовок з індексу
-
-        detailSection.appendChild(summary);
-
-        const startIdx = titleIndex + 1;
-        const endIdx = titleIndexes2[i + 1] || secondDetailGroup.length;
-
-        for (let j = startIdx; j < endIdx; j++) {
-          const pointElement = document.createElement('p');
-          pointElement.innerText = secondDetailGroup[j]; // Пункти
-          detailSection.appendChild(pointElement);
-        }
-
-        detailsContainer2.appendChild(detailSection);
-      });
 
       console.log('✅ Дані успішно завантажені!');
     } else {
