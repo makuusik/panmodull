@@ -7,24 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
 
-    <link rel="stylesheet" href="styles_modular.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" crossorigin href="/panmodull/assets/index-G99nVTfx.css">
+    <link rel="stylesheet" crossorigin href="/panmodull/assets/index-BC8RjK-8.css">
     <link rel="stylesheet" crossorigin href="/panmodull/assets/styles-DLm3aahZ.css">
   </head>
   <body>
-    <link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-  rel="stylesheet"
-/>
-<header>
+    <header>
   <nav id="navbar" class="navbar">
     <!-- Логотип -->
     <a href="../index.html" class="logo">
@@ -69,17 +60,19 @@
 
     <!-- Меню -->
     <ul class="nav-links">
-      <li><a href="../portfolio/portfolio.html">PORTFOLIO</a></li>
-      <li class="dropdown">
+      <li class="nav-option">
+        <a href="../portfolio/portfolio.html">PORTFOLIO</a>
+      </li>
+      <li class="dropdown nav-option">
         <a>PROJECTS</a>
         <ul class="dropdown-menu">
           <li><a href="../modular/modular.html">MODULAR HOUSES</a></li>
           <li><a href="../modular/frame.html">FRAME HOUSES</a></li>
         </ul>
       </li>
-      <li><a href="gallery.html">GALLERY</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacts.html">CONTACTS</a></li>
+      <li class="nav-option"><a href="gallery.html">GALLERY</a></li>
+      <li class="nav-option"><a href="faq.html">FAQ</a></li>
+      <li class="nav-option"><a href="contacts.html">CONTACTS</a></li>
     </ul>
   </nav>
 </header>
@@ -397,37 +390,41 @@
 <footer class="footer">
   <div class="footer-container">
     <div class="footer-nav">
-      <a href="" class="footer-nav-a">CONTACT</a>
+      <p href="" class="footer-nav-a">CONTACT</a>
       <ul class="link">
         <li>
-          <a href="tel:+48793791666"><p>+48 793 791 666</p></a>
+          <a href="tel:+48793791666"><p class="p-link">+48 793 791 666</p></a>
         </li>
         <li>
-          <a href="mailto:example@gmail.com"><p>example@gmail.com</p></a>
+          <a class="p-link" href="mailto:example@gmail.com"
+            ><p>example@gmail.com</p></a
+          >
         </li>
       </ul>
       <p class="p-link">Green Str. 20, Krakow</p>
     </div>
 
     <div class="footer-nav">
-      <a href="" class="footer-nav-a">PROJECTS</a>
+      <p href="" class="footer-nav-a">PROJECTS</a>
       <ul class="link">
-        <li><a href="../portfolio/portfolio.html">Portfolio</a></li>
-        <li><a href="../gallery/gallery.html">Gallery</a></li>
+        <li>
+          <a class="p-link" href="../portfolio/portfolio.html">Portfolio</a>
+        </li>
+        <li><a class="p-link" href="../gallery/gallery.html">Gallery</a></li>
       </ul>
       <p></p>
     </div>
 
     <div class="footer-nav">
-      <a href="" class="footer-nav-a">INFORMATION</a>
+      <p href="" class="footer-nav-a">INFORMATION</a>
       <ul class="link">
-        <li><a href="../faq/faq.html">FAQ</a></li>
-        <li><a href="../contacs/contacs.html">Contacts</a></li>
+        <li><a class="p-link" href="../faq/faq.html">FAQ</a></li>
+        <li><a class="p-link" href="../contacs/contacs.html">Contacts</a></li>
       </ul>
     </div>
 
     <div class="footer-nav">
-      <a href="" class="footer-nav-a">SOCIALS</a>
+      <p href="" class="footer-nav-a">SOCIALS</p>
     </div>
   </div>
 </footer>
