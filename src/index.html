@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,27 +9,97 @@
     <link rel="stylesheet" href="./css/styles.css" />
 
     <link rel="stylesheet" href="styles_modular.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <load src="./partials/header.html" />
 
-    <section class="section section-hero">
+    <section class="section section-hero content">
       <div class="hero-container">
-        <h1 class="hero-h1">PANMODUL</h1>
-        <h2 class="hero-h2">CREATE DESIRED DREAM HOUSE</h2>
+        <div class="hero-logo">
+          <svg
+            id="Layer_1"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 342.71 224"
+          >
+            <defs></defs>
+            <!-- Текст з коректним трансформуванням -->
+            <text
+              class="cls-2"
+              transform="translate(31.06 193.05) scale(1)"
+              fill="white"
+            >
+              <tspan class="cls-4" x="0" y="0">PANMODUL</tspan>
+            </text>
+            <!-- Лінії та фігури -->
+            <g>
+              <polyline
+                class="cls-1"
+                points="185.31 59.51 153 27.2 120.68 59.51"
+              />
+              <polyline
+                class="cls-1"
+                points="222.03 59.51 189.71 27.2 175.33 41.58 189.29 55.54"
+              />
+              <polyline
+                class="cls-1"
+                points="189.29 55.54 153 19.25 116.7 55.54"
+              />
+              <polyline
+                class="cls-1"
+                points="226 55.54 189.71 19.25 171.35 37.61 189.29 55.54"
+              />
+              <rect
+                class="cls-1"
+                x="145.88"
+                y="40.64"
+                width="7.11"
+                height="8.07"
+              />
+              <rect
+                class="cls-1"
+                x="153"
+                y="40.64"
+                width="7.11"
+                height="8.07"
+              />
+              <rect
+                class="cls-1"
+                x="145.88"
+                y="48.8"
+                width="7.11"
+                height="8.07"
+              />
+              <rect class="cls-1" x="153" y="48.8" width="7.11" height="8.07" />
+            </g>
+            <g>
+              <path
+                class="cls-3"
+                d="M163.14,76.44c-2.21-2.12-4.93-3.65-8.04-4.74h-.01s-.04-.01-.06-.02c-3.48-1.21-7.48-1.81-11.99-1.81h-25.12v71.4h7.1v-22.54h18.02c4.51,0,8.51-.6,11.99-1.8,2.55-.87,4.81-2.06,6.8-3.58.47-.35.92-.71,1.35-1.1,3.73-3.32,6.03-7.62,6.88-12.89,0-.03,0-.06,0-.09l.05.09,18.14,32.83h3.36l26.36-48.04v57.12h6.81v-71.4h-5.85l-28.86,52.94s-19.49-35.68-21.81-39.61c-2.14-3.63-3.05-4.77-5.13-6.76ZM161.83,102.36c-.87,1.97-2.11,3.67-3.73,5.1-.92.8-1.94,1.5-3.07,2.09-3.2,1.7-7.26,2.55-12.18,2.55h-17.83v-35.7h17.83c4.92,0,8.98.85,12.18,2.55,1.13.59,2.15,1.29,3.07,2.09,1.62,1.42,2.86,3.13,3.73,5.13,1.03,2.33,1.54,5.06,1.54,8.18s-.51,5.71-1.54,8.01Z"
+              />
+              <path
+                class="cls-3"
+                d="M155.09,119.47v21.8h6.8v-25.03c-2.07,1.4-4.36,2.49-6.8,3.23Z"
+              />
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
     <!-- Вторая секция -->
-    <section class="section section-two">
+    <section class="section section-two content">
       <div class="section-container">
-        <div class="section-two-box">
+        <div class="section-two-box" id="projects">
           <div class="link">
             <h3>MODULAR HOUSES</h3>
             <p>
@@ -156,62 +227,100 @@
       <h2 class="section-4-tittle">OUR WORKFLOW</h2>
       <div class="section-4-cards">
         <div class="cards">
-          <img
-            src="./img/media_d/schrek.jpg"
-            alt="shrek"
-            width="64px"
-            height="64px"
-          />
-          <div class="cards-info-cont">
+          <div class="cards-header">
+            <svg
+              id="a"
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m15,13.75c1.5166,0,2.75-1.2334,2.75-2.75v-6c0-1.5166-1.2334-2.75-2.75-2.75H5c-1.5166,0-2.75,1.2334-2.75,2.75v11c0,.28418.16016.54395.41504.6709.10547.05322.2207.0791.33496.0791.15918,0,.31738-.05078.4502-.1499l3.7998-2.8501h7.75Zm-8.4502-1.3501l-2.7998,2.1001V5c0-.68945.56055-1.25,1.25-1.25h10c.68945,0,1.25.56055,1.25,1.25v6c0,.68945-.56055,1.25-1.25,1.25H7c-.16211,0-.32031.05273-.4502.1499Zm15.2002-2.3999v11c0,.28418-.16016.54395-.41504.6709-.10547.05322-.2207.0791-.33496.0791-.15918,0-.31738-.05078-.4502-.1499l-3.7998-2.8501h-7.75c-1.49664,0-2.71222-1.20251-2.74408-2.69165l1.41107-1.05835h.08301v1c0,.68945.56055,1.25,1.25,1.25h8c.16211,0,.32031.05273.4502.1499l2.7998,2.1001v-9.5c0-.68945-.56055-1.25-1.25-1.25v-1.5c1.5166,0,2.75,1.2334,2.75,2.75Z"
+                stroke-width="0"
+              />
+            </svg>
             <h3>CONTACT</h3>
+          </div>
+          <div class="cards-info-cont">
             <p>
-              The story of a man named Brady hoo busy with three boys of his own
-              come to knock on our door.
+              Ми зв'язуємося з вами зручним для вас способом, щоб отримати
+              консультацію, уважно вислухати ваші потреби та допомогти
+              сформулювати технічне завдання для проекту.
             </p>
           </div>
         </div>
         <div class="cards">
-          <img
-            src="./img/media_d/schrek.jpg"
-            alt="shrek"
-            width="64px"
-            height="64px"
-          />
-          <div class="cards-info-cont">
+          <div class="cards-header">
+            <svg
+              id="a"
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m2.0752,7.33664l6.51367,3.25586c.2124.10645.44092.15918.66846.15918.27197,0,.54297-.0752.78418-.22461.44385-.27441.7085-.74902.7085-1.27051v-2.50586h1.57227c1.33887,0,2.42773-1.08887,2.42773-2.42773,0-.31543.25684-.57227.57227-.57227h5.67773c.41406,0,.75-.33594.75-.75s-.33594-.75-.75-.75h-5.67773c-1.14258,0-2.07227.92969-2.07227,2.07227,0,.51172-.41602.92773-.92773.92773h-1.57227v-2.50586c0-.52148-.26465-.99609-.7085-1.27051-.44287-.27441-.98633-.2998-1.45264-.06543l-6.51416,3.25586c-.50879.25488-.82471.76758-.82471,1.33594s.31592,1.08105.8252,1.33594Zm7.1748-4.58105l.00372,2.49512h-1.25372c-.41406,0-.75.33594-.75.75s.33594.75.75.75h1.25598l.00378,2.5-6.51367-3.24414,6.50391-3.25098Zm11.75,14.49512h-3.25v-2.25c0-.96484-.78516-1.75-1.75-1.75h-8c-.96484,0-1.75.78516-1.75,1.75v2.25h-3.25c-.96484,0-1.75.78516-1.75,1.75v2c0,.96484.78516,1.75,1.75,1.75h18c.96484,0,1.75-.78516,1.75-1.75v-2c0-.96484-.78516-1.75-1.75-1.75Zm-9.75,4H3c-.1377,0-.25-.1123-.25-.25v-2c0-.1377.1123-.25.25-.25h8.25v2.5Zm-3.5-4v-2.25c0-.1377.1123-.25.25-.25h8c.1377,0,.25.1123.25.25v2.25H7.75Zm13.5,3.75c0,.1377-.1123.25-.25.25h-8.25v-2.5h8.25c.1377,0,.25.1123.25.25v2Z"
+                stroke-width="0"
+              />
+            </svg>
             <h3>MATERIALS</h3>
+          </div>
+          <div class="cards-info-cont">
             <p>
-              The story of a man named Brady hoo busy with three boys of his own
-              come to knock on our door.
+              Ви обираєте типовий проект, вносимо корективи або розробляємо
+              проект з нуля. Допомагаємо вибрати матеріали та підготуємо
+              комерційну пропозицію, що відображає всі деталі вашого майбутнього
+              дому.
             </p>
           </div>
         </div>
         <div class="cards">
-          <img
-            src="./img/media_d/schrek.jpg"
-            alt="shrek"
-            width="64px"
-            height="64px"
-          />
-          <div class="cards-info-cont">
+          <div class="cards-header">
+            <svg
+              id="a"
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m20,6.25h-2.25v-1.25c0-1.5166-1.2334-2.75-2.75-2.75h-6c-1.5166,0-2.75,1.2334-2.75,2.75v1.25h-2.25c-1.5166,0-2.75,1.2334-2.75,2.75v10c0,1.5166,1.2334,2.75,2.75,2.75h16c1.5166,0,2.75-1.2334,2.75-2.75v-10c0-1.5166-1.2334-2.75-2.75-2.75Zm-12.25-1.25c0-.68945.56055-1.25,1.25-1.25h6c.68945,0,1.25.56055,1.25,1.25v1.25H7.75v-1.25Zm13.5,14c0,.68945-.56055,1.25-1.25,1.25H4c-.68945,0-1.25-.56055-1.25-1.25v-5.25h5.5v3.25c0,.41406.33594.75.75.75h6c.41406,0,.75-.33594.75-.75v-3.25h5.5v5.25Zm-11.5-2.75v-2.5h4.5v2.5h-4.5Zm11.5-4H2.75v-3.25c0-.68945.56055-1.25,1.25-1.25h16c.68945,0,1.25.56055,1.25,1.25v3.25Z"
+                stroke-width="0"
+              />
+            </svg>
             <h3>CONTRACT</h3>
+          </div>
+          <div class="cards-info-cont">
             <p>
-              The story of a man named Brady hoo busy with three boys of his own
-              come to knock on our door.
+              Ми укладаємо договір, який офіційно закріплює умови співпраці.
+              Після підписання договору ви вносите передоплату, підтверджуючи
+              серйозність намірів та готовність до початку роботи.
             </p>
           </div>
         </div>
         <div class="cards">
-          <img
-            src="./img/media_d/schrek.jpg"
-            alt="shrek"
-            width="64px"
-            height="64px"
-          />
-          <div class="cards-info-cont">
+          <div class="cards-header">
+            <svg
+              id="a"
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m22.12354,3.25977L10.12354,1.25977c-.04102-.00684-.08203-.00977-.12354-.00977h-4c-.11621,0-.23145.02734-.33545.0791L1.66455,3.3291c-.25391.12695-.41455.38672-.41455.6709v2c0,.41406.33594.75.75.75h3.25v14.5h-3.25c-.41406,0-.75.33594-.75.75s.33594.75.75.75h12c.41406,0,.75-.33594.75-.75s-.33594-.75-.75-.75h-3.25V6.75h6.5v3h-1.25c-.41406,0-.75.33594-.75.75s.33594.75.75.75h1.25v3.75c0,.41406.33594.75.75.75.68945,0,1.25.56055,1.25,1.25s-.56055,1.25-1.25,1.25-1.25-.56055-1.25-1.25c0-.41406-.33594-.75-.75-.75s-.75.33594-.75.75c0,1.5166,1.2334,2.75,2.75,2.75s2.75-1.2334,2.75-2.75c0-1.25684-.84717-2.31836-2-2.64648v-3.10352h1.25c.41406,0,.75-.33594.75-.75s-.33594-.75-.75-.75h-1.25v-3h3.25c.41406,0,.75-.33594.75-.75v-2c0-.36621-.26514-.67969-.62646-.74023Zm-16.87354,1.99023h-2.5v-.78613l2.5-1.25018v2.03632Zm1.5,2.56055l2.18945,2.18945-2.18945,2.18945v-4.37891Zm0,8l2.18945,2.18945-2.18945,2.18945v-4.37891Zm2.5,5.43945h-1.43945l1.43945-1.43945v1.43945Zm0-5.06055l-2.18945-2.18945,2.18945-2.18945v4.37891Zm0-8l-1.43945-1.43945h1.43945v1.43945Zm0-2.93945h-2.5v-2.5h2.5v2.5Zm12,0h-10.5v-2.36462l10.5,1.75037v.61426Z"
+                stroke-width="0"
+              />
+            </svg>
             <h3>CONSTRUCTION</h3>
+          </div>
+          <div class="cards-info-cont">
             <p>
-              The story of a man named Brady hoo busy with three boys of his own
-              come to knock on our door.
+              Ми закуповуємо необхідні матеріали, виготовляємо елементи будинку
+              та здійснюємо доставку на вашу ділянку. Далі наші спеціалісти
+              проводять монтаж, гарантуючи точне відповідність вашим очікуванням
+              та стандартам якості.
             </p>
           </div>
         </div>
@@ -219,6 +328,7 @@
     </section>
 
     <load src="./partials/footer.html" />
+    <script src="main.js"></script>
     <script src="../partials/header_script.js"></script>
   </body>
 </html>
