@@ -6,6 +6,8 @@
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -31,6 +33,7 @@ p {
 }
 
 .main-info {
+  background-color: #17191b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -106,16 +109,17 @@ p {
 }
 
 .details {
+  width: 100%;
+  background-color: #17191b;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 1200px;
-  max-width: 1200px;
   justify-self: center;
 }
 
 .wrapper-details {
+  max-width: 1200px;
   width: 100%;
   display: flex;
   flex-direction: row;

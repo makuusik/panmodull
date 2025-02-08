@@ -1,10 +1,3 @@
-body {
-  margin: 0;
-  background: #17191b;
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-}
 /* Стилізація навбару */
 .navbar {
   position: fixed; /* Закріплюємо навбар */
@@ -13,7 +6,7 @@ body {
   width: 100%; /* Займає всю ширину екрану */
   height: auto;
   color: white;
-  padding: 20px 30px;
+  padding: 12px 30px 20px 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -59,10 +52,12 @@ nav.scrolled {
 .navbar .logo .cls-1 {
   fill: none;
   stroke: white;
+  stroke-width: 3;
 }
 
 .logo p {
-  font-family: Montserrat;
+  margin: 0;
+  font-family: 'Montserrat';
   font-size: 1.5em;
   line-height: 0.75;
   font-weight: 300;
@@ -82,11 +77,13 @@ nav.scrolled {
 }
 
 /* Посилання в меню */
-.nav-links a {
+.nav-links .nav-option > a {
   color: white;
   text-decoration: none;
-  font-size: 1em;
-  line-height: 0.8;
+  display: flex;
+  align-items: end;
+  font-size: 18px;
+  line-height: 0.75;
 }
 
 /* Стилі для випадаючого меню */

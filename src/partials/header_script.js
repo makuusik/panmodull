@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  window.addEventListener('scroll', function () {
+  // Функція для оновлення прозорості на основі прокрутки
+  function updateScrollOpacity() {
     let scrollTop = window.scrollY;
     let opacity = Math.min(scrollTop / 300, 0.8); // Обмежуємо прозорість до 0.8
 
@@ -16,7 +17,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (dropdownMenu) {
       dropdownMenu.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`; // Робимо дропдаун прозорим відповідно до скролу
     }
-  });
+  }
+
+  // Викликаємо функцію при завантаженні сторінки для врахування поточного прокрутки
+  updateScrollOpacity();
+
+  // Обробник скролу
+  window.addEventListener('scroll', updateScrollOpacity);
 });
 
 document.addEventListener('DOMContentLoaded', function () {

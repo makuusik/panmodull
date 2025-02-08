@@ -18,9 +18,6 @@ body {
   text-align: center;
   padding-top: 80px; /* Відступ, щоб текст не перекривався з навбаром */
 }
-.big {
-  height: 700px;
-}
 h1 {
   font-size: 128px;
 }
@@ -33,6 +30,7 @@ h1 {
   flex-direction: column;
   padding-bottom: 75px;
 }
+
 /* Обгортка для кнопок */
 .button-wrapper {
   position: relative;

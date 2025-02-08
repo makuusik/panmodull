@@ -1,16 +1,12 @@
-.footer-nav a,
-p {
-  color: white;
+a {
   text-decoration: none;
-  margin: 0;
-  padding: 0;
 }
-
 .footer-nav-a {
   font-size: 32px;
   font-weight: 500;
   line-height: 37.5px;
   margin-bottom: 55px;
+  color: white;
 }
 
 .footer-container {
@@ -24,10 +20,16 @@ p {
 }
 
 .footer-nav .p-link {
+  all: unset;
+  color: #bfbfbf;
   margin-top: 20px;
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
+  text-decoration: none;
+}
+.footer-nav .p-link:hover {
+  color: white;
 }
 
 .footer-nav .link {
