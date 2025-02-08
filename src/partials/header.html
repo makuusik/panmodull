@@ -1,18 +1,61 @@
-<link rel="stylesheet" href="../css/header.css" />
 <link
-  href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
   rel="stylesheet"
 />
 <header>
   <nav id="navbar" class="navbar">
     <!-- Логотип -->
-    <a href="../index.html" class="logo">PANMODUL</a>
+    <a href="../index.html" class="logo">
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+      >
+        <g>
+          <polyline
+            class="cls-1"
+            points="77.96 43.26 45.64 10.94 13.32 43.26"
+          />
+          <polyline
+            class="cls-1"
+            points="114.68 43.26 82.36 10.94 67.97 25.32 81.93 39.28"
+          />
+          <polyline class="cls-1" points="81.93 39.28 45.64 2.99 9.35 39.28" />
+          <polyline
+            class="cls-1"
+            points="118.65 39.28 82.36 2.99 64 21.35 81.93 39.28"
+          />
+          <rect class="cls-1" x="38.53" y="24.39" width="7.11" height="8.07" />
+          <rect class="cls-1" x="45.64" y="24.39" width="7.11" height="8.07" />
+          <rect class="cls-1" x="38.53" y="32.54" width="7.11" height="8.07" />
+          <rect class="cls-1" x="45.64" y="32.54" width="7.11" height="8.07" />
+        </g>
+        <g>
+          <path
+            class="cls-2"
+            d="M55.79,60.18c-2.21-2.12-4.93-3.65-8.04-4.74h-.01s-.04-.01-.06-.02c-3.48-1.21-7.48-1.81-11.99-1.81H10.56v71.4h7.1v-22.54h18.02c4.51,0,8.51-.6,11.99-1.8,2.55-.87,4.81-2.06,6.8-3.58.47-.35.92-.71,1.35-1.1,3.73-3.32,6.03-7.62,6.88-12.89,0-.03,0-.06,0-.09l.05.09,18.14,32.83h3.36l26.36-48.04v57.12h6.81V53.61h-5.85l-28.86,52.94s-19.49-35.68-21.81-39.61c-2.14-3.63-3.05-4.77-5.13-6.76ZM54.47,86.1c-.87,1.97-2.11,3.67-3.73,5.1-.92.8-1.94,1.5-3.07,2.09-3.2,1.7-7.26,2.55-12.18,2.55h-17.83v-35.7h17.83c4.92,0,8.98.85,12.18,2.55,1.13.59,2.15,1.29,3.07,2.09,1.62,1.42,2.86,3.13,3.73,5.13,1.03,2.33,1.54,5.06,1.54,8.18s-.51,5.71-1.54,8.01Z"
+          />
+          <path
+            class="cls-2"
+            d="M47.73,103.21v21.8h6.8v-25.03c-2.07,1.4-4.36,2.49-6.8,3.23Z"
+          />
+        </g>
+      </svg>
+      <p>PANMODUL</p>
+    </a>
 
     <!-- Меню -->
     <ul class="nav-links">
       <li><a href="../portfolio/portfolio.html">PORTFOLIO</a></li>
-      <li><a href="#projects">PROJECTS</a></li>
-      <li><a href="../gallery/gallery.html">GALLERY</a></li>
+      <li class="dropdown">
+        <a>PROJECTS</a>
+        <ul class="dropdown-menu">
+          <li><a href="../modular/modular.html">MODULAR HOUSES</a></li>
+          <li><a href="../modular/frame.html">FRAME HOUSES</a></li>
+        </ul>
+      </li>
+      <li><a href="gallery.html">GALLERY</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="contacts.html">CONTACTS</a></li>
     </ul>
