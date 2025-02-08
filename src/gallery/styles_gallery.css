@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  background: #17191b;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+p,
+div,
+a,
+h3,
+li,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.section-hero {
+  height: 950px; /* Висота блоку на всю висоту екрана */
+  background-image: url('../img/media_d/module-house-42-3.png'); /* Заміни на своє зображення */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px; /* Відступ, щоб текст не перекривався з навбаром */
+}
+
+.hero-h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 150px;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-hero {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 64px;
+  color: white;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.gallery-item-container p {
+  font-weight: 200;
+  font-size: 32px;
+
+  text-align: center;
+}
+
+.gallery-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+
+  list-style: none;
+}
+
+.gallery-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+
+  gap: 25px;
+
+  flex-direction: column;
+}
+
+.gallery-item {
+  border: solid 1px rgb(225, 225, 225, 25%);
+  width: 1500px;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.div-vertical {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  justify-content: space-between;
+
+  /* gap: 185px; */
+}
+
+.div-horizontal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-item-row {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 25px;
+  gap: 25px;
+}
