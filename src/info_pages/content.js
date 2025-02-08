@@ -10,7 +10,7 @@ function getPolishMonthWord(number) {
 
 async function loadData() {
   try {
-    const response = await fetch('modular_houses_data_pl.json'); // Завантаження JSON
+    const response = await fetch('modular_houses_data_sorted.json'); // Завантаження JSON
     const data = await response.json();
 
     // Отримуємо номер сторінки з URL
@@ -97,3 +97,24 @@ function changeMainImage(src) {
 }
 
 document.addEventListener('DOMContentLoaded', loadData);
+
+document.querySelectorAll('.details-container summary').forEach(summary => {
+  summary.addEventListener('click', function () {
+    const parentContainer = this.closest('.details-container');
+
+    // Закриваємо всі відкриті details в межах поточного details-container
+    parentContainer.querySelectorAll('.details[open]').forEach(openDetail => {
+      if (openDetail !== this.parentElement) {
+        openDetail.removeAttribute('open');
+      }
+    });
+
+    // Перемикаємо відкриття поточного елемента
+    const parent = summary.parentElement;
+    if (parent.hasAttribute('open')) {
+      parent.removeAttribute('open');
+    } else {
+      parent.setAttribute('open', 'true');
+    }
+  });
+});

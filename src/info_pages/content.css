@@ -17,7 +17,7 @@ h2 {
   font-size: 32px;
 }
 p {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 100;
   line-height: 2;
 }
@@ -108,17 +108,10 @@ p {
   background-color: #f4f4f4;
 }
 
-.details {
-  width: 100%;
-  background-color: #17191b;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
-}
-
 .wrapper-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -127,27 +120,86 @@ p {
   align-items: top;
 }
 
+/* Для всіх елементів, включаючи summary і p */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Включає padding і border в загальний розмір елемента */
+}
+
 .details-container {
   width: 100%;
+  padding: 0; /* Видаляємо padding для самого контейнера */
 }
 
 .details-container summary {
+  width: 100%;
+  cursor: pointer;
   list-style: none;
-  padding: 15px;
+  padding: 25px;
   line-height: 1;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
   border: 1px solid white;
 }
-.details-container p {
+
+.details p {
+  display: block;
+  height: 0;
   list-style: none;
-  padding: 15px;
+  padding: 0 50px;
+  opacity: 0;
+  width: 100%;
   margin: 0;
   line-height: 1;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 200;
-  border: 1px solid rgb(202, 202, 202);
+  overflow: hidden; /* Щоб приховати вміст, коли він не відкритий */
+  transition: opacity 0.3s ease-out, padding 0.5s ease-out;
 }
+
+.details {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #17191b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  border: 1px solid rgb(202, 202, 202);
+  height: fit-content;
+}
+
+.details[open] p {
+  border-top: 1px solid rgb(83, 83, 83);
+  border-bottom: 1px solid rgb(83, 83, 83);
+  border-left: 1px solid rgb(202, 202, 202);
+  border-right: 1px solid rgb(202, 202, 202);
+  padding: 15px 50px;
+  display: block;
+  width: 100%;
+  opacity: 1; /* Відображення елемента */
+  height: auto; /* Висота налаштовується автоматично */
+}
+
+.details img {
+  opacity: 0;
+  max-height: 0; /* Спочатку висота 0 */
+  transition: max-height 0.3s ease-out, opacity 0.2s ease-out; /* Анімація max-height та opacity із затримкою */
+  width: 100%; /* Встановлюємо ширину зображення */
+  object-fit: cover; /* Забезпечуємо правильне відображення зображення */
+}
+
+.details[open] img {
+  opacity: 1; /* Змінюємо на 1, коли блок відкрито */
+  max-height: 500px; /* Встановлюємо максимальну висоту для зображення */
+}
+
+/* Стиль для контейнера деталей */
 
 /* Адаптивність */
 @media (max-width: 768px) {
@@ -172,4 +224,8 @@ p {
     width: 100%;
     max-width: 400px;
   }
+}
+.big {
+  height: 1000px;
+  background-color: #17191b;
 }

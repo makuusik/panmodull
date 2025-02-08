@@ -2,10 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../img/media/icons/Panmodul.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../img/media/icons/Panmodul white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Panmodul</title>
     <link rel="stylesheet" href="./styles_portfolio.css" />
     <link rel="stylesheet" href="../css/header.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <load src="../partials/header.html" />
@@ -14,98 +30,69 @@
       <div class="filter-section-container">
         <h1>WORK PORTFOLIO</h1>
         <div class="button-container">
-          <button class="button">MODULAR HOUSES</button>
-          <button class="button">FRAME HOUSES</button>
+          <button class="button" id="modularButton">MODULAR HOUSES</button>
+          <button class="button" id="frameButton">FRAME HOUSES</button>
         </div>
       </div>
     </section>
 
     <section class="portfolio-section">
       <ul class="portfolio-cont">
-        <li class="portfolio-items">
+        <li class="portfolio-items modular-filter">
           <img
-            src="../img/media_d/schrek.jpg"
+            src="../img/media/portfolio/10004.png"
             alt=""
-            width="500px"
+            width="600px"
             height="auto"
           />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
+          <h2>DOM MODUŁOWY W DRIEL</h2>
+          <p>Data budowy: 2023<br />Powierzchnia modułu: 52 m²</p>
         </li>
-        <li class="portfolio-items">
+        <li class="portfolio-items modular-filter">
           <img
-            src="../img/media_d/schrek.jpg"
+            src="../img/media/portfolio/10007.jpg"
             alt=""
-            width="500px"
+            width="600px"
             height="auto"
           />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
+          <h2>DOM MODUŁOWY W BRUMMEN</h2>
+          <p>Data budowy: 2021<br />Powierzchnia modułu: 91 m²</p>
         </li>
-        <li class="portfolio-items">
+        <li class="portfolio-items modular-filter">
           <img
-            src="../img/media_d/schrek.jpg"
+            src="../img/media/portfolio/10001.jpg"
             alt=""
-            width="500px"
+            width="600px"
             height="auto"
           />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
+          <h2>DOM MODUŁOWY W DUVEN</h2>
+          <p>Data budowy: 2022<br />Powierzchnia modułu: 94 m²</p>
         </li>
-        <li class="portfolio-items">
+        <li class="portfolio-items modular-filter">
           <img
-            src="../img/media_d/schrek.jpg"
+            src="../img/media/portfolio/10023.jpg"
             alt=""
-            width="500px"
+            width="600px"
             height="auto"
           />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
+          <h2>DOM MODUŁOWY W VELP</h2>
+          <p>Data budowy: 2023<br />Powierzchnia w osiach: 43 m²</p>
         </li>
-        <li class="portfolio-items">
+        <li class="portfolio-items frame-filter">
           <img
-            src="../img/media_d/schrek.jpg"
+            src="../img/media/portfolio/10024.jpg"
             alt=""
-            width="500px"
+            width="600px"
             height="auto"
           />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
-        </li>
-        <li class="portfolio-items">
-          <img
-            src="../img/media_d/schrek.jpg"
-            alt=""
-            width="500px"
-            height="auto"
-          />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
-        </li>
-        <li class="portfolio-items">
-          <img
-            src="../img/media_d/schrek.jpg"
-            alt=""
-            width="500px"
-            height="auto"
-          />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
-        </li>
-        <li class="portfolio-items">
-          <img
-            src="../img/media_d/schrek.jpg"
-            alt=""
-            width="500px"
-            height="auto"
-          />
-          <h2>MODULAR HOUSE</h2>
-          <p>Житомир, 2014, 320 кв.м</p>
+          <h2>DOM SZKIELETOWY W ŻYTOMIERZU</h2>
+          <p>Data budowy: 2024<br />Powierzchnia w osiach: 140 m²</p>
         </li>
       </ul>
     </section>
 
     <load src="../partials/footer.html" />
     <script src="../partials/header_script.js"></script>
+    <script src="portfolio.js"></script>
   </body>
 </html>

@@ -53,6 +53,16 @@ h1 {
   z-index: 3;
   font-size: 20px;
   font-weight: 300;
+  transition: transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.95); /* Зменшуємо кнопку на 5% при натисканні */
+}
+
+.disabled {
+  border: 1px solid grey;
+  color: grey;
 }
 
 .button-container {
@@ -63,8 +73,7 @@ h1 {
 .portfolio-cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 100px;
-
+  gap: 50px;
   max-width: 70%;
 }
 
@@ -72,17 +81,13 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   padding: 0;
   margin: 0;
 
   width: fit-content;
 
   outline: solid 1px rgb(255, 255, 255, 50%);
-}
-
-.portfolio-items img {
-  /* box-sizing: content-box; */
 }
 
 .portfolio-section {
@@ -92,16 +97,20 @@ h1 {
 }
 
 .portfolio-items h2 {
+  text-align: left;
   color: white;
+  padding: 0 20px;
   font-weight: 400;
-  font-size: 24px;
-  margin-top: 50px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .portfolio-items p {
   color: white;
-  font-weight: 200;
+  padding: 0 20px;
+  text-align: left;
+  font-weight: 100;
   font-size: 16px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   margin-top: 15px;
 }
