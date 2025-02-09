@@ -10,6 +10,17 @@ buttons[savedTabIndex].classList.add('active');
 indicator.style.width = `${firstButton.offsetWidth}px`;
 indicator.style.transform = `translateX(${firstButton.parentElement.offsetLeft}px)`;
 
+buttons.forEach((button, index) => {
+  button.classList.remove('active');
+  all_content[index]?.classList.remove('active'); // Видаляємо active у всіх options-grid
+});
+buttons[savedTabIndex].classList.add('active');
+all_content[savedTabIndex]?.classList.add('active');
+
+// Позиціонуємо indicator
+indicator.style.width = `${firstButton.offsetWidth}px`;
+indicator.style.transform = `translateX(${firstButton.offsetLeft}px)`;
+
 // Відновлення вибраного табу при перезавантаженні сторінки
 buttons.forEach((button, index) => {
   button.addEventListener('click', function () {
@@ -37,60 +48,42 @@ buttons.forEach((button, index) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const grids = document.querySelectorAll('.options-grid');
-
-  // Отримуємо збережений індекс активного гріда (за замовчуванням 0)
-  const savedIndex = localStorage.getItem('activeGridIndex') || 0;
-
-  // Встановлюємо клас "active" на збережений грід
-  grids.forEach((grid, index) => {
-    grid.classList.toggle('active', index == savedIndex);
-  });
-
-  // Додаємо обробник подій для кожного гріда
-  grids.forEach((grid, index) => {
-    grid.addEventListener('click', () => {
-      // Видаляємо "active" у всіх
-      grids.forEach(g => g.classList.remove('active'));
-
-      // Додаємо "active" до натиснутого
-      grid.classList.add('active');
-
-      // Зберігаємо індекс активного гріда
-      localStorage.setItem('activeGridIndex', index);
-    });
-  });
-});
-
 function generateHouseBlocksForAllGrids(ranges, jsonData) {
   document.querySelectorAll('.options-grid').forEach((contentBox, index) => {
     const [start, end] = ranges[index];
     let totalItems = end - start + 1;
 
-    // Оновлення totalItems після виключення елемента з id 14
+    // Виключаємо елемент з id 14
     if (start <= 14 && end >= 14) {
       totalItems--;
     }
 
-    const buttonCount = contentBox.querySelectorAll('button').length;
-    let remainder = (totalItems + buttonCount) % 3; // Кількість елементів, які залишаються
-    let rowLastDiv = null;
+    const existingButtons = contentBox.querySelectorAll('button');
+    const lastButton =
+      existingButtons.length > 0
+        ? existingButtons[existingButtons.length - 1]
+        : null;
+    const totalExistingButtons = existingButtons.length;
+
+    const totalWithExisting = totalItems + totalExistingButtons; // Враховуємо вже наявні кнопки
+    let remainder = totalWithExisting % 3; // Скільки елементів залишиться "зайвими" в останньому ряді
+
+    const fragment = document.createDocumentFragment();
+    let tempRow = []; // Тимчасовий масив для row-last
 
     for (let i = start; i <= end; i++) {
-      if (i === 14) continue;
+      if (i === 14) continue; // Пропускаємо 14
 
-      // Визначаємо заголовок в залежності від діапазону
+      // Визначаємо заголовок
       let title = '';
       if (i >= 17 && i <= 38) title = `DOM MODUŁOWY MH-${i}`;
       else if (i >= 40 && i <= 43) title = `BIURO MODUŁOWE MH-${i}`;
       else if (i >= 44 && i <= 46) title = `SAUNA MODUŁOWA MH-${i}`;
       else if (i >= 7 && i <= 16) title = `DOMEK MODUŁOWY MH-${i}`;
 
-      // Перевіряємо, чи є jsonData і чи містить воно дані
-      let shortInfo = 'Brak opisu'; // Значення за замовчуванням
+      // Отримуємо short-info з jsonData
+      let shortInfo = 'Brak opisu';
       if (jsonData && Array.isArray(jsonData)) {
-        // Оскільки jsonData - це масив масивів, розгортаємо його
         const flatData = jsonData.flat();
         const houseData = flatData.find(item => item.index === i);
         if (houseData && houseData['short-info']) {
@@ -121,22 +114,34 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
             />
           </div>
           <h2>${title}</h2>
-          <p>${shortInfo}</p> <!-- Вставляємо дані з JSON -->
+          <p>${shortInfo}</p>
         `;
 
-      if (remainder > 0 && i > end - remainder) {
-        if (!rowLastDiv) {
-          rowLastDiv = document.createElement('div');
-          rowLastDiv.classList.add('row-last');
-        }
-        rowLastDiv.appendChild(houseDiv);
+      // Визначаємо, чи елемент потрапляє в row-last
+      if (
+        remainder > 0 &&
+        totalExistingButtons + fragment.childNodes.length + tempRow.length >=
+          totalWithExisting - remainder
+      ) {
+        tempRow.push(houseDiv);
       } else {
-        contentBox.appendChild(houseDiv);
+        fragment.appendChild(houseDiv);
       }
     }
 
-    if (rowLastDiv) {
-      contentBox.appendChild(rowLastDiv);
+    // Якщо в tempRow є елементи, створюємо row-last
+    if (tempRow.length > 0) {
+      const rowLastDiv = document.createElement('div');
+      rowLastDiv.classList.add('row-last');
+      tempRow.forEach(el => rowLastDiv.appendChild(el));
+      fragment.appendChild(rowLastDiv);
+    }
+
+    // Вставляємо фрагмент у DOM після всіх кнопок
+    if (lastButton) {
+      lastButton.after(fragment);
+    } else {
+      contentBox.prepend(fragment);
     }
   });
 }
@@ -149,8 +154,12 @@ const ranges = [
   [7, 16], // Для четвертого options-grid
 ];
 
-// Викликаємо для всіх .options-grid
-generateHouseBlocksForAllGrids(ranges);
+fetch('../info_pages/updated_data.json') // Змініть шлях, якщо JSON у іншому місці
+  .then(response => response.json())
+  .then(jsonData => {
+    generateHouseBlocksForAllGrids(ranges, jsonData);
+  })
+  .catch(error => console.error('Помилка завантаження JSON:', error));
 
 function openPage(pageNumber) {
   window.location.href = `../info_pages/content.html?page=${pageNumber}`;
