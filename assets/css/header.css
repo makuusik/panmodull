@@ -1,0 +1,128 @@
+/* Стилізація навбару */
+.navbar {
+  position: fixed; /* Закріплюємо навбар */
+  top: 0;
+  left: 0;
+  width: 100%; /* Займає всю ширину екрану */
+  height: auto;
+  color: white;
+  padding: 12px 30px 25px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1000; /* Щоб навбар був зверху */
+  gap: 128px;
+  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
+
+  transition: background-color 0.3s ease-in-out;
+}
+nav.transparent {
+  background: rgba(0, 0, 0, 0); /* Повністю прозорий */
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Кольоровий навбар після прокручування */
+nav.scrolled {
+  background: #202325; /* Чорний напівпрозорий */
+}
+
+/* Логотип (зліва) */
+.logo {
+  color: white;
+  font-weight: bold;
+  margin-right: 20px; /* Відступ між логотипом і меню */
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-self: flex-end;
+}
+.logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.navbar .logo .cls-2 {
+  fill: white;
+}
+
+.navbar .logo .cls-1 {
+  fill: none;
+  stroke: white;
+  stroke-width: 3;
+}
+
+.logo p {
+  margin: 0;
+  font-family: 'Montserrat';
+  font-size: 1.5em;
+  line-height: 0.75;
+  font-weight: 300;
+  display: flex;
+  align-items: end;
+}
+
+/* Меню (зліва відразу після логотипу) */
+.nav-links {
+  align-self: flex-end;
+  list-style: none;
+  display: flex;
+  gap: 64px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+/* Посилання в меню */
+.nav-links .nav-option > a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: end;
+  font-size: 18px;
+  line-height: 0.75;
+}
+
+/* Стилі для випадаючого меню */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: -32px; /* Зміщення вліво на 32px */
+  width: calc(100% + 64px); /* Розширення на 32px з кожного боку */
+  background-color: rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid white; /* Початковий стан верхньої границі */
+  border-bottom: 1px solid white; /* Початковий стан нижньої границі */
+  padding: 10px 0;
+  list-style: none;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.5s ease-out,
+    border-top-width 0.5s ease-in-out, border-bottom-width 0.5s ease-out;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  max-height: 200px; /* Або інша відповідна висота */
+  opacity: 1;
+  border-top-width: 1px; /* Плавне з'явлення верхньої границі */
+  border-bottom-width: 1px; /* Плавне з'явлення нижньої границі */
+}
