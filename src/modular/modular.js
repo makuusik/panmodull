@@ -37,14 +37,40 @@ buttons.forEach((button, index) => {
   });
 });
 
-function generateHouseBlocksForAllGrids(ranges) {
+document.addEventListener('DOMContentLoaded', () => {
+  const grids = document.querySelectorAll('.options-grid');
+
+  // Отримуємо збережений індекс активного гріда (за замовчуванням 0)
+  const savedIndex = localStorage.getItem('activeGridIndex') || 0;
+
+  // Встановлюємо клас "active" на збережений грід
+  grids.forEach((grid, index) => {
+    grid.classList.toggle('active', index == savedIndex);
+  });
+
+  // Додаємо обробник подій для кожного гріда
+  grids.forEach((grid, index) => {
+    grid.addEventListener('click', () => {
+      // Видаляємо "active" у всіх
+      grids.forEach(g => g.classList.remove('active'));
+
+      // Додаємо "active" до натиснутого
+      grid.classList.add('active');
+
+      // Зберігаємо індекс активного гріда
+      localStorage.setItem('activeGridIndex', index);
+    });
+  });
+});
+
+function generateHouseBlocksForAllGrids(ranges, jsonData) {
   document.querySelectorAll('.options-grid').forEach((contentBox, index) => {
     const [start, end] = ranges[index];
     let totalItems = end - start + 1;
 
     // Оновлення totalItems після виключення елемента з id 14
     if (start <= 14 && end >= 14) {
-      totalItems--; // Якщо 14-й елемент є в діапазоні, зменшуємо totalItems
+      totalItems--;
     }
 
     const buttonCount = contentBox.querySelectorAll('button').length;
@@ -52,14 +78,29 @@ function generateHouseBlocksForAllGrids(ranges) {
     let rowLastDiv = null;
 
     for (let i = start; i <= end; i++) {
-      // Пропускаємо елемент з id=14
-      if (i === 14) {
-        continue; // Перехід до наступної ітерації
+      if (i === 14) continue;
+
+      // Визначаємо заголовок в залежності від діапазону
+      let title = '';
+      if (i >= 17 && i <= 38) title = `DOM MODUŁOWY MH-${i}`;
+      else if (i >= 40 && i <= 43) title = `BIURO MODUŁOWE MH-${i}`;
+      else if (i >= 44 && i <= 46) title = `SAUNA MODUŁOWA MH-${i}`;
+      else if (i >= 7 && i <= 16) title = `DOMEK MODUŁOWY MH-${i}`;
+
+      // Перевіряємо, чи є jsonData і чи містить воно дані
+      let shortInfo = 'Brak opisu'; // Значення за замовчуванням
+      if (jsonData && Array.isArray(jsonData)) {
+        // Оскільки jsonData - це масив масивів, розгортаємо його
+        const flatData = jsonData.flat();
+        const houseData = flatData.find(item => item.index === i);
+        if (houseData && houseData['short-info']) {
+          shortInfo = houseData['short-info'];
+        }
       }
 
       const houseDiv = document.createElement('button');
       houseDiv.onclick = function () {
-        openPage(i); // Заміни 1 на потрібний номер сторінки
+        openPage(i);
       };
 
       houseDiv.innerHTML = `
@@ -79,11 +120,10 @@ function generateHouseBlocksForAllGrids(ranges) {
               height="177"
             />
           </div>
-          <h2>MODULE HOUSE M${i}</h2>
-          <p>Some info about house option</p>
+          <h2>${title}</h2>
+          <p>${shortInfo}</p> <!-- Вставляємо дані з JSON -->
         `;
 
-      // Останні елементи, якщо їх кількість не кратна 3, додаємо в row-last
       if (remainder > 0 && i > end - remainder) {
         if (!rowLastDiv) {
           rowLastDiv = document.createElement('div');
@@ -95,7 +135,6 @@ function generateHouseBlocksForAllGrids(ranges) {
       }
     }
 
-    // Додаємо row-last в кінець, якщо він є
     if (rowLastDiv) {
       contentBox.appendChild(rowLastDiv);
     }

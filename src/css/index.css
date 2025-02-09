@@ -235,11 +235,34 @@ img {
   grid-template-rows: repeat(2, auto); /* Два рядки */
   gap: 10px;
 }
+.image-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+}
 
 .image-grid img {
   width: 100%;
   height: auto;
   display: block;
+}
+.image-wrapper::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 10%;
+  left: -100%; /* Починає поза межами зліва */
+  transform: translateY(-50%);
+  background-color: rgba(231, 225, 208);
+  color: black;
+  padding: 5px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  white-space: nowrap;
+  transition: left 0.5s ease;
+}
+.image-wrapper:hover::before {
+  left: 10px; /* Виїжджає зліва */
 }
 
 .section-two {

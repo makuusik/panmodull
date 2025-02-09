@@ -1,24 +1,19 @@
 import json
 
 # Завантаження JSON-файлу
-with open("modular_houses_data_pl.json", "r", encoding="utf-8") as file:
+with open("modular_houses_data_sorted.json", "r", encoding="utf-8") as file:
     saved_data = json.load(file)
 
-# Сортування списку за ключем "index"
-saved_data.sort(key=lambda x: x["index"])
+# Видалення ключа "details" у кожному елементі
+for item in saved_data:
+    item.pop("details", None)  # None запобігає помилкам, якщо ключа немає
+    
+    # # Видалення елементів 0-3 та 5 у "descriptions"
+    # if "descriptions" in item and isinstance(item["descriptions"], list):
+    #     item["descriptions"] = [desc for i, desc in enumerate(item["descriptions"]) if i not in {0, 1, 2, 3, 5}]
 
-# Отримання всіх індексів з файлу
-extracted_indices = {item["index"] for item in saved_data}
-
-# Пошук відсутніх індексів у діапазоні 7-46
-missing_indices = [i for i in range(7, 47) if i not in extracted_indices]
-
-# Вивід результату
-if missing_indices:
-    print(f"⛔️ Відсутні індекси: {missing_indices}")
-else:
-    print("✅ Усі індекси 7-46 присутні у JSON файлі.")
-
-# Збереження відсортованого списку назад у файл
-with open("modular_houses_data_sorted.json", "w", encoding="utf-8") as file:
+# Збереження оновленого JSON у файл
+with open("modular_houses_data_cleaned.json", "w", encoding="utf-8") as file:
     json.dump(saved_data, file, ensure_ascii=False, indent=4)
+
+print("✅ Всі ключі 'details' та вказані елементи 'descriptions' успішно видалені та дані збережені у modular_houses_data_cleaned.json")
