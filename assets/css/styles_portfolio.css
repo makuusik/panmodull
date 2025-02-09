@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  background: #17191b;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+p,
+div,
+a,
+h3,
+h2,
+li,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.filter-section {
+  padding-top: 225px;
+  padding-bottom: 134px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 128px;
+  color: white;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 66px;
+}
+
+.filter-section-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+  height: 100px;
+  width: 317px;
+  border: 0.5px solid #fff;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border 0.2s ease-out;
+  position: relative; /* Щоб не взаємодіяли з indicator */
+  z-index: 3;
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.1s ease;
+}
+
+.button:active {
+  transform: scale(0.95); /* Зменшуємо кнопку на 5% при натисканні */
+}
+
+.disabled {
+  border: 1px solid grey;
+  color: grey;
+}
+
+.button-container {
+  display: flex;
+  gap: 33px;
+}
+
+.portfolio-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  max-width: 70%;
+}
+
+.portfolio-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 0;
+  margin: 0;
+
+  width: fit-content;
+
+  outline: solid 1px rgb(255, 255, 255, 50%);
+}
+
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.portfolio-items h2 {
+  text-align: left;
+  color: white;
+  padding: 0 20px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.portfolio-items p {
+  color: white;
+  padding: 0 20px;
+  text-align: left;
+  font-weight: 100;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
