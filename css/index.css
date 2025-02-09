@@ -1,0 +1,395 @@
+body {
+  margin: 0;
+  background: #17191b;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+p,
+div,
+a,
+h3,
+li,
+ul,
+img {
+  margin: 0;
+  padding: 0;
+}
+
+.section-hero {
+  height: 950px; /* Висота блоку на всю висоту екрана */
+  background-image: url('../img/media_d/Modern-Minimalist-Exterior-2014 (1).png'); /* Заміни на своє зображення */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px; /* Відступ, щоб текст не перекривався з навбаром */
+}
+
+.hero-container {
+  height: 100vh;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 800px; /* можете налаштувати розміри */
+  height: auto;
+  animation: logoAnimation 3s ease-out forwards;
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-logo svg .cls-1 {
+  stroke: white;
+  fill: none;
+  stroke-width: 2px;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 1000; /* довжина лінії для ефекту малювання */
+  stroke-dashoffset: 1000; /* на початку лінія прихована */
+  animation: drawLine 16s ease forwards;
+}
+
+.hero-logo svg rect.cls-1 {
+  animation: drawLine 22s ease forwards;
+}
+
+.hero-logo svg .cls-2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  fill: white;
+  opacity: 0;
+  animation: fadeInText 2s ease 1s forwards; /* Затримка на 1 сек. для тексту */
+}
+
+.hero-logo svg .cls-2 tspan {
+  display: inline-block;
+}
+.hero-logo svg .cls-3 {
+  fill: white;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hero-h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 128px;
+  font-weight: 700;
+  line-height: 150px;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.section-two {
+  padding-top: 100.5px;
+  padding-bottom: 100.5px;
+}
+
+.section-two p {
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.section-two h3 {
+  color: white;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+.section-two ul {
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 23px;
+
+  list-style: inside;
+  margin-left: 9.33px;
+}
+
+.section-two-box {
+  display: flex;
+  height: 436px;
+  width: 1216px;
+  gap: 25px;
+}
+.section-two-box img {
+  object-fit: contain;
+  background-color: white;
+}
+
+.section-two .section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  align-items: normal;
+}
+
+.section-two-box button {
+  height: 78px;
+  width: 627px;
+  border: 0.5px solid #fff;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border 0.2s ease-out;
+  position: relative; /* Щоб не взаємодіяли з indicator */
+  z-index: 3;
+  font-size: 20px;
+  font-weight: 300;
+}
+.section-two-box button:hover {
+  background-color: black;
+  border: 0.5px solid #000000;
+}
+
+.section-container .link {
+  padding: 0;
+  margin: 0;
+}
+
+.section-two-box .link {
+  width: auto;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-two-box .link ul {
+  padding-bottom: 20px;
+}
+
+.section-two-box .link h3 {
+  padding-bottom: 28.5px;
+}
+
+.section-two-box:first-child {
+  padding-bottom: 100px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 25% auto; /* Ліва колонка 25%, права займає решту */
+  gap: 10px; /* Відступ між великою картинкою і сіткою */
+  align-items: start;
+}
+.large-image {
+  height: 100%;
+}
+.large-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  grid-template-rows: repeat(2, auto); /* Два рядки */
+  gap: 10px;
+}
+.image-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.image-wrapper::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 10%;
+  left: -100%; /* Починає поза межами зліва */
+  transform: translateY(-50%);
+  background-color: rgba(231, 225, 208);
+  color: black;
+  padding: 5px 10px;
+  font-weight: 200;
+  font-size: 20px;
+  white-space: nowrap;
+  transition: left 0.5s ease;
+}
+.image-wrapper:hover::before {
+  left: 10px; /* Виїжджає зліва */
+}
+
+.section-two {
+  background-color: #17191b;
+}
+
+.section-three {
+  padding-bottom: 100px;
+  padding-top: 100px;
+  width: 100%;
+  background-color: #5c6b73;
+}
+
+.sec-3-butt-cont {
+  margin-top: 100px;
+  display: flex;
+  justify-self: center;
+}
+
+.sec-3-butt {
+  width: 317px;
+  height: 100px;
+
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 23px;
+  font-family: 'Roboto', sans-serif;
+
+  border: 0.5px solid #fff;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out, border 0.2s ease-out;
+  position: relative; /* Щоб не взаємодіяли з indicator */
+  z-index: 3;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.sec-3-butt:hover {
+  background-color: black;
+  border: 0.5px solid #000000;
+}
+
+.section-4-tittle {
+  justify-self: center;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 112px;
+  color: white;
+  margin: 0;
+  margin-bottom: 154px;
+}
+
+.section-four {
+  padding-top: 154px;
+  padding-bottom: 154px;
+  background-image: url(..\img\backgrounds\backgrounds_ornament.png);
+  background-size: cover;
+}
+
+.section-4-cards {
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Дозволяє карткам переноситись на новий рядок */
+}
+
+.cards {
+  width: 355px;
+  background-color: #c2dfe3;
+  box-shadow: 0px 6px 10px rgb(0 0 0 / 25%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Вирівнюємо контент по верхньому краю */
+  align-items: center;
+  padding: 40px 0px;
+  cursor: pointer;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.cards-info-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards-header {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Вирівнюємо картинку і h3 по вертикалі */
+  gap: 32px; /* Між картинкою і заголовком */
+}
+
+.cards h3 {
+  color: black;
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0; /* Прибираємо верхній і нижній відступ */
+}
+
+.cards p {
+  color: #5f5f5f;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+  padding: 0px 40px;
+}
+
+.cards:hover {
+  background-color: #202325;
+}
+
+.cards:hover .cards-header h3 {
+  color: white;
+}
+
+.cards:hover .cards-info-cont p {
+  color: #bfbfbf;
+}
+
+.cards:hover .cards-header svg {
+  fill: white;
+}
