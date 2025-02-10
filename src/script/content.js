@@ -27,8 +27,8 @@ async function loadData() {
 
       // Оновлення основного зображення
       const images = document.getElementsByClassName('image1');
-      const imagePath = `./img/media/modular/${pageId}.jpg`;
-      const altImagePath = `./img/media/modular_alt/${pageId}_alt.jpg`;
+      const imagePath = `img/modular/${pageId}.jpg`;
+      const altImagePath = `img/modular_alt/${pageId}_alt.jpg`;
 
       for (let img of images) {
         img.src = imagePath;
