@@ -99,14 +99,14 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           <div class="image-wrapper">
             <img
               class="img-default"
-              src="img/media/modular/${i}.jpg"
+              src="img/modular/${i}.jpg"
               alt="House ${i}"
               width="350"
               height="177"
             />
             <img
               class="img-hover"
-              src="img/media/modular_alt/${i}_alt.jpg"
+              src="img/modular_alt/${i}_alt.jpg"
               alt="House ${i}"
               width="350"
               height="177"
