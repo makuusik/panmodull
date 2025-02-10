@@ -10,7 +10,7 @@ function getPolishMonthWord(number) {
 
 async function loadData() {
   try {
-    const response = await fetch('modular_houses_data_sorted.json'); // Завантаження JSON
+    const response = await fetch('../modular_houses_data_sorted.json'); // Завантаження JSON
     const data = await response.json();
 
     // Отримуємо номер сторінки з URL
@@ -27,8 +27,8 @@ async function loadData() {
 
       // Оновлення основного зображення
       const images = document.getElementsByClassName('image1');
-      const imagePath = `../img/media/modular/${pageId}.jpg`;
-      const altImagePath = `../img/media/modular_alt/${pageId}_alt.jpg`;
+      const imagePath = `./img/media/modular/${pageId}.jpg`;
+      const altImagePath = `./img/media/modular_alt/${pageId}_alt.jpg`;
 
       for (let img of images) {
         img.src = imagePath;

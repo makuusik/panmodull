@@ -100,14 +100,14 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           <div class="image-wrapper">
             <img
               class="img-default"
-              src="../img/media/modular/${i}.jpg"
+              src="./img/media/modular/${i}.jpg"
               alt="House ${i}"
               width="350"
               height="177"
             />
             <img
               class="img-hover"
-              src="../img/media/modular_alt/${i}_alt.jpg"
+              src="./img/media/modular_alt/${i}_alt.jpg"
               alt="House ${i}"
               width="350"
               height="177"
@@ -154,7 +154,7 @@ const ranges = [
   [7, 16], // Для четвертого options-grid
 ];
 
-fetch('../info_pages/updated_data.json') // Змініть шлях, якщо JSON у іншому місці
+fetch('../updated_data.json') // Змініть шлях, якщо JSON у іншому місці
   .then(response => response.json())
   .then(jsonData => {
     generateHouseBlocksForAllGrids(ranges, jsonData);
@@ -162,5 +162,5 @@ fetch('../info_pages/updated_data.json') // Змініть шлях, якщо JS
   .catch(error => console.error('Помилка завантаження JSON:', error));
 
 function openPage(pageNumber) {
-  window.location.href = `../info_pages/content.html?page=${pageNumber}`;
+  window.location.href = `../content.html?page=${pageNumber}`;
 }
