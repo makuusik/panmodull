@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  background: #17191b;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  height: 950px; /* Висота блоку на всю висоту екрана */
+  background-image: url('../img/media_d/Modern-Minimalist-Exterior-2014 (1).png'); /* Заміни на своє зображення */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px; /* Відступ, щоб текст не перекривався з навбаром */
+}
+h1 {
+  font-size: 128px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+
+.house-options {
+  background-color: #17191b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 75px;
+}
+
+/* Обгортка для кнопок */
+.button-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 75px 0px;
+  max-width: 1200px;
+  width: auto;
+  border: 1px solid rgb(100, 100, 100);
+}
+
+/* Контейнер для кнопок */
+.button-container {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  position: relative; /* Робимо контейнер відносним, щоб indicator позиціонувався від нього */
+  z-index: 2; /* Щоб кнопки були вище фону */
+}
+
+/* Кнопки */
+.box {
+  width: 300px;
+  height: 100px;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: white;
+  background: transparent;
+  transition: color 0.3s ease;
+  position: relative; /* Щоб не взаємодіяли з indicator */
+  z-index: 3;
+  font-size: 18px;
+  font-weight: 200;
+
+  box-sizing: border-box;
+  /* Центруємо текст */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* Позиціонування indicator поверх кнопок */
+.indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%; /* Покриває висоту кнопок */
+  box-sizing: border-box;
+  border: 1px solid rgb(100, 100, 100);
+  transition: transform 0.3s ease, width 0.3s ease;
+  z-index: 1; /* Щоб бути під кнопками */
+}
+
+/* Ініціалізуємо рамку по першій кнопці */
+.button-container li:nth-child(1) .btn:focus ~ .indicator {
+  transform: translateX(0);
+  border: 1px solid white;
+}
+
+.active {
+  color: white;
+}
+
+.content-box {
+  width: 1200px;
+}
+.options-grid {
+  display: none;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 40px; /* Без відступів */
+  width: 100%; /* Обмежуємо ширину */
+  max-width: 1200px; /* Щоб не виходило за межі */
+  margin: 0 auto; /* Центруємо */
+  grid-auto-flow: dense;
+  animation: moving 1s ease;
+}
+@keyframes moving {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+}
+
+.options-grid .row-last {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center; /* Центрує останній ряд */
+  grid-column: 1 / -1; /* Розтягує цей ряд на всю ширину */
+}
+
+.options-grid .row-last > button {
+  width: calc((100% - 40px * 2) / 3);
+}
+
+.options-grid button {
+  all: unset;
+  border: 1px solid rgb(100, 100, 100); /* Рамка для кожного блоку */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  transition: 0.3s ease-out;
+}
+
+.options-grid .image-wrapper .img-hover {
+  width: 100%;
+  object-fit: contain;
+  background-color: white;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 177px;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: white;
+  transition: opacity 0.2s ease-out; /* Плавний перехід */
+  max-height: 250px;
+}
+.img-hover {
+  opacity: 0; /* Приховане за замовчуванням */
+}
+.image-wrapper:hover .img-hover {
+  opacity: 1; /* Плавно з'являється */
+}
+
+.options-grid button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.options-grid.active {
+  display: grid;
+}
+
+:is(.row-last, .options-grid) h2 {
+  display: flex;
+  align-items: center; /* Центрує текст по вертикалі */
+  justify-content: center; /* Додатково центрує по горизонталі */
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin: auto;
+  justify-content: center;
+  height: 40px;
+  margin-top: 10px;
+}
+:is(.row-last, .options-grid) p {
+  font-size: 16px;
+  font-weight: 200;
+  color: white;
+  margin: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.info-text {
+  padding: 100px 0;
+  grid-column: 1 / -1; /* Розтягує цей ряд на всю ширину */
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.info-text p,
+.info-text h2 {
+  text-align: left;
+  margin: 0;
+}
+
+.info-text h2 {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.info-text p,
+.info-text li {
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.9;
+}
