@@ -17,5 +17,5 @@ import"./assets/header_script-B6MJcyG1.js";/* empty css                      */c
           </div>
           <h2>${n}</h2>
           <p>${w}</p>
-        `,O>0&&E+c.childNodes.length+d.length>=y-O?d.push(f):c.appendChild(f)}if(d.length>0){const t=document.createElement("div");t.classList.add("row-last"),d.forEach(n=>t.appendChild(n)),c.appendChild(t)}L?L.after(c):o.prepend(c)})}const D=[[17,38],[40,43],[44,46],[7,16]];fetch("/updated_data.json").then(e=>e.json()).then(e=>{A(D,e)}).catch(e=>console.error("Помилка завантаження JSON:",e));function S(e){window.location.href=`/content.html?page=${e}`}
+        `,O>0&&E+c.childNodes.length+d.length>=y-O?d.push(f):c.appendChild(f)}if(d.length>0){const t=document.createElement("div");t.classList.add("row-last"),d.forEach(n=>t.appendChild(n)),c.appendChild(t)}L?L.after(c):o.prepend(c)})}const D=[[17,38],[40,43],[44,46],[7,16]];fetch("updated_data.json").then(e=>e.json()).then(e=>{A(D,e)}).catch(e=>console.error("Помилка завантаження JSON:",e));function S(e){window.location.href=`/content.html?page=${e}`}
 //# sourceMappingURL=modular.js.map
