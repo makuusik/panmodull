@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/panmodull/assets/Panmodul-Gs2EVNYX.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/panmodull/assets/Panmodul%20white-DrfpN6_d.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контент</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" crossorigin href="/panmodull/assets/content-LTWJRLsl.css">
+    <link rel="stylesheet" crossorigin href="/panmodull/assets/footer-ByKyITyu.css">
+  </head>
+  <body>
+    <header>
+  <nav id="navbar" class="navbar">
+    <!-- Логотип -->
+    <a href="../index.html" class="logo">
+      <svg
+        id="Layer_1"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 128 128"
+      >
+        <g>
+          <polyline
+            class="cls-1"
+            points="77.96 43.26 45.64 10.94 13.32 43.26"
+          />
+          <polyline
+            class="cls-1"
+            points="114.68 43.26 82.36 10.94 67.97 25.32 81.93 39.28"
+          />
+          <polyline class="cls-1" points="81.93 39.28 45.64 2.99 9.35 39.28" />
+          <polyline
+            class="cls-1"
+            points="118.65 39.28 82.36 2.99 64 21.35 81.93 39.28"
+          />
+          <rect class="cls-1" x="38.53" y="24.39" width="7.11" height="8.07" />
+          <rect class="cls-1" x="45.64" y="24.39" width="7.11" height="8.07" />
+          <rect class="cls-1" x="38.53" y="32.54" width="7.11" height="8.07" />
+          <rect class="cls-1" x="45.64" y="32.54" width="7.11" height="8.07" />
+        </g>
+        <g>
+          <path
+            class="cls-2"
+            d="M55.79,60.18c-2.21-2.12-4.93-3.65-8.04-4.74h-.01s-.04-.01-.06-.02c-3.48-1.21-7.48-1.81-11.99-1.81H10.56v71.4h7.1v-22.54h18.02c4.51,0,8.51-.6,11.99-1.8,2.55-.87,4.81-2.06,6.8-3.58.47-.35.92-.71,1.35-1.1,3.73-3.32,6.03-7.62,6.88-12.89,0-.03,0-.06,0-.09l.05.09,18.14,32.83h3.36l26.36-48.04v57.12h6.81V53.61h-5.85l-28.86,52.94s-19.49-35.68-21.81-39.61c-2.14-3.63-3.05-4.77-5.13-6.76ZM54.47,86.1c-.87,1.97-2.11,3.67-3.73,5.1-.92.8-1.94,1.5-3.07,2.09-3.2,1.7-7.26,2.55-12.18,2.55h-17.83v-35.7h17.83c4.92,0,8.98.85,12.18,2.55,1.13.59,2.15,1.29,3.07,2.09,1.62,1.42,2.86,3.13,3.73,5.13,1.03,2.33,1.54,5.06,1.54,8.18s-.51,5.71-1.54,8.01Z"
+          />
+          <path
+            class="cls-2"
+            d="M47.73,103.21v21.8h6.8v-25.03c-2.07,1.4-4.36,2.49-6.8,3.23Z"
+          />
+        </g>
+      </svg>
+      <p>PANMODUL</p>
+    </a>
+
+    <!-- Меню -->
+    <ul class="nav-links">
+      <li class="nav-option">
+        <a href="../portfolio.html">PORTFOLIO</a>
+      </li>
+      <li class="dropdown nav-option">
+        <a>PROJEKTY</a>
+        <ul class="dropdown-menu">
+          <li><a href="../modular.html">DOMY MODUŁOWE</a></li>
+          <li><a href="../frame.html">DOMY SZKIELETOWE</a></li>
+        </ul>
+      </li>
+      <li class="nav-option"><a href="../gallery.html">GALERIA</a></li>
+      <li class="nav-option"><a href="faq.html">FAQ</a></li>
+      <li class="nav-option"><a href="contacts.html">KONTAKT</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <section class="hero">
+      <h1 id="title"></h1>
+    </section>
+    <section class="main-info">
+      <div class="wrapper">
+        <div class="container">
+          <!-- Лівий блок - скролл із фото -->
+          <div class="scroll-images">
+            <img class="image1" onclick="changeMainImage(this.src)" />
+            <img id="image2" onclick="changeMainImage(this.src)" />
+            <img id="image3" onclick="changeMainImage(this.src)" />
+            <img id="image4" onclick="changeMainImage(this.src)" />
+          </div>
+
+          <!-- Центр - головне фото -->
+          <img id="main-image" class="main-image image1" />
+
+          <!-- Правий блок - таблиця -->
+          <table class="data-table" id="table-body"></table>
+        </div>
+        <div class="text-box">
+          <h2 id="title2"></h2>
+          <p id="text"></p>
+        </div>
+      </div>
+    </section>
+    <section class="details">
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1">
+          <div class="details">
+            <summary>Standard</summary>
+            <p>Izolacja podstaw: 150 mm</p>
+            <p>Izolacja ścian zewnętrznych: 150 mm</p>
+            <p>Izolacja dachu: 150 mm</p>
+            <p>Fasada: metal</p>
+            <p>Wykończenie wnętrza: boazeria sosnowa</p>
+          </div>
+          <div class="details">
+            <summary>1. Konstrukcja podstawy (podłoga)</summary>
+            <p><strong>PODŁOGA (linoleum)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Deska - 45x145 mm</p>
+            <p>3. Izolacja - 150 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. Linoleum</p>
+            <img src="/panmodull/assets/10005-Cmbubfi4.png" alt="" width="200px" />
+            <p><strong>PODŁOGA (płytka)</strong></p>
+            <p>1. OSB - 10 mm</p>
+            <p>2. Deska - 45x145 mm</p>
+            <p>3. Izolacja - 150 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. Płyta cementowo-włóknista 2 warstwy - 20 mm</p>
+            <p>6. Hydroizolacja</p>
+            <p>7. Płytka ceramiczna na kleju</p>
+            <img src="/panmodull/assets/10006-xt1yT9qa.png" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2. Konstrukcja ścian zewnętrznych</summary>
+            <p><strong>ŚCIANA (zewnętrzna)</strong></p>
+            <p>1. Matellofasad (kolor według RAL)</p>
+            <p>2. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>3. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>4. Ochrona przed wiatrem</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Deska - 45x145 mm</p>
+            <p>7. Izolacja - 150 mm</p>
+            <p>8. Paroizolacja</p>
+            <p>9. OSB - 10 mm</p>
+            <p>10. Krokwia - 45x45 mm</p>
+            <p>11. Falszbrus malowany (boazeria)</p>
+            <img src="/panmodull/assets/10001-hV_-BL9J.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3. Konstrukcja ścian wewnętrznych</summary>
+            <p><strong>ŚCIANA wewnętrzna (łazienka)</strong></p>
+            <p>1. Falszbrus malowany (boazeria)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Deska - 45x95 mm</p>
+            <p>4. Izolacja - 100 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Płyta GKL wodoodporna</p>
+            <p>7. Płytka ceramiczna na kleju</p>
+            <img src="/panmodull/assets/10002-DHtcOM5q.jpg" alt="" width="200px" />
+            <p><strong>ŚCIANA wewnętrzna</strong></p>
+            <p>1. Falszbrus malowany (boazeria)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Deska - 45x95 mm</p>
+            <p>4. Izolacja - 100 mm</p>
+            <p>5. OSB-10 mm</p>
+            <p>6. Falszbrus malowany (boazeria)</p>
+            <img src="/panmodull/assets/10003-DBVxtNHM.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. Konstrukcja dachu</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (kolor według RAL)</p>
+            <p>2. Krokwia - 30x100 mm</p>
+            <p>3. Wentylacyjna belka - 45x45 mm</p>
+            <p>4. Membrana</p>
+            <p>5. Izolacja - 150 mm</p>
+            <p>6. Deska - 45x145 mm</p>
+            <p>7. Paroizolacja</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Krokwia - 45x45 mm</p>
+            <p>10. Falszbrus (boazeria)</p>
+            <img src="/panmodull/assets/10004-DzAaKu5q.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. Okna i drzwi</summary>
+            <p>
+              Okna PCV WDS 5S, podwójne szyby, akcesoria (Turcja), kolor –
+              biały, drzwi PCV
+            </p>
+          </div>
+          <div class="details">
+            <summary>6. Elektryczność</summary>
+            <p>
+              Zestaw elektryczny (Chiny, Ukraina), bez oświetlenia zewnętrznego
+            </p>
+          </div>
+          <div class="details">
+            <summary>7. Inżynieria</summary>
+            <p>
+              Zestaw rur do kanalizacji i wodociągu, a także rozprowadzenie i
+              podłączenie (krany)
+            </p>
+          </div>
+        </div>
+
+        <div class="details-container" id="details-container-2">
+          <div class="details">
+            <summary>Premia</summary>
+            <p>Izolacja podstawy: - 200 mm</p>
+            <p>Izolacja ścian zewnętrznych: - 250 mm</p>
+            <p>Izolacja dachu: - 250 mm</p>
+            <p>Fasada: termodeska</p>
+            <p>Wykończenie wnętrza: płyta gipsowo-kartonowa</p>
+          </div>
+          <div class="details">
+            <summary>1. Konstrukcja podstawy (podłoga)</summary>
+            <p><strong>PODŁOGA (linoleum)</strong></p>
+            <p>1. Sklejka laminowana - 18 mm</p>
+            <p>2. Deska - 45x195 mm</p>
+            <p>3. Izolacja - 200 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. Linoleum, panele laminowane</p>
+            <img src="/panmodull/assets/10005-Cmbubfi4.png" alt="" width="200px" />
+            <p><strong>PODŁOGA (płytki)</strong></p>
+            <p>1. Sklejka laminowana - 18 mm</p>
+            <p>2. Deska - 45x195 mm</p>
+            <p>3. Izolacja - 200 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. Płyta cementowo-włóknista 2 warstwy - 20 mm</p>
+            <p>6. Hydroizolacja</p>
+            <p>7. Płytki ceramiczne na kleju</p>
+            <img src="/panmodull/assets/10006-xt1yT9qa.png" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2. Konstrukcja ścian zewnętrznych</summary>
+            <p><strong>ŚCIANA (zewnętrzna)</strong></p>
+            <p>1. Termodeska (kolor według RAL)</p>
+            <p>2. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>3. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>4. Ochrona przed wiatrem</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Izolacja - 200 mm</p>
+            <p>7. Deska - 45x195 mm</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Paroizolacja</p>
+            <p>10. Krokwia - 45x45 mm</p>
+            <p>11. Izolacja - 50 mm</p>
+            <p>12. Płyta gipsowo-kartonowa</p>
+            <img src="/panmodull/assets/10007-DdQmu5p6.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3. Konstrukcja ścian wewnętrznych</summary>
+            <p><strong>ŚCIANA wewnętrzna (łazienka)</strong></p>
+            <p>1. Płyta gipsowo-kartonowa</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Izolacja - 100 mm</p>
+            <p>4. Deska - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Wodoodporna płyta gipsowo-kartonowa</p>
+            <p>7. Płytki ceramiczne na kleju</p>
+            <img src="/panmodull/assets/10008-DJaIKpQV.jpg" alt="" width="200px" />
+            <p><strong>ŚCIANA wewnętrzna</strong></p>
+            <p>1. Płyta gipsowo-kartonowa</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Izolacja - 100 mm</p>
+            <p>4. Deska - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Płyta gipsowo-kartonowa</p>
+            <img src="/panmodull/assets/10009-D564xy5I.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. Konstrukcja dachu</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (kolor według RAL), membrana PVC</p>
+            <p>2. Krokwia - 30x100 mm</p>
+            <p>3. Belka - 45x45 mm</p>
+            <p>4. Membrana</p>
+            <p>5. Izolacja - 200 mm</p>
+            <p>6. Deska - 45x195 mm</p>
+            <p>7. Paroizolacja</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Belka - 45x45 mm</p>
+            <p>10. Izolacja - 50 mm</p>
+            <p>11. Płyta gipsowo-kartonowa</p>
+            <img src="/panmodull/assets/10010-CrVGeS0q.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. Okna i drzwi</summary>
+            <p>
+              Okna PCV WDS 7S, pięciokomorowe szyby zespolone, okucia (Niemcy),
+              kolor w masie lub laminacja, drzwi PCV, membrana, paroizolacja,
+              taśma PSUL
+            </p>
+          </div>
+          <div class="details">
+            <summary>6. Elektryczność</summary>
+            <p>
+              Zestaw elektryczny (Turcja, Niemcy), oświetlenie zewnętrzne,
+              gniazda zewnętrzne
+            </p>
+          </div>
+          <div class="details">
+            <summary>7. Inżynieria</summary>
+            <p>
+              Zestaw rur do kanalizacji i wodociągu oraz rozprowadzenie i
+              podłączenie armatury sanitarnej
+            </p>
+          </div>
+          <div class="details">
+            <summary>8. Hydraulika</summary>
+            <p>
+              Kabina prysznicowa 900x900 mm, umywalka, toaleta, baterie Grohe
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-nav">
+      <p href="" class="footer-nav-a">KONTAKT</a>
+      <ul class="link">
+        <li>
+          <a href="tel:+48793791666"><p class="p-link">+48 793 791 666</p></a>
+        </li>
+        <li>
+          <a class="p-link" href="mailto:example@gmail.com"
+            >example@gmail.com</a
+          >
+        </li>
+      </ul>
+      <p class="p-link">Green Str. 20, Krakow</p>
+    </div>
+
+    <div class="footer-nav">
+      <p href="" class="footer-nav-a">PROJEKTY</a>
+      <ul class="link">
+        <li>
+          <a class="p-link" href="../portfolio/portfolio.html">Portfolio</a>
+        </li>
+        <li><a class="p-link" href="../gallery/gallery.html">Galeria</a></li>
+      </ul>
+      <p></p>
+    </div>
+
+    <div class="footer-nav">
+      <p href="" class="footer-nav-a">INFORMACJE</a>
+      <ul class="link">
+        <li><a class="p-link" href="../faq/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-nav">
+      <p href="" class="footer-nav-a">SOCIAL MEDIA</p>
+    </div>
+  </div>
+</footer>
+
+    <script src="./script/content.js"></script>
+    <script src="./partials/header_script.js"></script>
+  </body>
+</html>
