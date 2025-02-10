@@ -44,13 +44,13 @@ async function loadData() {
       tableBody.innerHTML = ''; // Очищення таблиці
 
       const properties_list = [
-        'Area',
-        'Living area',
-        'Module Size',
-        'Height',
-        'Bedrooms',
-        'Terrace',
-        'Time for construction',
+        'Powierzchnia',
+        'Powierzchnia mieszkalna',
+        'Rozmiar modułu',
+        'Wysokość',
+        'Sypialnie',
+        'Taras',
+        'Czas budowy',
       ];
       const units = ['m²', 'm²', 'm', 'm', '', 'm²', 'months'];
 

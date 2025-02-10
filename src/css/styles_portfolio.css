@@ -25,7 +25,8 @@ img {
 }
 
 h1 {
-  font-weight: 600;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
   font-size: 128px;
   color: white;
   margin: 0;

@@ -128,7 +128,7 @@ img {
 .section-two p {
   color: white;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 23px;
 }
 
@@ -142,7 +142,7 @@ img {
 .section-two ul {
   color: white;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 23px;
 
   list-style: inside;
@@ -171,7 +171,7 @@ img {
 .section-two-box button {
   height: 78px;
   width: 627px;
-  border: 0.5px solid #fff;
+  border: 0.5px solid rgb(100, 100, 100);
   padding: 10px 20px;
   color: rgb(255, 255, 255);
   background: transparent;
@@ -311,7 +311,8 @@ img {
 .section-4-tittle {
   justify-self: center;
   font-size: 96px;
-  font-weight: 400;
+  font-family: 'Montserrat';
+  font-weight: 200;
   line-height: 112px;
   color: white;
   margin: 0;
@@ -371,9 +372,9 @@ img {
 }
 
 .cards p {
-  color: #5f5f5f;
+  color: #3a3a3a;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   padding: 0px 40px;
 }
