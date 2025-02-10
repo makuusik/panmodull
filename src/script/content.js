@@ -22,7 +22,7 @@ async function loadData() {
 
     if (pageData) {
       // Оновлення заголовків
-      document.getElementById('title').innerText = `MODULAR HOUSE MH-${pageId}`;
+      document.getElementById('title').innerText = pageData.title.toUpperCase();
       document.getElementById('title2').innerText = pageData.title;
 
       // Оновлення основного зображення
