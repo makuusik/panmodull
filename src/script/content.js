@@ -9,6 +9,7 @@ function getPolishMonthWord(number) {
 }
 
 async function loadData() {
+  // Визначення змінних для div
   try {
     const response = await fetch('updated_data.json'); // Завантаження JSON
     const data = await response.json();
@@ -16,6 +17,24 @@ async function loadData() {
     // Отримуємо номер сторінки з URL
     const params = new URLSearchParams(window.location.search);
     const pageId = Number(params.get('page')) || 1;
+    const wrapperDetails = document.querySelectorAll('.wrapper-details'); // Отримуємо всі елементи
+
+    if (wrapperDetails.length >= 2) {
+      // Переконуємось, що є два елементи
+      if ([44, 45, 46, 3, 4].includes(pageId)) {
+        wrapperDetails[0].style.display = 'none';
+        wrapperDetails[1].style.display = 'flex';
+      } else {
+        wrapperDetails[1].style.display = 'none';
+        wrapperDetails[0].style.display = 'flex';
+        wrapperDetails[2].style.display = 'none';
+      }
+    } else {
+      console.warn(
+        '⛔ Очікувалося два .wrapper-details, але знайдено:',
+        wrapperDetails.length
+      );
+    }
 
     // Знаходимо відповідний запис у JSON за index
     const pageData = data.find(item => item.index === pageId);
@@ -37,7 +56,7 @@ async function loadData() {
       document.getElementById('image2').src = altImagePath;
 
       // Оновлення тексту опису
-      document.getElementById('text').innerText = pageData.descriptions[4];
+      document.getElementById('text').innerHTML = pageData.descriptions[4];
 
       // Оновлення таблиці характеристик
       const tableBody = document.getElementById('table-body');
@@ -82,19 +101,22 @@ async function loadData() {
 
       // Оновлення details для першого блоку
 
-      console.log('✅ Дані успішно завантажені!');
+      // console.log('✅ Дані успішно завантажені!');
     } else {
-      console.warn('⛔️ Дані для цієї сторінки не знайдено.');
+      // console.warn('⛔️ Дані для цієї сторінки не знайдено.');
     }
   } catch (error) {
     console.error('❌ Помилка завантаження JSON:', error);
   }
 }
 
-function changeMainImage(src) {
+export function changeMainImage(src) {
   const mainImage = document.getElementById('main-image');
-  mainImage.src = src;
+  if (mainImage) {
+    mainImage.src = src;
+  }
 }
+window.changeMainImage = changeMainImage;
 
 document.addEventListener('DOMContentLoaded', loadData);
 
