@@ -154,7 +154,7 @@ const ranges = [
   [7, 16], // Для четвертого options-grid
 ];
 
-fetch('/updated_data.json') // Змініть шлях, якщо JSON у іншому місці
+fetch('updated_data.json') // Змініть шлях, якщо JSON у іншому місці
   .then(response => response.json())
   .then(jsonData => {
     generateHouseBlocksForAllGrids(ranges, jsonData);
