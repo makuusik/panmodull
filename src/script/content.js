@@ -10,7 +10,7 @@ function getPolishMonthWord(number) {
 
 async function loadData() {
   try {
-    const response = await fetch('updated_data.json.json'); // Завантаження JSON
+    const response = await fetch('updated_data.json'); // Завантаження JSON
     const data = await response.json();
 
     // Отримуємо номер сторінки з URL
