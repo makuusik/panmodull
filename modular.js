@@ -2,14 +2,14 @@ import"./assets/header_script-B6MJcyG1.js";/* empty css                      */c
           <div class="image-wrapper">
             <img
               class="img-default"
-              src="img/media/modular/${t}.jpg"
+              src="img/modular/${t}.jpg"
               alt="House ${t}"
               width="350"
               height="177"
             />
             <img
               class="img-hover"
-              src="img/media/modular_alt/${t}_alt.jpg"
+              src="img/modular_alt/${t}_alt.jpg"
               alt="House ${t}"
               width="350"
               height="177"
