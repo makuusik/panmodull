@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/media/icons/Panmodul.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./img/media/icons/Panmodul white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контент</title>
+    <link rel="stylesheet" href="content.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <load src="../partials/header.html" />
+    <section class="hero">
+      <h1 id="title"></h1>
+    </section>
+    <section class="main-info">
+      <div class="wrapper">
+        <div class="container">
+          <!-- Лівий блок - скролл із фото -->
+          <div class="scroll-images">
+            <img class="image1" onclick="changeMainImage(this.src)" />
+            <img id="image2" onclick="changeMainImage(this.src)" />
+            <img id="image3" onclick="changeMainImage(this.src)" />
+            <img id="image4" onclick="changeMainImage(this.src)" />
+          </div>
+
+          <!-- Центр - головне фото -->
+          <img id="main-image" class="main-image image1" />
+
+          <!-- Правий блок - таблиця -->
+          <table class="data-table" id="table-body"></table>
+        </div>
+        <div class="text-box">
+          <h2 id="title2"></h2>
+          <p id="text"></p>
+        </div>
+      </div>
+    </section>
+    <section class="details">
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1">
+          <div class="details">
+            <summary>Standard</summary>
+            <p>Izolacja podstaw: 150 mm</p>
+            <p>Izolacja ścian zewnętrznych: 150 mm</p>
+            <p>Izolacja dachu: 150 mm</p>
+            <p>Fasada: metal</p>
+            <p>Wykończenie wnętrza: boazeria sosnowa</p>
+          </div>
+          <div class="details">
+            <summary>1. Konstrukcja podstawy (podłoga)</summary>
+            <p><strong>PODŁOGA (linoleum)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Deska - 45x145 mm</p>
+            <p>3. Izolacja - 150 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. Linoleum</p>
+            <img src="../img/details/10005.png" alt="" width="200px" />
+            <p><strong>PODŁOGA (płytka)</strong></p>
+            <p>1. OSB - 10 mm</p>
+            <p>2. Deska - 45x145 mm</p>
+            <p>3. Izolacja - 150 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. Płyta cementowo-włóknista 2 warstwy - 20 mm</p>
+            <p>6. Hydroizolacja</p>
+            <p>7. Płytka ceramiczna na kleju</p>
+            <img src="../img/details/10006.png" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2. Konstrukcja ścian zewnętrznych</summary>
+            <p><strong>ŚCIANA (zewnętrzna)</strong></p>
+            <p>1. Matellofasad (kolor według RAL)</p>
+            <p>2. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>3. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>4. Ochrona przed wiatrem</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Deska - 45x145 mm</p>
+            <p>7. Izolacja - 150 mm</p>
+            <p>8. Paroizolacja</p>
+            <p>9. OSB - 10 mm</p>
+            <p>10. Krokwia - 45x45 mm</p>
+            <p>11. Falszbrus malowany (boazeria)</p>
+            <img src="../img/details/10001.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3. Konstrukcja ścian wewnętrznych</summary>
+            <p><strong>ŚCIANA wewnętrzna (łazienka)</strong></p>
+            <p>1. Falszbrus malowany (boazeria)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Deska - 45x95 mm</p>
+            <p>4. Izolacja - 100 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Płyta GKL wodoodporna</p>
+            <p>7. Płytka ceramiczna na kleju</p>
+            <img src="../img/details/10002.jpg" alt="" width="200px" />
+            <p><strong>ŚCIANA wewnętrzna</strong></p>
+            <p>1. Falszbrus malowany (boazeria)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Deska - 45x95 mm</p>
+            <p>4. Izolacja - 100 mm</p>
+            <p>5. OSB-10 mm</p>
+            <p>6. Falszbrus malowany (boazeria)</p>
+            <img src="../img/details/10003.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. Konstrukcja dachu</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (kolor według RAL)</p>
+            <p>2. Krokwia - 30x100 mm</p>
+            <p>3. Wentylacyjna belka - 45x45 mm</p>
+            <p>4. Membrana</p>
+            <p>5. Izolacja - 150 mm</p>
+            <p>6. Deska - 45x145 mm</p>
+            <p>7. Paroizolacja</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Krokwia - 45x45 mm</p>
+            <p>10. Falszbrus (boazeria)</p>
+            <img src="../img/details/10004.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. Okna i drzwi</summary>
+            <p>
+              Okna PCV WDS 5S, podwójne szyby, akcesoria (Turcja), kolor –
+              biały, drzwi PCV
+            </p>
+          </div>
+          <div class="details">
+            <summary>6. Elektryczność</summary>
+            <p>
+              Zestaw elektryczny (Chiny, Ukraina), bez oświetlenia zewnętrznego
+            </p>
+          </div>
+          <div class="details">
+            <summary>7. Inżynieria</summary>
+            <p>
+              Zestaw rur do kanalizacji i wodociągu, a także rozprowadzenie i
+              podłączenie (krany)
+            </p>
+          </div>
+        </div>
+
+        <div class="details-container" id="details-container-2">
+          <div class="details">
+            <summary>Premia</summary>
+            <p>Izolacja podstawy: - 200 mm</p>
+            <p>Izolacja ścian zewnętrznych: - 250 mm</p>
+            <p>Izolacja dachu: - 250 mm</p>
+            <p>Fasada: termodeska</p>
+            <p>Wykończenie wnętrza: płyta gipsowo-kartonowa</p>
+          </div>
+          <div class="details">
+            <summary>1. Konstrukcja podstawy (podłoga)</summary>
+            <p><strong>PODŁOGA (linoleum)</strong></p>
+            <p>1. Sklejka laminowana - 18 mm</p>
+            <p>2. Deska - 45x195 mm</p>
+            <p>3. Izolacja - 200 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. Linoleum, panele laminowane</p>
+            <img src="../img/details/10005.png" alt="" width="200px" />
+            <p><strong>PODŁOGA (płytki)</strong></p>
+            <p>1. Sklejka laminowana - 18 mm</p>
+            <p>2. Deska - 45x195 mm</p>
+            <p>3. Izolacja - 200 mm</p>
+            <p>4. Paroizolacja</p>
+            <p>5. Płyta cementowo-włóknista 2 warstwy - 20 mm</p>
+            <p>6. Hydroizolacja</p>
+            <p>7. Płytki ceramiczne na kleju</p>
+            <img src="../img/details/10006.png" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2. Konstrukcja ścian zewnętrznych</summary>
+            <p><strong>ŚCIANA (zewnętrzna)</strong></p>
+            <p>1. Termodeska (kolor według RAL)</p>
+            <p>2. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>3. Wentylacyjna szczelina - 20x40 mm</p>
+            <p>4. Ochrona przed wiatrem</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Izolacja - 200 mm</p>
+            <p>7. Deska - 45x195 mm</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Paroizolacja</p>
+            <p>10. Krokwia - 45x45 mm</p>
+            <p>11. Izolacja - 50 mm</p>
+            <p>12. Płyta gipsowo-kartonowa</p>
+            <img src="../img/details/10007.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3. Konstrukcja ścian wewnętrznych</summary>
+            <p><strong>ŚCIANA wewnętrzna (łazienka)</strong></p>
+            <p>1. Płyta gipsowo-kartonowa</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Izolacja - 100 mm</p>
+            <p>4. Deska - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Wodoodporna płyta gipsowo-kartonowa</p>
+            <p>7. Płytki ceramiczne na kleju</p>
+            <img src="../img/details/10008.jpg" alt="" width="200px" />
+            <p><strong>ŚCIANA wewnętrzna</strong></p>
+            <p>1. Płyta gipsowo-kartonowa</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Izolacja - 100 mm</p>
+            <p>4. Deska - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Płyta gipsowo-kartonowa</p>
+            <img src="../img/details/10009.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. Konstrukcja dachu</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (kolor według RAL), membrana PVC</p>
+            <p>2. Krokwia - 30x100 mm</p>
+            <p>3. Belka - 45x45 mm</p>
+            <p>4. Membrana</p>
+            <p>5. Izolacja - 200 mm</p>
+            <p>6. Deska - 45x195 mm</p>
+            <p>7. Paroizolacja</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Belka - 45x45 mm</p>
+            <p>10. Izolacja - 50 mm</p>
+            <p>11. Płyta gipsowo-kartonowa</p>
+            <img src="../img/details/10010.jpg" alt="" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. Okna i drzwi</summary>
+            <p>
+              Okna PCV WDS 7S, pięciokomorowe szyby zespolone, okucia (Niemcy),
+              kolor w masie lub laminacja, drzwi PCV, membrana, paroizolacja,
+              taśma PSUL
+            </p>
+          </div>
+          <div class="details">
+            <summary>6. Elektryczność</summary>
+            <p>
+              Zestaw elektryczny (Turcja, Niemcy), oświetlenie zewnętrzne,
+              gniazda zewnętrzne
+            </p>
+          </div>
+          <div class="details">
+            <summary>7. Inżynieria</summary>
+            <p>
+              Zestaw rur do kanalizacji i wodociągu oraz rozprowadzenie i
+              podłączenie armatury sanitarnej
+            </p>
+          </div>
+          <div class="details">
+            <summary>8. Hydraulika</summary>
+            <p>
+              Kabina prysznicowa 900x900 mm, umywalka, toaleta, baterie Grohe
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <load src="../partials/footer.html" />
+    <script src="content.js"></script>
+    <script src="../partials/header_script.js"></script>
+  </body>
+</html>
