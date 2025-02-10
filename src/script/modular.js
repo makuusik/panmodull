@@ -90,7 +90,7 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           shortInfo = houseData['short-info'];
         }
       }
-
+      const basePath = import.meta.env.BASE_URL;
       const houseDiv = document.createElement('button');
       houseDiv.onclick = function () {
         openPage(i);
@@ -100,14 +100,14 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           <div class="image-wrapper">
             <img
               class="img-default"
-              src="panmodull/img/media/modular/${i}.jpg"
+              src="${basePath}img/media/modular/${i}.jpg"
               alt="House ${i}"
               width="350"
               height="177"
             />
             <img
               class="img-hover"
-              src="panmodull/img/media/modular_alt/${i}_alt.jpg"
+              src="${basePath}img/media/modular_alt/${i}_alt.jpg"
               alt="House ${i}"
               width="350"
               height="177"
