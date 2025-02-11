@@ -3,7 +3,7 @@ const indicator = document.querySelector('.indicator');
 const buttonContainer = document.querySelector('.button-container');
 const all_content = document.querySelectorAll('.questions');
 // Збереження стану вибраного табу в LocalStorage
-const savedTabIndexFAQ = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
+const savedTabIndexFAQ = localStorage.getItem('activeTabIndexFAQ') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
 const firstButton = buttons[savedTabIndexFAQ];
 console.log(savedTabIndexFAQ);
 buttons[savedTabIndexFAQ].classList.add('active');
@@ -44,7 +44,7 @@ buttons.forEach((button, index) => {
     all_content[index].classList.add('active');
 
     // Зберігаємо індекс вибраної вкладки
-    localStorage.setItem('activeTabIndex', index);
+    localStorage.setItem('activeTabIndexFAQ', index);
   });
 });
 
