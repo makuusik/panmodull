@@ -3,10 +3,10 @@ const indicator = document.querySelector('.indicator');
 const buttonContainer = document.querySelector('.button-container');
 const all_content = document.querySelectorAll('.questions');
 // Збереження стану вибраного табу в LocalStorage
-const savedTabIndex = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
-const firstButton = buttons[savedTabIndex];
-console.log(savedTabIndex);
-buttons[savedTabIndex].classList.add('active');
+const savedTabIndexFAQ = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
+const firstButton = buttons[savedTabIndexFAQ];
+console.log(savedTabIndexFAQ);
+buttons[savedTabIndexFAQ].classList.add('active');
 indicator.style.width = `${firstButton.offsetWidth}px`;
 indicator.style.transform = `translateX(${firstButton.parentElement.offsetLeft}px)`;
 
@@ -14,8 +14,8 @@ buttons.forEach((button, index) => {
   button.classList.remove('active');
   all_content[index]?.classList.remove('active'); // Видаляємо active у всіх options-grid
 });
-buttons[savedTabIndex].classList.add('active');
-all_content[savedTabIndex]?.classList.add('active');
+buttons[savedTabIndexFAQ].classList.add('active');
+all_content[savedTabIndexFAQ]?.classList.add('active');
 
 // Позиціонуємо indicator
 indicator.style.width = `${firstButton.offsetWidth}px`;
