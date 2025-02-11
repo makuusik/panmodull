@@ -3,16 +3,16 @@ const buttonContainer = document.querySelector('.button-container');
 const all_content = document.querySelectorAll('.options-grid');
 
 // Збереження стану вибраного табу в LocalStorage
-const savedTabIndex = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
+// const savedTabIndex = localStorage.getItem('activeTabIndex') || 0; // Якщо немає збереженого індексу, вибираємо перший таб
 const firstButton = buttons[savedTabIndex];
-buttons[savedTabIndex].classList.add('active');
+// buttons[savedTabIndex].classList.add('active');
 
 buttons.forEach((button, index) => {
   button.classList.remove('active');
   all_content[index]?.classList.remove('active'); // Видаляємо active у всіх options-grid
 });
-buttons[savedTabIndex].classList.add('active');
-all_content[savedTabIndex]?.classList.add('active');
+// buttons[savedTabIndex].classList.add('active');
+// all_content[savedTabIndex]?.classList.add('active');
 
 // Відновлення вибраного табу при перезавантаженні сторінки
 buttons.forEach((button, index) => {
@@ -32,8 +32,8 @@ buttons.forEach((button, index) => {
     });
     all_content[index].classList.add('active');
 
-    // Зберігаємо індекс вибраної вкладки
-    localStorage.setItem('activeTabIndex', index);
+    // // Зберігаємо індекс вибраної вкладки
+    // localStorage.setItem('activeTabIndex', index);
   });
 });
 
