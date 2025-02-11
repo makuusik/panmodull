@@ -155,6 +155,13 @@ img {
   width: 1216px;
   gap: 25px;
 }
+.img-container {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  background-color: white;
+}
 .section-two-box img {
   object-fit: contain;
   background-color: white;
@@ -169,6 +176,7 @@ img {
 }
 
 .section-two-box button {
+  position: relative;
   height: 78px;
   width: 627px;
   border: 0.5px solid rgb(100, 100, 100);
@@ -185,6 +193,12 @@ img {
 .section-two-box button:hover {
   background-color: black;
   border: 0.5px solid #000000;
+}
+.section-two-box button svg {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%); /* Центрування по вертикалі */
 }
 
 .section-container .link {
