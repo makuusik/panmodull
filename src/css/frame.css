@@ -104,7 +104,7 @@ h1 {
   width: 1200px;
 }
 .options-grid {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 колонки */
   gap: 40px; /* Без відступів */
   width: 100%; /* Обмежуємо ширину */
