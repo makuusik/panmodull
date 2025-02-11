@@ -120,7 +120,7 @@ h1 {
   }
 }
 
-.options-grid .rows-last {
+.options-grid .row-lasts {
   display: flex;
   flex-direction: row;
   gap: 40px;
