@@ -366,7 +366,9 @@ img {
   justify-content: center;
   width: 100%;
 }
-
+.slider-btn {
+  display: none;
+}
 .cards-header {
   padding: 32px;
   display: flex;
@@ -413,7 +415,7 @@ img {
   }
   .section-hero {
     padding-top: 70px;
-    height: 35vh;
+    height: 40vh;
     align-self: center;
     width: 100vw;
     box-sizing: border-box;
@@ -424,6 +426,7 @@ img {
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -440,10 +443,17 @@ img {
     padding: 10vw;
     box-sizing: border-box;
   }
-  .section-container {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
+
+  .child1 {
+    order: 2;
+  }
+
+  .child2 {
+    order: 1;
+  }
+
+  .child3 {
+    order: 3;
   }
   .houses-container {
     display: flex;
@@ -470,5 +480,85 @@ img {
   .link p {
     font-size: 16px;
     padding-bottom: 20px;
+  }
+  .link ul {
+    font-size: 16px;
+    padding-bottom: 20px;
+  }
+  .houses-container .link h3 {
+    padding-bottom: 28.5px;
+    font-size: 28px;
+    text-align: center;
+  }
+  .section-three {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .large-image {
+    display: none; /* Прибираємо великий банер */
+  }
+
+  .image-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    padding-bottom: 10px;
+
+    /* Snap scrolling */
+    scroll-snap-type: x mandatory;
+  }
+
+  .image-grid .image-wrapper {
+    flex: 0 0 80%;
+    max-width: 80%;
+
+    /* Snap-align для кожного зображення */
+    scroll-snap-align: center;
+
+    /* Затемнення неактивних фото */
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .image-grid .image-wrapper .active {
+    opacity: 1; /* Активне фото повністю видно */
+  }
+
+  /* Фіктивні відступи для центрованого першого та останнього зображення */
+  .spacer {
+    flex: 0 0 10%;
+    max-width: 10%;
+  }
+
+  .slider-buttons {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .slider-btn {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }

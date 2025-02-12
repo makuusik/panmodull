@@ -47,3 +47,34 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.getElementById('navbar');
+  const menu = document.querySelector('.nav-links');
+  const menuItems = document.querySelectorAll('.nav-links .nav-option');
+  const toggleButton = document.createElement('button');
+
+  toggleButton.textContent = '☰';
+  toggleButton.classList.add('menu-toggle');
+
+  if (navbar) {
+    navbar.appendChild(toggleButton);
+  } else {
+    console.error('Navbar element not found!');
+  }
+
+  toggleButton.addEventListener('click', function () {
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+    } else {
+      menu.classList.add('open');
+      menuItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateX(100px)';
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateX(0)';
+        }, 100 * index);
+      });
+    }
+  });
+});
