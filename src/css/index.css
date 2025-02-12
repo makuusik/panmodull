@@ -332,11 +332,11 @@ img {
   line-height: 112px;
   color: white;
   margin: 0;
+  margin-top: 154px;
   margin-bottom: 154px;
 }
 
 .section-four {
-  padding-top: 154px;
   padding-bottom: 154px;
   background-image: url(..\img\backgrounds\backgrounds_ornament.png);
   background-size: cover;
@@ -559,7 +559,7 @@ img {
     background-color: rgba(0, 0, 0, 0);
     color: white;
     border: none;
-    padding: 10px 10px;
+    padding: 0;
     box-sizing: border-box;
     width: 10vw;
     cursor: pointer;
@@ -569,7 +569,12 @@ img {
     height: 30vh;
     display: inline-block;
   }
-
+  /* .scroll-btn:active {
+    background-color: rgba(0, 0, 0, 0.205);
+  } */
+  .scroll-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
   .left {
     left: 0;
   }
@@ -593,5 +598,22 @@ img {
     font-weight: 200;
     height: auto;
     padding: auto;
+  }
+  .section-four {
+    padding: 0;
+    background-image: url(..\img\backgrounds\backgrounds_ornament.png);
+    background-size: cover;
+  }
+
+  .section-4-tittle {
+    width: 100vw;
+    justify-self: center;
+    font-size: 48px;
+    font-family: 'Montserrat';
+    font-weight: 200;
+    line-height: normal;
+    color: white;
+    margin: 70px 0;
+    text-align: center;
   }
 }
