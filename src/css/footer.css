@@ -2,29 +2,34 @@ a {
   text-decoration: none;
 }
 .footer-nav-a {
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 37.5px;
-  margin-bottom: 55px;
+
   color: white;
+  white-space: nowrap; /* Запобігає перехід на новий рядок */
 }
 
 .footer-container {
   display: flex;
-  justify-content: center;
-  gap: 170px;
+  justify-content: space-between;
+  width: 1200px;
+  max-width: 1200px;
 }
 .footer-nav {
   display: flex;
   flex-direction: column;
+  width: 24%;
+  padding: 0 2%;
+  align-items: flex-start; /* Вирівнювання по верхньому краю */
+  justify-content: flex-start; /* Вирівнювання по верхньому краю */
 }
-
 .footer-nav .p-link {
   all: unset;
   color: #bfbfbf;
   margin-top: 20px;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 28px;
   text-decoration: none;
   cursor: pointer;
@@ -36,7 +41,7 @@ a {
 .footer-nav .link {
   list-style: none;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 28px;
   margin-top: 55px;
   margin-bottom: 0;
@@ -47,4 +52,25 @@ a {
   background-color: #17191b;
   padding-top: 200px;
   padding-bottom: 200px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  .footer-nav-a {
+    margin: 0;
+    margin-top: 20px;
+    color: white;
+  }
+  .footer-nav .link {
+    margin: 0;
+  }
+  .footer {
+    padding: 0;
+  }
 }
