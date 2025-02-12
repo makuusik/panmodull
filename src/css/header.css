@@ -135,7 +135,7 @@ nav.scrolled {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -150%;
     width: 100vw;
     height: 100vh;
     background: #17191b;
@@ -180,6 +180,14 @@ nav.scrolled {
     gap: 12px;
     justify-self: flex-end;
     align-self: center;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+  .logo:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
   }
   .navbar {
     height: 70px;

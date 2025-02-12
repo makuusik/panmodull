@@ -13,57 +13,97 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('.image-grid');
-  const items = document.querySelectorAll('.image-wrapper');
+  const imageGrid = document.querySelector('.image-grid');
+  const images = document.querySelectorAll('.image-wrapper');
 
-  let currentIndex = 0;
-  let isSwiping = false; // Прапорець для запобігання подвійних свайпів
+  function updateImageOpacity() {
+    const gridRect = imageGrid.getBoundingClientRect();
+    const gridCenter = gridRect.left + gridRect.width / 2;
 
-  function updateActiveImage(index) {
-    items.forEach((item, i) => {
-      item.classList.toggle('active', i === index);
+    images.forEach(image => {
+      const rect = image.getBoundingClientRect();
+      const imageCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(gridCenter - imageCenter);
+      const maxDistance = gridRect.width / 2;
+
+      // Обчислення прозорості залежно від відстані
+      let opacity = Math.max(0.3, 1 - distance / maxDistance);
+      image.style.opacity = opacity;
     });
   }
 
-  function scrollToIndex(index) {
-    if (isSwiping) return; // Якщо вже відбувається свайп — ігноруємо
+  imageGrid.addEventListener('scroll', updateImageOpacity);
+  window.addEventListener('resize', updateImageOpacity);
 
-    if (index < 0) index = 0;
-    if (index >= items.length) index = items.length - 1;
-
-    isSwiping = true; // Блокуємо повторний свайп
-
-    const target = items[index];
-    container.scrollTo({
-      left:
-        target.offsetLeft -
-        container.offsetLeft -
-        (container.clientWidth - target.clientWidth) / 2,
+  updateImageOpacity();
+});
+window.onload = function () {
+  window.scrollGallery = function (direction) {
+    const container = document.querySelector('.image-grid');
+    const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+    container.scrollBy({
+      left: direction * scrollAmount,
       behavior: 'smooth',
     });
+  };
+};
 
-    currentIndex = index;
-    updateActiveImage(index);
+document.addEventListener('DOMContentLoaded', function () {
+  const svgObject = document.getElementById('svg-object');
 
-    setTimeout(() => {
-      isSwiping = false; // Розблоковуємо свайпи після завершення анімації
-    }, 300); // Затримка для плавності
+  if (svgObject) {
+    svgObject.addEventListener('load', function () {
+      const svgDoc = svgObject.contentDocument;
+      const paths = svgDoc.querySelectorAll('path');
+
+      paths.forEach(path => {
+        path.style.strokeDasharray = path.getTotalLength();
+        path.style.strokeDashoffset = path.getTotalLength();
+        path.classList.add('draw');
+      });
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const imageGrid = document.querySelector('.image-grid');
+  const images = document.querySelectorAll('.image-wrapper');
+
+  function updateImageOpacity() {
+    if (window.innerWidth > 768) {
+      // Якщо це НЕ телефон, скидаємо прозорість і виходимо
+      images.forEach(image => (image.style.opacity = 1));
+      return;
+    }
+
+    const gridRect = imageGrid.getBoundingClientRect();
+    const gridCenter = gridRect.left + gridRect.width / 2;
+
+    images.forEach(image => {
+      const rect = image.getBoundingClientRect();
+      const imageCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(gridCenter - imageCenter);
+      const maxDistance = gridRect.width / 2;
+
+      let opacity = Math.max(0.3, 1 - distance / maxDistance);
+      image.style.opacity = opacity;
+    });
   }
 
-  let startX = 0;
-  container.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
+  imageGrid.addEventListener('scroll', updateImageOpacity);
+  window.addEventListener('resize', updateImageOpacity);
 
-  container.addEventListener('touchend', e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startX - endX;
-
-    if (Math.abs(diff) > 50) {
-      const direction = diff > 0 ? 1 : -1;
-      scrollToIndex(currentIndex + direction);
-    }
-  });
-
-  updateActiveImage(currentIndex);
+  updateImageOpacity();
 });
+
+window.onload = function () {
+  window.scrollGallery = function (direction) {
+    const container = document.querySelector('.image-grid');
+    const scrollAmount = container.clientWidth * 0.5;
+
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+};

@@ -106,7 +106,7 @@
     <section class="section-two">
       <div class="houses-container" id="projects">
         <div class="link child1">
-          <h3>MODUŁOWE BUDYNKI</h3>
+          <h3>MODULARNE BUDYNKI</h3>
           <p>
             Budownictwo modułowe w Polsce to technologia, w której gotowe moduły
             są produkowane w fabryce i dostarczane na plac budowy do szybkiego
@@ -208,58 +208,70 @@
 
     <!-- Третья секция с флексбоксом и гридом -->
     <section class="section-three">
-      <div class="container">
-        <div class="image-wrapper" data-text="DOM SZKIELETOWY W ŻYTOMIERZU">
-          <div class="large-image">
+      <div class="image-grid-wrapper">
+        <button class="scroll-btn left" onclick="scrollGallery(-1)">
+          &#10094;
+        </button>
+        <div class="image-grid">
+          <div
+            class="image-wrapper large-image"
+            data-text="DOM SZKIELETOWY W ŻYTOMIERZU"
+          >
             <img
               src="./img/media/portfolio/frame/10001.jpg"
               alt="DOM SZKIELETOWY W ŻYTOMIERZU"
             />
+            <h4>DOM SZKIELETOWY W ŻYTOMIERZU</h4>
           </div>
-        </div>
-        <div class="image-grid">
-          <div class="spacer"></div>
           <div class="image-wrapper" data-text="DOM MODUŁOWY W DUVEN">
             <img
               src="./img/media/portfolio/module_duven/10007.jpg"
               alt="DOM MODUŁOWY W DUVEN"
             />
+            <h4>DOM MODUŁOWY W DUVEN</h4>
           </div>
           <div class="image-wrapper" data-text="DOM MODUŁOWY W BRUMMEN">
             <img
               src="./img/media/portfolio/10007.jpg"
               alt="DOM MODUŁOWY W BRUMMEN"
             />
+            <h4>DOM MODUŁOWY W BRUMMEN</h4>
           </div>
           <div class="image-wrapper" data-text="DOM MODUŁOWY W DRIEL">
             <img
               src="./img/media/portfolio/10004.png"
               alt="DOM MODUŁOWY W DRIEL"
             />
+            <h4>DOM MODUŁOWY W DRIEL</h4>
           </div>
           <div class="image-wrapper" data-text="DOM MODUŁOWY W VELP">
             <img
               src="./img/media/portfolio/module_velp/10007.jpg"
               alt="DOM MODUŁOWY W VELP"
             />
+            <h4>DOM MODUŁOWY W VELP</h4>
           </div>
           <div class="image-wrapper" data-text="DOM SZKIELETOWY W ŻYTOMIERZU">
             <img
               src="./img/media/portfolio/frame/10008.jpg"
               alt="DOM SZKIELETOWY W ŻYTOMIERZU"
             />
+            <h4>DOM MODUŁOWY W DUVEN</h4>
           </div>
           <div class="image-wrapper" data-text="DOM MODUŁOWY W DUVEN">
             <img
               src="./img/media/portfolio/module_duven/10010.jpg"
               alt="DOM MODUŁOWY W DUVEN"
             />
+            <h4>DOM MODUŁOWY W DUVEN</h4>
           </div>
-          <div class="spacer"></div>
         </div>
+        <button class="scroll-btn right" onclick="scrollGallery(1)">
+          &#10095;
+        </button>
       </div>
+
       <div class="sec-3-butt-cont">
-        <!-- <a href="portfolio/portfolio.html"> -->
         <a href="./portfolio.html">
           <button class="sec-3-butt">ZOBACZ WSZYSTKO</button>
         </a>

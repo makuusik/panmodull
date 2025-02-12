@@ -167,6 +167,7 @@ img {
   align-items: center;
   background-color: white;
 }
+
 .houses-container img {
   object-fit: contain;
   background-color: white;
@@ -224,27 +225,21 @@ img {
   padding-bottom: 100px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 25% auto; /* Ліва колонка 25%, права займає решту */
-  gap: 10px; /* Відступ між великою картинкою і сіткою */
-  align-items: start;
+.scroll-btn {
+  display: none;
 }
-.large-image {
-  height: 100%;
-}
-.large-image img {
+.image-wrapper img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Три колонки */
+  grid-template-columns: repeat(4, 1fr); /* Три колонки */
   grid-template-rows: repeat(2, auto); /* Два рядки */
-  gap: 10px;
+  gap: 10px; /* Відступ між великою картинкою і сіткою */
+  align-items: start;
 }
 .image-wrapper {
   position: relative;
@@ -253,27 +248,37 @@ img {
   height: 100%;
 }
 
-.image-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.image-wrapper::before {
-  content: attr(data-text);
-  position: absolute;
-  bottom: 10%;
-  left: -100%; /* Починає поза межами зліва */
-  transform: translateY(-50%);
-  background-color: rgba(231, 225, 208);
-  color: black;
-  padding: 5px 10px;
-  font-weight: 200;
-  font-size: 20px;
-  white-space: nowrap;
-  transition: left 0.5s ease;
-}
-.image-wrapper:hover::before {
-  left: 10px; /* Виїжджає зліва */
+@media (min-width: 769px) {
+  .large-image {
+    height: 100%;
+    grid-row: 1 / -1;
+  }
+  .large-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  .image-wrapper::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: 20px;
+    left: -100%; /* Починає поза межами зліва */
+    transform: translateY(-50%);
+    background-color: rgba(231, 225, 208);
+    color: black;
+    padding: 5px 10px;
+    font-weight: 200;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: left 0.5s ease;
+  }
+  .image-wrapper:hover::before {
+    left: 10px; /* Виїжджає зліва */
+  }
+  h4 {
+    display: none;
+  }
 }
 
 .section-two {
@@ -477,6 +482,7 @@ img {
   .houses-container .img-container img {
     width: 100%;
   }
+
   .link p {
     font-size: 16px;
     padding-bottom: 20px;
@@ -490,75 +496,102 @@ img {
     font-size: 28px;
     text-align: center;
   }
+
   .section-three {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    overflow: hidden;
-    position: relative;
+    height: fit-content;
   }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .large-image {
-    display: none; /* Прибираємо великий банер */
-  }
-
   .image-grid {
     display: flex;
-    flex-wrap: nowrap;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 10px;
-    padding-bottom: 10px;
-
-    /* Snap scrolling */
     scroll-snap-type: x mandatory;
+    gap: 2px;
+    padding: 0;
   }
 
-  .image-grid .image-wrapper {
-    flex: 0 0 80%;
-    max-width: 80%;
-
-    /* Snap-align для кожного зображення */
+  .image-wrapper {
+    flex: 0 0 90vw; /* Ширина фото */
+    height: 30vh;
     scroll-snap-align: center;
-
-    /* Затемнення неактивних фото */
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease;
+    padding: 40px;
+    padding-bottom: 70px;
+    align-self: center;
+    width: 100vw;
   }
 
-  .image-grid .image-wrapper .active {
-    opacity: 1; /* Активне фото повністю видно */
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
   }
 
-  /* Фіктивні відступи для центрованого першого та останнього зображення */
-  .spacer {
-    flex: 0 0 10%;
-    max-width: 10%;
+  /* Затемнення неактивних фото */
+  .image-wrapper:not(.active) {
+    transform: scale(0.9);
+    opacity: 0.3;
   }
-
-  .slider-buttons {
+  .large-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .image-grid-wrapper {
+    position: relative; /* Батьківський контейнер для абсолютного позиціонування кнопок */
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-grid {
     position: relative;
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer та Edge */
+  }
+  .image-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
-  .slider-btn {
-    background-color: rgba(0, 0, 0, 0.9);
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    width: 10vw;
     cursor: pointer;
-    font-size: 20px;
+    z-index: 10;
+    font-size: 24px;
+    transition: background 0.3s ease;
+    height: 30vh;
+    display: inline-block;
   }
 
-  .slider-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
+  }
+  .section-three {
+    padding: 0;
+  }
+  .sec-3-butt {
+    margin: 0 0 5vh 0;
+  }
+  .sec-3-butt-cont {
+    margin: 0;
+  }
+  h4 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+    height: auto;
+    padding: auto;
   }
 }
