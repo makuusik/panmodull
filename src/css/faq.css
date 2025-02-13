@@ -218,3 +218,51 @@ strong {
   width: 100%;
   padding: 0; /* Видаляємо padding для самого контейнера */
 }
+
+@media (max-width: 768px) {
+
+
+    html,
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    
+      .section-hero {
+        padding-top: 70px;
+        height: 40vh;
+        align-self: center;
+        width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-h1 {
+        font-size: 28px;
+      }
+
+      .faq-container {
+
+
+    align-self: center;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+      }
+
+      .button-container li {
+        width: 100%;
+        height: 100%;
+      }
+
+      .button-wrapper {
+        width: 90%;
+        height: 100%;
+      }
+
+      .questions.active {
+        width: 90%;
+      }
+}
