@@ -132,6 +132,9 @@ a {
   }
 }
 @media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  }
   .nav-links {
     position: fixed;
     top: 0;
@@ -250,7 +253,13 @@ a {
       border-top 0.4s ease-out, border-bottom 0.4s ease-out;
   }
   .dropdown-menu li {
+    width: 100%;
+    padding: 0;
+  }
+  .dropdown-menu li a {
     padding: 1.3vh;
+    width: 100%;
+    text-align: center;
   }
   .dropdown-menu.open {
     border-top: 1px solid rgb(100, 100, 100);
