@@ -115,3 +115,64 @@ h1 {
   margin-bottom: 20px;
   margin-top: 15px;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .filter-section {
+    padding-top: 70px;
+    height: 40vh;
+    align-self: center;
+    width: 100vw;
+    /* box-sizing: border-box; */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .portfolio-section {
+    padding-top: 0px;
+
+    align-self: center;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .portfolio-cont {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    
+  }
+
+  .portfolio-items {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+
+  }
+}
