@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
 
     if (dropdownMenu) {
-      dropdownMenu.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`; // Робимо дропдаун прозорим відповідно до скролу
+      dropdownMenu.style.backgroundColor = `transparent`; // Робимо дропдаун прозорим відповідно до скролу
     }
   }
 
@@ -75,6 +75,43 @@ document.addEventListener('DOMContentLoaded', function () {
           item.style.transform = 'translateX(0)';
         }, 100 * index);
       });
+    }
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const navbar = document.getElementById('navbar');
+  const dropdownToggle = document.querySelector('.dropdown'); // Кнопка, яка відкриває дропдаун
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+
+  if (!navbar || !dropdownToggle || !dropdownMenu) {
+    console.error('Не знайдено необхідних елементів!');
+    return;
+  }
+
+  function updateScrollOpacity() {
+    let scrollTop = window.scrollY;
+    let opacity = Math.min(scrollTop / 300, 0.8);
+
+    navbar.classList.toggle('scrolled', opacity > 0);
+    dropdownMenu.classList.toggle('scrolled', opacity > 0);
+  }
+
+  updateScrollOpacity();
+  window.addEventListener('scroll', updateScrollOpacity);
+
+  // Обробник кліку на кнопку відкриття дропдауну
+  dropdownToggle.addEventListener('click', function (event) {
+    event.preventDefault(); // Запобігає переходу за посиланням
+    dropdownMenu.classList.toggle('open');
+  });
+
+  // Закриття дропдауну при кліку поза ним
+  document.addEventListener('click', function (event) {
+    if (
+      !dropdownToggle.contains(event.target) &&
+      !dropdownMenu.contains(event.target)
+    ) {
+      dropdownMenu.classList.remove('open');
     }
   });
 });

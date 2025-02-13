@@ -30,9 +30,6 @@ a {
 }
 
 /* Кольоровий навбар після прокручування */
-nav.scrolled {
-  background: #202325; /* Чорний напівпрозорий */
-}
 
 /* Логотип (зліва) */
 .logo {
@@ -96,25 +93,6 @@ nav.scrolled {
   position: relative;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 45px;
-  left: -32px; /* Зміщення вліво на 32px */
-  width: calc(100% + 64px); /* Розширення на 32px з кожного боку */
-  background-color: rgb(0, 0, 0);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid white; /* Початковий стан верхньої границі */
-  border-bottom: 1px solid white; /* Початковий стан нижньої границі */
-  padding: 10px 0;
-  list-style: none;
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease-in-out, opacity 0.5s ease-out,
-    border-top-width 0.5s ease-in-out, border-bottom-width 0.5s ease-out;
-}
-
 .dropdown-menu li {
   padding: 10px 15px;
 }
@@ -124,12 +102,34 @@ nav.scrolled {
   color: rgb(255, 255, 255);
   display: block;
 }
-
-.dropdown:hover .dropdown-menu {
-  max-height: 200px; /* Або інша відповідна висота */
-  opacity: 1;
-  border-top-width: 1px; /* Плавне з'явлення верхньої границі */
-  border-bottom-width: 1px; /* Плавне з'явлення нижньої границі */
+@media (min-width: 769px) {
+  .dropdown-menu {
+    position: absolute;
+    top: 45px;
+    left: -32px; /* Зміщення вліво на 32px */
+    width: calc(100% + 64px); /* Розширення на 32px з кожного боку */
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid white; /* Початковий стан верхньої границі */
+    border-bottom: 1px solid white; /* Початковий стан нижньої границі */
+    padding: 10px 0;
+    list-style: none;
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.5s ease-out,
+      border-top-width 0.5s ease-in-out, border-bottom-width 0.5s ease-out;
+  }
+  nav.scrolled {
+    background: #202325; /* Чорний напівпрозорий */
+  }
+  .dropdown:hover .dropdown-menu {
+    max-height: 200px; /* Або інша відповідна висота */
+    opacity: 1;
+    border-top-width: 1px; /* Плавне з'явлення верхньої границі */
+    border-bottom-width: 1px; /* Плавне з'явлення нижньої границі */
+  }
 }
 @media (max-width: 768px) {
   .nav-links {
@@ -142,10 +142,11 @@ nav.scrolled {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 10vh;
     opacity: 0;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    gap: 10px;
+    gap: 0;
   }
 
   .nav-links.open {
@@ -161,6 +162,9 @@ nav.scrolled {
     all: unset;
     display: block;
     position: absolute;
+    outline: none;
+    border: none;
+
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
@@ -209,10 +213,46 @@ nav.scrolled {
   .nav-links .nav-option > a {
     font-size: 20px;
     font-weight: 200;
-    padding: 50px;
+    padding: 7vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     text-align: center;
+  }
+
+  .dropdown {
+    height: fit-content;
+  }
+  .dropdown-menu {
+    all: unset;
+    width: 100%;
+    position: relative;
+    background: #17191b;
+    border-top: 1px solid transparent; /* Початковий стан */
+    border-bottom: 1px solid transparent; /* Початковий стан */
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Анімація відкриття */
+    opacity: 0;
+    font-size: 20px;
+    font-weight: 200;
+    transform-origin: top;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out,
+      border-top 0.4s ease-out, border-bottom 0.4s ease-out;
+  }
+  .dropdown-menu li {
+    padding: 1.3vh;
+  }
+  .dropdown-menu.open {
+    border-top: 1px solid rgb(100, 100, 100);
+    border-bottom: 1px solid rgb(100, 100, 100);
+    max-height: 200px;
+    opacity: 1;
   }
 }
