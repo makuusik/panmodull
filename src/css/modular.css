@@ -228,3 +228,42 @@ h1 {
   font-size: 18px;
   line-height: 1.9;
 }
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .hero {
+    height: 40vh;
+  }
+  .button-wrapper {
+    width: 100vw;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+  }
+  .btn {
+    width: 24vw;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 16px;
+    text-align: center;
+  }
+  /* .btn {
+    width: 48vw;
+    border: 1px solid rgb(50, 50, 50);
+    margin: 1vw;
+  }
+  .indicator {
+    display: none;
+  }
+  .btn.active {
+    border: 1px solid rgb(100, 100, 100);
+  } */
+}

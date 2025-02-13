@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.getElementById('navbar');
-  const dropdownToggle = document.querySelector('.dropdown'); // Кнопка, яка відкриває дропдаун
+  const dropdownToggle = document.querySelector('.dropdown > a'); // Посилання, яке відкриває дропдаун
   const dropdownMenu = document.querySelector('.dropdown-menu');
 
   if (!navbar || !dropdownToggle || !dropdownMenu) {
@@ -101,8 +101,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Обробник кліку на кнопку відкриття дропдауну
   dropdownToggle.addEventListener('click', function (event) {
-    event.preventDefault(); // Запобігає переходу за посиланням
-    dropdownMenu.classList.toggle('open');
+    if (!dropdownMenu.contains(event.target)) {
+      event.preventDefault(); // Запобігає переходу за посиланням тільки для "PROJEKTY"
+      dropdownMenu.classList.toggle('open');
+    }
+  });
+
+  // Дозволяємо вкладеним посиланням працювати нормально
+  dropdownMenu.addEventListener('click', function (event) {
+    event.stopPropagation(); // Запобігає закриттю при кліку на внутрішні посилання
   });
 
   // Закриття дропдауну при кліку поза ним
