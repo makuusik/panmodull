@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 .hero {
@@ -183,25 +184,16 @@ h1 {
   display: grid;
 }
 
-:is(.row-last, .options-grid) h2 {
-  display: flex;
-  align-items: center; /* Центрує текст по вертикалі */
-  justify-content: center; /* Додатково центрує по горизонталі */
-  font-size: 20px;
+.info-text h2 {
   font-weight: 500;
-  color: white;
-  margin: auto;
-  justify-content: center;
-  height: 40px;
-  margin-top: 10px;
+  font-size: 20px;
 }
-:is(.row-last, .options-grid) p {
-  font-size: 16px;
+
+.info-text p,
+.info-text li {
   font-weight: 200;
-  color: white;
-  margin: 0;
-  margin-bottom: 15px;
-  text-align: center;
+  font-size: 18px;
+  line-height: 1.9;
 }
 .info-text {
   padding: 100px 0;
@@ -213,20 +205,49 @@ h1 {
 }
 .info-text p,
 .info-text h2 {
+  display: inline;
   text-align: left;
   margin: 0;
 }
 
-.info-text h2 {
-  font-weight: 500;
-  font-size: 20px;
+@media (min-width: 769px) {
+  :is(.row-last, .options-grid) h2 {
+    display: flex;
+    align-items: center; /* Центрує текст по вертикалі */
+    justify-content: center; /* Додатково центрує по горизонталі */
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    margin: auto;
+    justify-content: center;
+    height: 40px;
+    margin-top: 10px;
+  }
+  :is(.row-last, .options-grid) p {
+    font-size: 16px;
+    font-weight: 200;
+    color: white;
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .info-text h2 {
+    margin: 0;
+    margin-bottom: 2vh;
+  }
+  .info-text p {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 2vh;
+  }
+  .info-text ul {
+    margin: 0;
+    margin-bottom: 2vh;
+  }
 }
 
-.info-text p,
-.info-text li {
-  font-weight: 200;
-  font-size: 18px;
-  line-height: 1.9;
+ul {
+  margin: 0;
 }
 @media (max-width: 768px) {
   html,
@@ -254,6 +275,74 @@ h1 {
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;
     text-align: center;
+  }
+
+  .content-box {
+    width: 100%;
+  }
+  .options-grid {
+    display: none;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 40px; /* Без відступів */
+    width: 100%;
+    max-width: 100%; /* Щоб не виходило за межі */
+    margin: 0;
+    grid-auto-flow: dense;
+    animation: none;
+  }
+  .options-grid button {
+    animation: moving 1s ease forwards;
+    opacity: 0;
+    margin: 4vw;
+  }
+  .options-grid.active {
+    display: flex;
+  }
+  .options-grid .row-last {
+    display: flex;
+    flex-direction: column;
+  }
+  .options-grid .row-last > button {
+    width: auto;
+    margin: 4vw;
+  }
+  p {
+    line-height: normal;
+  }
+
+  @keyframes moving {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .info-text {
+    background-color: rgb(40, 40, 40);
+    padding: 4vw;
+    padding-top: 8vw;
+  }
+  .info-text h2 {
+    font-size: 18px;
+    margin-bottom: 2vh;
+  }
+  .info-text p {
+    font-size: 16px;
+    margin-bottom: 2vh;
+  }
+  .info-text li {
+    font-size: 16px;
+    margin-bottom: 2vh;
+  }
+  .info-text ul {
+    margin-bottom: 2vh;
+  }
+  ul {
+    padding-left: 4vw;
   }
   /* .btn {
     width: 48vw;

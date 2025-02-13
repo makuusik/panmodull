@@ -103,6 +103,7 @@ h1 {
 .content-box {
   width: 1200px;
 }
+
 .options-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 колонки */
@@ -111,8 +112,8 @@ h1 {
   max-width: 1200px; /* Щоб не виходило за межі */
   margin: 0 auto; /* Центруємо */
   grid-auto-flow: dense;
-  animation: moving 1s ease;
 }
+
 @keyframes moving {
   from {
     transform: translateX(50px);
@@ -171,18 +172,6 @@ h1 {
 .img-hover {
   opacity: 0; /* Приховане за замовчуванням */
 }
-.image-wrapper:hover .img-hover {
-  opacity: 1; /* Плавно з'являється */
-}
-
-.options-grid button:hover {
-  cursor: pointer;
-  scale: 1.1;
-}
-
-.options-grid.active {
-  display: grid;
-}
 
 :is(.row-last, .options-grid) h2 {
   display: flex;
@@ -208,6 +197,7 @@ h1 {
   padding: 100px 0;
   grid-column: 1 / -1; /* Розтягує цей ряд на всю ширину */
   display: flex;
+  color: white;
   flex-direction: column;
   justify-content: start;
   align-items: start;
@@ -228,4 +218,126 @@ h1 {
   font-weight: 200;
   font-size: 18px;
   line-height: 1.9;
+}
+
+@media (min-width: 769px) {
+  .image-wrapper:hover .img-hover {
+    opacity: 1; /* Плавно з'являється */
+  }
+
+  .options-grid button:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
+
+  .options-grid.active {
+    display: grid;
+  }
+}
+@media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .hero {
+    height: 40vh;
+  }
+  .button-wrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+  }
+  .btn {
+    width: 24vw;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 16px;
+    text-align: center;
+  }
+  .content-box {
+    width: 100%;
+  }
+  .options-grid {
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 40px; /* Без відступів */
+    width: 100%;
+    max-width: 100%; /* Щоб не виходило за межі */
+    margin: 0;
+    grid-auto-flow: dense;
+  }
+  .options-grid button {
+    animation: moving 1s ease forwards;
+    opacity: 0;
+    margin: 4vw;
+  }
+  .options-grid.active {
+    display: flex;
+  }
+  .options-grid .row-last button:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .options-grid .row-last {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3vh;
+  }
+  .options-grid .row-last > button {
+    width: auto;
+    margin: 4vw;
+  }
+  p {
+    line-height: normal;
+  }
+
+  @keyframes moving {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .info-text {
+    background-color: rgb(40, 40, 40);
+    padding: 4vw;
+    padding-top: 8vw;
+  }
+  .info-text h2 {
+    font-size: 18px;
+    margin-bottom: 2vh;
+  }
+  .info-text p {
+    font-size: 16px;
+    margin-bottom: 2vh;
+  }
+  .info-text li {
+    font-size: 16px;
+    margin-bottom: 2vh;
+  }
+  ul {
+    padding-left: 4vw;
+  }
+  /* .btn {
+    width: 48vw;
+    border: 1px solid rgb(50, 50, 50);
+    margin: 1vw;
+  }
+  .indicator {
+    display: none;
+  }
+  .btn.active {
+    border: 1px solid rgb(100, 100, 100);
+  } */
 }

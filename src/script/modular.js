@@ -65,23 +65,22 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
         : null;
     const totalExistingButtons = existingButtons.length;
 
-    const totalWithExisting = totalItems + totalExistingButtons; // Враховуємо вже наявні кнопки
-    let remainder = totalWithExisting % 3; // Скільки елементів залишиться "зайвими" в останньому ряді
+    const totalWithExisting = totalItems + totalExistingButtons;
+    let remainder = totalWithExisting % 3;
 
     const fragment = document.createDocumentFragment();
-    let tempRow = []; // Тимчасовий масив для row-last
+    let tempRow = [];
+    let animationIndex = totalExistingButtons; // Починаємо анімацію від уже наявних кнопок
 
     for (let i = start; i <= end; i++) {
       if (i === 14) continue; // Пропускаємо 14
 
-      // Визначаємо заголовок
       let title = '';
       if (i >= 17 && i <= 38) title = `DOM MODUŁOWY MH-${i}`;
       else if (i >= 40 && i <= 43) title = `BIURO MODUŁOWE MH-${i}`;
       else if (i >= 44 && i <= 46) title = `SAUNA MODUŁOWA MH-${i}`;
       else if (i >= 7 && i <= 16) title = `DOMEK MODUŁOWY MH-${i}`;
 
-      // Отримуємо short-info з jsonData
       let shortInfo = 'Brak opisu';
       if (jsonData && Array.isArray(jsonData)) {
         const flatData = jsonData.flat();
@@ -90,7 +89,9 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           shortInfo = houseData['short-info'];
         }
       }
+
       const houseDiv = document.createElement('button');
+      houseDiv.style.animationDelay = `${animationIndex * 0.2}s`;
       houseDiv.onclick = function () {
         openPage(i);
       };
@@ -116,7 +117,8 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
           <p>${shortInfo}</p>
         `;
 
-      // Визначаємо, чи елемент потрапляє в row-last
+      animationIndex++; // Збільшуємо індекс затримки
+
       if (
         remainder > 0 &&
         totalExistingButtons + fragment.childNodes.length + tempRow.length >=
@@ -128,7 +130,6 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
       }
     }
 
-    // Якщо в tempRow є елементи, створюємо row-last
     if (tempRow.length > 0) {
       const rowLastDiv = document.createElement('div');
       rowLastDiv.classList.add('row-last');
@@ -136,7 +137,6 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
       fragment.appendChild(rowLastDiv);
     }
 
-    // Вставляємо фрагмент у DOM після всіх кнопок
     if (lastButton) {
       lastButton.after(fragment);
     } else {
