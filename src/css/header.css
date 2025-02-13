@@ -162,30 +162,21 @@ a {
     all: unset;
     display: block;
     position: absolute;
-    outline: none !important;
+    outline: none;
     border: none;
 
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
-    background: none !important;
-    border: none !important;
-    color: white !important;
+    background: none;
+    border: none;
+    color: white;
     font-size: 2rem;
     cursor: pointer;
     z-index: 1001;
-    box-shadow: none;
+
     appearance: none;
     -webkit-appearance: none;
-  }
-  .menu-toggle:focus,
-  .menu-toggle:active {
-    outline: none !important;
-    box-shadow: none !important; /* Прибирає підсвітку при кліку */
-  }
-
-  .menu-toggle::-moz-focus-inner {
-    border: 0 !important; /* Для Firefox на Android */
   }
   .logo {
     color: white;
