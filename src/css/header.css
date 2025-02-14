@@ -242,7 +242,7 @@ a {
     align-items: end;
   }
   .nav-links .nav-option > a {
-    max-height: 13vh;
+    max-height: 11vh;
     box-sizing: border-box;
     font-size: 20px;
     font-weight: 200;
