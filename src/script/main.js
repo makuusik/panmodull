@@ -107,3 +107,27 @@ window.onload = function () {
     });
   };
 };
+window.onload = function () {
+  const container = document.querySelector('.image-grid');
+
+  // Примусово оновлюємо scrollLeft
+  container.scrollLeft = 1;
+  container.scrollLeft = 0;
+
+  window.scrollGallery = function (direction) {
+    const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+};
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.querySelector('.image-grid');
+
+  // Додаємо обробник подій, щоб кнопки працювали відразу
+  container.addEventListener('touchstart', function () {
+    container.scrollLeft += 1;
+    container.scrollLeft -= 1;
+  });
+});
