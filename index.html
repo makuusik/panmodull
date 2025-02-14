@@ -560,5 +560,33 @@
   </div>
 </footer>
 
+    <script>
+      window.onload = function () {
+        const container = document.querySelector('.image-grid');
+
+        // Примусово оновлюємо scrollLeft
+        container.scrollLeft = 1;
+        container.scrollLeft = 0;
+
+        window.scrollGallery = function (direction) {
+          const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+          container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth',
+          });
+        };
+      };
+      window.scrollGallery = function (direction) {
+        const container = document.querySelector('.image-grid');
+        const scrollAmount = container.clientWidth * 0.5;
+
+        setTimeout(() => {
+          container.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth',
+          });
+        }, 100);
+      };
+    </script>
   </body>
 </html>
