@@ -167,14 +167,16 @@ a {
     width: 100vw;
     height: 100vh;
     background: #17191b;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     padding-top: 10vh;
     opacity: 0;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     gap: 0;
+    max-height: 100vh;
   }
 
   .nav-links.open {
@@ -246,7 +248,7 @@ a {
     box-sizing: border-box;
     font-size: 20px;
     font-weight: 200;
-    padding: 7vh;
+    padding: 6vh 7vh;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -284,7 +286,7 @@ a {
     padding: 0;
   }
   .dropdown-menu li a {
-    padding: 1.3vh;
+    padding: 1.1vh;
     width: 100%;
     text-align: center;
   }
