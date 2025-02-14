@@ -265,6 +265,8 @@ p {
   .scroll-images img {
     scroll-snap-align: center;
     flex-shrink: 0;
+    object-fit: contain;
+    background-color: white;
   }
   h1 {
     font-size: 32px;
