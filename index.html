@@ -561,32 +561,28 @@
 </footer>
 
     <script>
-      window.onload = function () {
+      document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('.image-grid');
 
-        // Примусово оновлюємо scrollLeft
+        // Примусово оновлюємо scrollLeft (невеликий "поштовх")
         container.scrollLeft = 1;
         container.scrollLeft = 0;
 
+        // Додаємо обробник подій, щоб кнопки працювали одразу
+        container.addEventListener('touchstart', function () {
+          container.scrollLeft += 1;
+          container.scrollLeft -= 1;
+        });
+
+        // Функція для прокрутки
         window.scrollGallery = function (direction) {
-          const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+          const scrollAmount = container.clientWidth * 0.5;
           container.scrollBy({
             left: direction * scrollAmount,
             behavior: 'smooth',
           });
         };
-      };
-      window.scrollGallery = function (direction) {
-        const container = document.querySelector('.image-grid');
-        const scrollAmount = container.clientWidth * 0.5;
-
-        setTimeout(() => {
-          container.scrollBy({
-            left: direction * scrollAmount,
-            behavior: 'smooth',
-          });
-        }, 100);
-      };
+      });
     </script>
   </body>
 </html>
