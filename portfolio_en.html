@@ -21,15 +21,15 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/panmodull/assets/header_script-CSPAm_N9.js"></script>
-    <script type="module" crossorigin src="/panmodull/assets/gallery-Bt4gBLs9.js"></script>
+    <script type="module" crossorigin src="/panmodull/assets/portfolio-B2oeFfvy.js"></script>
     <link rel="stylesheet" crossorigin href="/panmodull/assets/header_script-CjSDMJ5W.css">
-    <link rel="stylesheet" crossorigin href="/panmodull/assets/gallery-CmX5-Ixg.css">
+    <link rel="stylesheet" crossorigin href="/panmodull/assets/portfolio-JmEWl9tm.css">
   </head>
   <body>
     <header>
   <nav id="navbar" class="navbar">
     <!-- Логотип -->
-    <a href="index.html" class="logo">
+    <a href="index_en.html" class="logo">
       <svg
         id="Layer_1"
         data-name="Layer 1"
@@ -72,18 +72,18 @@
     <!-- Меню -->
     <ul class="nav-links">
       <li class="nav-option">
-        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="portfolio_en.html">PORTFOLIO</a>
       </li>
       <li class="dropdown nav-option">
-        <a class="dropdown-link" href="index.html#projects">PROJEKTY</a>
+        <a class="dropdown-link" href="index.html#projects">PROJECTS</a>
         <ul class="dropdown-menu">
-          <li><a href="modular.html">DOMY MODUŁOWE</a></li>
-          <li><a href="frame.html">DOMY SZKIELETOWE</a></li>
+          <li><a href="modular_en.html">MODULAR BUILDINGS</a></li>
+          <li><a href="frame_en.html">FRAME HOUSES</a></li>
         </ul>
       </li>
-      <li class="nav-option"><a href="gallery.html">GALERIA</a></li>
-      <li class="nav-option"><a href="faq.html">FAQ</a></li>
-      <li class="nav-option"><a href="#footer">KONTAKT</a></li>
+      <li class="nav-option"><a href="gallery_en.html">GALLERY</a></li>
+      <li class="nav-option"><a href="faq_en.html">FAQ</a></li>
+      <li class="nav-option"><a href="#footer">CONTACT</a></li>
     </ul>
     <div class="language">
       <button onclick="switchLanguage()">PL</button>
@@ -93,95 +93,75 @@
 </header>
 
 
-    <section class="section section-hero">
-      <div class="hero-container">
-        <h1 class="hero-h1">WIDEO REALIZACJI</h1>
+    <section class="filter-section">
+      <div class="filter-section-container">
+        <h1>WORK PORTFOLIO</h1>
+        <div class="button-container">
+          <button class="button" id="modularButton">MODULAR HOUSES</button>
+          <button class="button" id="frameButton">FRAME HOUSES</button>
+        </div>
       </div>
     </section>
 
-    <section class="gallery-section">
-      <div class="gallery-container">
-        <ul class="gallery-list">
-          <li class="gallery-item">
-            <div class="gallery-item-container vertical">
-              <p>
-                Mieszkalny dom modułowy dla rodziców naszego klienta, wykonany z
-                wykończeniem wnętrza ze sklejki meblowej, łączy w sobie styl i
-                trwałość. Taki wybór materiału tworzy przytulną atmosferę,
-                zapewniając jednocześnie wytrzymałość i ekologiczność wnętrza.
-              </p>
-
-              <video
-                width="500px"
-                height="auto"
-                controls
-                poster="/panmodull/assets/1-B6nw6Fh9.jpg"
-                muted
-                playsinline
-                autoplay
-              >
-                <source
-                  src="/panmodull/assets/video-modul-house-kitchen-CCMeNLRY.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </li>
-          <li class="gallery-item">
-            <div class="gallery-item-container vertical">
-              <video
-                width="500px"
-                height="auto"
-                controls
-                poster="/panmodull/assets/2-CeSrZ5Zd.jpg"
-                muted
-                playsinline
-                autoplay
-              >
-                <source
-                  src="/panmodull/assets/video-modul-house-inside-CGtvKd0-.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <p>
-                Mieszkalny dom modułowy o powierzchni 80 m² przeznaczony do
-                całorocznego użytkowania. Układ pomieszczeń: salon, kuchnia, 2-3
-                sypialnie, łazienka. Wykończenie wnętrza: płyta
-                gipsowo-kartonowa pod malowanie, panele laminowane, wbudowane
-                oświetlenie. Izolacja termiczna, wentylacja, taras.
-              </p>
-            </div>
-          </li>
-          <li class="gallery-item">
-            <div class="gallery-item-container vertical">
-              <p>
-                Mieszkalny dom modułowy dla rodziców naszego klienta, wykonany z
-                wykończeniem wnętrza ze sklejki meblowej, łączy w sobie styl i
-                trwałość. Taki wybór materiału tworzy przytulną atmosferę,
-                zapewniając jednocześnie wytrzymałość i ekologiczność wnętrza.
-              </p>
-
-              <video
-                width="500px"
-                height="auto"
-                controls
-                poster="/panmodull/assets/3-BGTsa_ba.jpg"
-                muted
-                playsinline
-                autoplay
-              >
-                <source src="/panmodull/assets/3-dvj64QU8.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <section class="portfolio-section">
+      <ul class="portfolio-cont">
+        <li class="portfolio-items modular-filter">
+          <img
+            src="/panmodull/assets/10004-BnpqfMW2.png"
+            alt=""
+            width="600px"
+            height="auto"
+          />
+          <h2>MODULAR HOUSE IN DRIE</h2>
+          <p>Construction year: 2023<br />Module area: 52 m²</p>
+        </li>
+        <li class="portfolio-items modular-filter">
+          <img
+            src="/panmodull/assets/10007-DYjxFS_T.jpg"
+            alt=""
+            width="600px"
+            height="auto"
+          />
+          <h2>MODULAR HOUSE IN BRUMMEN</h2>
+          <p>Construction year: 2021<br />Module area: 91 m²</p>
+        </li>
+        <li class="portfolio-items modular-filter">
+          <img
+            src="/panmodull/assets/10001-D5JctK6s.jpg"
+            alt=""
+            width="600px"
+            height="auto"
+          />
+          <h2>MODULAR HOUSE IN DUVEN</h2>
+          <p>Construction year: 2022<br />Module area: 94 m²</p>
+        </li>
+        <li class="portfolio-items modular-filter">
+          <img
+            src="/panmodull/assets/10023-CCkGLMXr.jpg"
+            alt=""
+            width="600px"
+            height="auto"
+          />
+          <h2>MODULAR HOUSE IN VELP</h2>
+          <p>Construction year: 2023<br />Area in axes: 43 m²</p>
+        </li>
+        <li class="portfolio-items frame-filter">
+          <img
+            src="/panmodull/assets/10024-xTogmVEQ.jpg"
+            alt=""
+            width="600px"
+            height="auto"
+          />
+          <h2>TIMBER FRAME HOUSE IN ZHYTOMYR</h2>
+          <p>Construction year: 2024<br />Area in axes: 140 m²</p>
+        </li>
+      </ul>
     </section>
 
     <footer class="footer" id="footer">
   <div class="footer-container">
     <div class="footer-nav">
-      <p class="footer-nav-a">KONTAKT</p>
+      <p class="footer-nav-a">CONTACT</p>
       <ul class="link">
         <li>
           <a href="tel:+48793791666" class="p-link">+48 793 791 666</a>
@@ -193,24 +173,24 @@
         </li>
       </ul>
       <p class="p-link">
-        Świętego Józefa 7A, Magnice, 55-040 Kobierzyce, Polska
+        Świętego Józefa 7A, Magnice, 55-040 Kobierzyce, Poland
       </p>
     </div>
 
     <div class="footer-nav">
-      <p class="footer-nav-a">PROJEKTY</p>
+      <p class="footer-nav-a">PROJECTS</p>
       <ul class="link">
         <li>
-          <a class="p-link" href="portfolio.html">Portfolio</a>
+          <a class="p-link" href="portfolio_en.html">Portfolio</a>
         </li>
-        <li><a class="p-link" href="gallery.html">Galeria</a></li>
+        <li><a class="p-link" href="gallery_en.html">Gallery</a></li>
       </ul>
     </div>
 
     <div class="footer-nav">
-      <p class="footer-nav-a">INFORMACJE</p>
+      <p class="footer-nav-a">INFORMATION</p>
       <ul class="link">
-        <li><a class="p-link" href="faq.html">FAQ</a></li>
+        <li><a class="p-link" href="faq_en.html">FAQ</a></li>
       </ul>
     </div>
 
@@ -282,7 +262,7 @@
     </div>
 
     <div class="footer-nav">
-      <p href="" class="footer-nav-a">INFORMACJE PRAWNE</p>
+      <p href="" class="footer-nav-a">LEGAL INFORMATION</p>
       <ul class="link">
         <li><p class="p-link">NIP:8961646084</p></li>
         <li><p class="p-link">REGON:540257471</p></li>
