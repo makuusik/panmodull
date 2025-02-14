@@ -142,3 +142,14 @@ document.addEventListener('DOMContentLoaded', () => {
     container.scrollLeft -= 1;
   }, 100);
 });
+window.scrollGallery = direction => {
+  if (!container) return;
+  const scrollAmount = container.clientWidth * 0.5;
+  container.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth',
+  });
+  setTimeout(updateImageOpacity, 300); // Затримка для анімації
+};
+container.addEventListener('scroll', updateImageOpacity);
+window.addEventListener('resize', updateImageOpacity);
