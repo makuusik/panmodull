@@ -121,6 +121,9 @@ a {
 }
 
 @media (min-width: 769px) {
+  header {
+    height: 100%;
+  }
   .dropdown-menu {
     position: absolute;
     top: 45px;
@@ -176,7 +179,7 @@ a {
     opacity: 0;
     transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
     gap: 0;
-    max-height: 100vh;
+    max-height: 100%;
   }
 
   .nav-links.open {
