@@ -261,6 +261,8 @@ p {
     flex-direction: row;
     scroll-snap-type: x mandatory;
     gap: 3vw;
+    scroll-behavior: smooth; /* Зменшує різкість прокрутки */
+    scrollbar-width: thin; /* Для Firefox */
   }
   .scroll-images img {
     scroll-snap-align: center;

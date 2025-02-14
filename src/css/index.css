@@ -506,6 +506,8 @@ img {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; /* Зменшує різкість прокрутки */
+    scrollbar-width: thin; /* Для Firefox */
     gap: 2px;
     padding: 0;
   }
