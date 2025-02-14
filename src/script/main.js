@@ -12,12 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-document.addEventListener('DOMContentLoaded', function () {
-  const imageGrid = document.querySelector('.image-grid');
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.image-grid');
   const images = document.querySelectorAll('.image-wrapper');
 
   function updateImageOpacity() {
-    const gridRect = imageGrid.getBoundingClientRect();
+    if (window.innerWidth > 768) {
+      images.forEach(image => (image.style.opacity = 1));
+      return;
+    }
+
+    const gridRect = container.getBoundingClientRect();
     const gridCenter = gridRect.left + gridRect.width / 2;
 
     images.forEach(image => {
@@ -26,17 +31,40 @@ document.addEventListener('DOMContentLoaded', function () {
       const distance = Math.abs(gridCenter - imageCenter);
       const maxDistance = gridRect.width / 2;
 
-      // Обчислення прозорості залежно від відстані
       let opacity = Math.max(0.3, 1 - distance / maxDistance);
       image.style.opacity = opacity;
     });
   }
 
-  imageGrid.addEventListener('scroll', updateImageOpacity);
+  window.scrollGallery = direction => {
+    if (!container) return;
+    const scrollAmount = container.clientWidth * 0.5;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+    setTimeout(updateImageOpacity, 300); // Затримка для анімації
+  };
+
+  // Оновлюємо opacity при завантаженні
+  setTimeout(() => {
+    container.scrollLeft += 1;
+    container.scrollLeft -= 1;
+    updateImageOpacity();
+  }, 100);
+
+  container.addEventListener('scroll', updateImageOpacity);
   window.addEventListener('resize', updateImageOpacity);
 
-  updateImageOpacity();
+  // Виправлення проблеми з кнопками на мобільних
+  container.addEventListener('touchstart', () =>
+    setTimeout(updateImageOpacity, 50)
+  );
+  container.addEventListener('mousedown', () =>
+    setTimeout(updateImageOpacity, 50)
+  );
 });
+
 window.onload = function () {
   window.scrollGallery = function (direction) {
     const container = document.querySelector('.image-grid');
@@ -114,20 +142,3 @@ document.addEventListener('DOMContentLoaded', () => {
     container.scrollLeft -= 1;
   }, 100);
 });
-window.onload = function () {
-  const container = document.querySelector('.image-grid');
-
-  // Ініціалізуємо прокрутку, щоб браузер "розбудив" скролл
-  container.scrollLeft = 1;
-  setTimeout(() => {
-    container.scrollLeft = 0;
-  }, 50);
-
-  window.scrollGallery = function (direction) {
-    const scrollAmount = container.clientWidth * 0.5;
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth',
-    });
-  };
-};
