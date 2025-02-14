@@ -122,12 +122,14 @@ window.onload = function () {
     });
   };
 };
-document.addEventListener('DOMContentLoaded', function () {
+window.scrollGallery = function (direction) {
   const container = document.querySelector('.image-grid');
+  const scrollAmount = container.clientWidth * 0.5;
 
-  // Додаємо обробник подій, щоб кнопки працювали відразу
-  container.addEventListener('touchstart', function () {
-    container.scrollLeft += 1;
-    container.scrollLeft -= 1;
-  });
-});
+  setTimeout(() => {
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+  }, 100);
+};
