@@ -76,10 +76,19 @@ function generateHouseBlocksForAllGrids(ranges, jsonData) {
       if (i === 14) continue; // Пропускаємо 14
 
       let title = '';
-      if (i >= 17 && i <= 38) title = `DOM MODUŁOWY MH-${i}`;
-      else if (i >= 40 && i <= 43) title = `BIURO MODUŁOWE MH-${i}`;
-      else if (i >= 44 && i <= 46) title = `SAUNA MODUŁOWA MH-${i}`;
-      else if (i >= 7 && i <= 16) title = `DOMEK MODUŁOWY MH-${i}`;
+      const isEnglish = window.location.href.includes('_en');
+
+      if (i >= 17 && i <= 38) {
+        title = isEnglish ? `MODULAR HOUSE MH-${i}` : `DOM MODUŁOWY MH-${i}`;
+      } else if (i >= 40 && i <= 43) {
+        title = isEnglish ? `MODULAR OFFICE MH-${i}` : `BIURO MODUŁOWE MH-${i}`;
+      } else if (i >= 44 && i <= 46) {
+        title = isEnglish ? `MODULAR SAUNA MH-${i}` : `SAUNA MODUŁOWA MH-${i}`;
+      } else if (i >= 7 && i <= 16) {
+        title = isEnglish
+          ? `MODULAR COTTAGE MH-${i}`
+          : `DOMEK MODUŁOWY MH-${i}`;
+      }
 
       let shortInfo = 'Brak opisu';
       if (jsonData && Array.isArray(jsonData)) {
@@ -153,7 +162,10 @@ const ranges = [
   [7, 16], // Для четвертого options-grid
 ];
 
-fetch('updated_data.json') // Змініть шлях, якщо JSON у іншому місці
+const isEnglish = window.location.href.includes('_en');
+const jsonFile = isEnglish ? 'updated_data_en.json' : 'updated_data.json';
+
+fetch(jsonFile) // Вибір JSON залежно від мови
   .then(response => response.json())
   .then(jsonData => {
     generateHouseBlocksForAllGrids(ranges, jsonData);
@@ -161,8 +173,10 @@ fetch('updated_data.json') // Змініть шлях, якщо JSON у іншо
   .catch(error => console.error('Помилка завантаження JSON:', error));
 
 function openPage(pageNumber) {
-  window.location.href = `content.html?page=${pageNumber}`;
+  const pageUrl = isEnglish
+    ? `content_en.html?page=${pageNumber}`
+    : `content.html?page=${pageNumber}`;
+  window.location.href = pageUrl;
 }
-window.openPage = function (pageNumber) {
-  window.location.href = `content.html?page=${pageNumber}`;
-};
+
+window.openPage = openPage;

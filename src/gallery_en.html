@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./img/media/icons/Panmodul.svg"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./img/media/icons/Panmodul white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panmodul</title>
+    <link rel="stylesheet" href="./css/gallery.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <load src="./partials/header_en.html" />
+
+    <section class="section section-hero">
+      <div class="hero-container">
+        <h1 class="hero-h1">VIDEO OF THE PROJECT</h1>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-container">
+        <ul class="gallery-list">
+          <li class="gallery-item">
+            <div class="gallery-item-container vertical">
+              <p>
+                A residential modular home for our client's parents, featuring
+                an interior finish made of furniture-grade plywood, combines
+                style and durability. This material choice creates a cozy
+                atmosphere while ensuring both resilience and eco-friendliness
+                of the interior.
+              </p>
+
+              <video
+                width="500px"
+                height="auto"
+                controls
+                poster="./videos/1.jpg"
+                muted
+                playsinline
+                autoplay
+              >
+                <source
+                  src="./videos/video-modul-house-kitchen.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </li>
+          <li class="gallery-item">
+            <div class="gallery-item-container vertical">
+              <video
+                width="500px"
+                height="auto"
+                controls
+                poster="./videos/2.jpg"
+                muted
+                playsinline
+                autoplay
+              >
+                <source
+                  src="./videos/video-modul-house-inside.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <p>
+                A residential modular home with an area of 80 m², designed for
+                year-round use. Room layout: living room, kitchen, 2-3 bedrooms,
+                bathroom. Interior finishing: drywall for painting, laminated
+                panels, built-in lighting. Thermal insulation, ventilation,
+                terrace.
+              </p>
+            </div>
+          </li>
+          <li class="gallery-item">
+            <div class="gallery-item-container vertical">
+              <p>
+                A residential modular home for our client's parents, made with
+                interior finishing from furniture-grade plywood, combines style
+                and durability. This choice of material creates a cozy
+                atmosphere while ensuring both resilience and eco-friendliness
+                of the interior.
+              </p>
+
+              <video
+                width="500px"
+                height="auto"
+                controls
+                poster="./videos/3.jpg"
+                muted
+                playsinline
+                autoplay
+              >
+                <source src="./videos/3.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <load src="./partials/footer_en.html" />
+    <script type="module" src="/script/header_script.js"></script>
+    <script type="module" src="/script/gallery.js"></script>
+  </body>
+</html>

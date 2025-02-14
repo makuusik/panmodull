@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let opacity = Math.min(scrollTop / 300, 0.8); // Обмежуємо прозорість до 0.8
 
     navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-
-    if (dropdownMenu) {
-      dropdownMenu.style.backgroundColor = `transparent`; // Робимо дропдаун прозорим відповідно до скролу
-    }
+    dropdownMenu.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
   }
 
   // Викликаємо функцію при завантаженні сторінки для врахування поточного прокрутки
@@ -120,3 +117,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+function switchLanguage(toEnglish) {
+  let currentUrl = window.location.href;
+  let newUrl;
+
+  if (toEnglish) {
+    if (currentUrl.includes('_en')) {
+      return; // Вже англійська версія, нічого не робимо
+    }
+    newUrl = currentUrl.replace(/(\.\w+)?$/, '_en$1');
+  } else {
+    if (!currentUrl.includes('_en')) {
+      return; // Вже базова версія, нічого не робимо
+    }
+    newUrl = currentUrl.replace('_en', '');
+  }
+
+  window.location.href = newUrl;
+}
+
+document
+  .querySelector('.language button:first-child')
+  .addEventListener('click', function () {
+    switchLanguage(false);
+  });
+
+document
+  .querySelector('.language button:last-child')
+  .addEventListener('click', function () {
+    switchLanguage(true);
+  });

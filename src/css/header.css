@@ -15,6 +15,7 @@
   background: rgba(0, 0, 0, 0); /* Повністю прозорий */
   box-sizing: border-box;
   transition: background-color 0.3s ease-in-out;
+  font-family: 'Roboto', sans-serif;
 }
 
 .menu-toggle {
@@ -101,6 +102,26 @@ a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   display: block;
+}
+.language {
+  margin-left: auto;
+  margin-right: 20px;
+  text-align: center;
+  align-self: flex-end;
+}
+.language button {
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+  padding: 0 10px;
+}
+.language button:hover {
+  background-color: black;
+  border: 1px solid black;
 }
 @media (min-width: 769px) {
   .dropdown-menu {

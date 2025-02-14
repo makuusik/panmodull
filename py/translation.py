@@ -1,51 +1,59 @@
 import json
-from deep_translator import GoogleTranslator
+import time
+from deepl import Translator
 from tqdm import tqdm
 
-translator = GoogleTranslator(source="uk", target="pl")
+# Вставте ваш API-ключ DeepL тут
+DEEPL_API_KEY = "f71406f3-bdc5-413f-bb57-79140bc32536:fx"
 
-def translate_batch_texts(texts):
-    """Перекладає список текстів через GoogleTranslator batch."""
-    clean_texts = [text if text.strip() else "" for text in texts]  # Уникнення пустих рядків
-    try:
-        return translator.translate_batch(clean_texts)
-    except Exception as e:
-        print(f"❌ Помилка перекладу: {e}")
-        return texts  # Якщо помилка, повертаємо оригінал
+translator = Translator(DEEPL_API_KEY)
+
+def translate_batch_texts(texts, source_lang="PL", target_lang="EN-US"):
+    """Перекладає список текстів через DeepL API."""
+    translated_texts = []
+    
+    for text in tqdm(texts, desc="🔄 Переклад"):
+        if not text.strip():
+            translated_texts.append("")  # Пропускаємо пусті рядки
+            continue
+        
+        try:
+            translation = translator.translate_text(text, source_lang=source_lang, target_lang=target_lang)
+            translated_texts.append(translation.text)
+            time.sleep(0.2)  # Запобігання перевищенню ліміту запитів
+        except Exception as e:
+            print(f"❌ Помилка перекладу: {e}")
+            translated_texts.append(text)  # Якщо помилка, повертаємо оригінал
+
+    return translated_texts
 
 # Завантаження JSON
-with open("modular_houses_data.json", "r", encoding="utf-8") as file:
+with open("updated_data.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
-# Переклад заголовків
+# Переклад заголовків та описів
 titles = [entry["title"] for entry in data]
+shortinfo = [entry["short-info"] for entry in data]
 descriptions = [desc for entry in data for desc in entry["descriptions"]]
-details = [detail for entry in data for section in entry["details"] for detail in section]
 
-print("🔄 Переклад заголовків...")
-translated_titles = translate_batch_texts(list(tqdm(titles, desc="📌 Заголовки")))
+print("📌 Переклад заголовків...")
+translated_titles = translate_batch_texts(titles)
 
-print("🔄 Переклад описів...")
-translated_descriptions = translate_batch_texts(list(tqdm(descriptions, desc="📜 Опис")))
-
-print("🔄 Переклад деталей...")
-translated_details = translate_batch_texts(list(tqdm(details, desc="📋 Деталі")))
+print("📜 Переклад описів...")
+translated_descriptions = translate_batch_texts(descriptions)
+print("📜 Переклад которкої інформації...")
+translated_shortinfo = translate_batch_texts(shortinfo)
 
 # Запис назад у структуру JSON
 desc_index = 0
-detail_index = 0
 for i, entry in enumerate(data):
     entry["title"] = translated_titles[i]
     entry["descriptions"] = translated_descriptions[desc_index:desc_index + len(entry["descriptions"])]
     desc_index += len(entry["descriptions"])
-
-    for j in range(len(entry["details"])):
-        length = len(entry["details"][j])
-        entry["details"][j] = translated_details[detail_index:detail_index + length]
-        detail_index += length
+    entry["short-info"] = translated_shortinfo[i]
 
 # Збереження результату
-with open("modular_houses_data_pl.json", "w", encoding="utf-8") as file:
+with open("updated_data_en.json", "w", encoding="utf-8") as file:
     json.dump(data, file, indent=4, ensure_ascii=False)
 
-print("✅ Переклад завершено! Збережено у modular_houses_data_pl.json")
+print("✅ Переклад завершено! Збережено у updated_data_en.json")
