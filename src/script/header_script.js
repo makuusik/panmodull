@@ -160,3 +160,14 @@ document
   .addEventListener('click', function () {
     switchLanguage(true);
   });
+document
+  .querySelector('.language-phone button:first-child')
+  .addEventListener('click', function () {
+    switchLanguage(false);
+  });
+
+document
+  .querySelector('.language-phone button:last-child')
+  .addEventListener('click', function () {
+    switchLanguage(true);
+  });

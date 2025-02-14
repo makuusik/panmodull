@@ -127,6 +127,7 @@ h1 {
   gap: 40px;
   justify-content: center; /* Центрує останній ряд */
   grid-column: 1 / -1; /* Розтягує цей ряд на всю ширину */
+  padding-top: 100px;
 }
 
 .options-grid .row-last > button {

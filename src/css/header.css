@@ -119,10 +119,7 @@ a {
   transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
   padding: 0 10px;
 }
-.language button:hover {
-  background-color: black;
-  border: 1px solid black;
-}
+
 @media (min-width: 769px) {
   .dropdown-menu {
     position: absolute;
@@ -150,6 +147,13 @@ a {
     opacity: 1;
     border-top-width: 1px; /* Плавне з'явлення верхньої границі */
     border-bottom-width: 1px; /* Плавне з'явлення нижньої границі */
+  }
+  .language button:hover {
+    background-color: black;
+    border: 1px solid black;
+  }
+  .language-phone {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -238,6 +242,8 @@ a {
     align-items: end;
   }
   .nav-links .nav-option > a {
+    max-height: 13vh;
+    box-sizing: border-box;
     font-size: 20px;
     font-weight: 200;
     padding: 7vh;
@@ -287,5 +293,27 @@ a {
     border-bottom: 1px solid rgb(100, 100, 100);
     max-height: 200px;
     opacity: 1;
+  }
+  .language {
+    display: none;
+  }
+  .language-phone {
+    display: flex;
+    flex-direction: row;
+  }
+  .language-phone button {
+    all: unset;
+    border: none;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 7vw 20vw;
+    color: white;
+    background-color: transparent;
+  }
+  hr {
+    width: 100%;
+    border: 0.1px solid rgb(100, 100, 100);
   }
 }
