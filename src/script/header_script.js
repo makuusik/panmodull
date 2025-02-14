@@ -121,16 +121,29 @@ function switchLanguage(toEnglish) {
   let currentUrl = window.location.href;
   let newUrl;
 
+  // Перевіряємо, чи ми на кореневій сторінці
+  let isRootPage =
+    currentUrl.endsWith('/panmodull/') ||
+    currentUrl.endsWith('/panmodull/index.html');
+
   if (toEnglish) {
     if (currentUrl.includes('_en')) {
       return; // Вже англійська версія, нічого не робимо
     }
-    newUrl = currentUrl.replace(/(\.\w+)?$/, '_en$1');
+    if (isRootPage) {
+      newUrl = 'https://makuusik.github.io/panmodull/index_en.html';
+    } else {
+      newUrl = currentUrl.replace(/(\.\w+)?$/, '_en$1');
+    }
   } else {
     if (!currentUrl.includes('_en')) {
       return; // Вже базова версія, нічого не робимо
     }
-    newUrl = currentUrl.replace('_en', '');
+    if (isRootPage) {
+      newUrl = 'https://makuusik.github.io/panmodull/index.html';
+    } else {
+      newUrl = currentUrl.replace('_en', '');
+    }
   }
 
   window.location.href = newUrl;
