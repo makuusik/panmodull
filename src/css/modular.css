@@ -175,11 +175,6 @@ h1 {
   opacity: 1; /* Плавно з'являється */
 }
 
-.options-grid button:hover {
-  cursor: pointer;
-  scale: 1.1;
-}
-
 .options-grid.active {
   display: grid;
 }
@@ -211,6 +206,10 @@ h1 {
 }
 
 @media (min-width: 769px) {
+  .options-grid button:hover {
+    cursor: pointer;
+    scale: 1.1;
+  }
   :is(.row-last, .options-grid) h2 {
     display: flex;
     align-items: center; /* Центрує текст по вертикалі */
