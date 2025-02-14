@@ -93,18 +93,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const imageGrid = document.querySelector('.image-grid');
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.image-grid');
   const images = document.querySelectorAll('.image-wrapper');
 
   function updateImageOpacity() {
     if (window.innerWidth > 768) {
-      // Якщо це НЕ телефон, скидаємо прозорість і виходимо
       images.forEach(image => (image.style.opacity = 1));
       return;
     }
 
-    const gridRect = imageGrid.getBoundingClientRect();
+    const gridRect = container.getBoundingClientRect();
     const gridCenter = gridRect.left + gridRect.width / 2;
 
     images.forEach(image => {
@@ -118,10 +117,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  imageGrid.addEventListener('scroll', updateImageOpacity);
+  window.scrollGallery = direction => {
+    if (!container) return;
+    const scrollAmount = container.clientWidth * 0.5;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+    setTimeout(updateImageOpacity, 300); // Затримка для оновлення прозорості після прокрутки
+  };
+
+  // Оновлення прозорості після завантаження
+  setTimeout(() => {
+    container.scrollLeft += 1;
+    container.scrollLeft -= 1;
+    updateImageOpacity();
+  }, 100);
+
+  container.addEventListener('scroll', updateImageOpacity);
   window.addEventListener('resize', updateImageOpacity);
 
-  updateImageOpacity();
+  // Виправлення проблеми з кнопками на мобільних
+  container.addEventListener('touchstart', () =>
+    setTimeout(updateImageOpacity, 50)
+  );
+  container.addEventListener('mousedown', () =>
+    setTimeout(updateImageOpacity, 50)
+  );
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -142,14 +164,3 @@ document.addEventListener('DOMContentLoaded', () => {
     container.scrollLeft -= 1;
   }, 100);
 });
-window.scrollGallery = direction => {
-  if (!container) return;
-  const scrollAmount = container.clientWidth * 0.5;
-  container.scrollBy({
-    left: direction * scrollAmount,
-    behavior: 'smooth',
-  });
-  setTimeout(updateImageOpacity, 300); // Затримка для анімації
-};
-container.addEventListener('scroll', updateImageOpacity);
-window.addEventListener('resize', updateImageOpacity);
