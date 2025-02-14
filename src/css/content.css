@@ -75,9 +75,10 @@ p {
   cursor: pointer;
   transition: transform 0.3s;
 }
-
-.scroll-images img:hover {
-  transform: scale(1.05);
+@media (min-width: 768px) {
+  .scroll-images img:hover {
+    transform: scale(1.05);
+  }
 }
 
 /* Велике фото */
@@ -145,21 +146,6 @@ p {
   border: 1px solid rgb(100, 100, 100);
 }
 
-.details p {
-  display: block;
-  height: 0;
-  list-style: none;
-  padding: 0 50px;
-  opacity: 0;
-  width: 100%;
-  margin: 0;
-  line-height: 1;
-  font-size: 16px;
-  font-weight: 200;
-  overflow: hidden; /* Щоб приховати вміст, коли він не відкритий */
-  transition: opacity 0.3s ease-out, padding 0.5s ease-out;
-}
-
 .details {
   width: 100%;
   padding: 0;
@@ -175,6 +161,22 @@ p {
   border: 1px solid rgb(100, 100, 100);
   height: fit-content;
 }
+.details p {
+  display: block;
+  height: 0;
+  list-style: none;
+  padding: 0 50px;
+  opacity: 0;
+  width: 100%;
+  margin: 0;
+  line-height: 1;
+  font-size: 16px;
+  font-weight: 200;
+  max-height: 0;
+  overflow: hidden; /* Щоб приховати вміст, коли він не відкритий */
+  transition: opacity 0.3s ease-out, max-height 0.3s ease-out,
+    padding 0.5s ease-out;
+}
 
 .details[open] p {
   border-top: 1px solid rgb(83, 83, 83);
@@ -184,6 +186,7 @@ p {
   padding: 15px 50px;
   display: block;
   width: 100%;
+  max-height: 100%;
   opacity: 1; /* Відображення елемента */
   height: auto; /* Висота налаштовується автоматично */
 }
@@ -205,6 +208,14 @@ p {
 
 /* Адаптивність */
 @media (max-width: 768px) {
+  html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
   .container {
     flex-direction: column;
     align-items: center;
@@ -225,6 +236,43 @@ p {
   .data-table {
     width: 100%;
     max-width: 400px;
+  }
+  .wrapper-details {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3vw;
+    gap: 0;
+  }
+  .details-container {
+    width: auto;
+    margin-bottom: 5vh;
+  }
+  .text-box h2 {
+    margin: 2vw 0;
+  }
+  .text-box p {
+    font-size: 16px;
+  }
+  .main-image {
+    display: none;
+  }
+  .scroll-images {
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    gap: 3vw;
+  }
+  .scroll-images img {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+  }
+  .wrapper {
+    padding: 4vw 4vw;
   }
 }
 .big {

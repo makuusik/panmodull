@@ -140,3 +140,38 @@ document.querySelectorAll('.details-container summary').forEach(summary => {
     }
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const imageGrid = document.querySelector('.scroll-images');
+  const images = document.querySelectorAll('img');
+
+  function updateImageOpacity() {
+    const gridRect = imageGrid.getBoundingClientRect();
+    const gridCenter = gridRect.left + gridRect.width / 2;
+
+    images.forEach(image => {
+      const rect = image.getBoundingClientRect();
+      const imageCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(gridCenter - imageCenter);
+      const maxDistance = gridRect.width / 2;
+
+      // Обчислення прозорості залежно від відстані
+      let opacity = Math.max(0.3, 1 - distance / maxDistance);
+      image.style.opacity = opacity;
+    });
+  }
+
+  imageGrid.addEventListener('scroll', updateImageOpacity);
+  window.addEventListener('resize', updateImageOpacity);
+
+  updateImageOpacity();
+});
+window.onload = function () {
+  window.scrollGallery = function (direction) {
+    const container = document.querySelector('.scroll-images');
+    const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+};

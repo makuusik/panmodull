@@ -55,6 +55,9 @@ a {
   display: flex;
   justify-content: center;
 }
+.p-link svg {
+  margin-right: 2vw;
+}
 @media (max-width: 768px) {
   .footer-container {
     display: flex;
@@ -75,5 +78,8 @@ a {
   }
   .footer-nav {
     width: 100%;
+  }
+  .link svg {
+    fill: white;
   }
 }
