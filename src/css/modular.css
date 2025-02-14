@@ -263,6 +263,7 @@ ul {
   }
   .button-wrapper {
     width: 100vw;
+    margin: 4vh 0;
   }
   .button-container {
     display: flex;
@@ -284,7 +285,7 @@ ul {
     display: none;
     box-sizing: border-box;
     flex-direction: column;
-    gap: 40px; /* Без відступів */
+    gap: 1vh;
     width: 100%;
     max-width: 100%; /* Щоб не виходило за межі */
     margin: 0;
