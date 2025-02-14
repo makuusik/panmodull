@@ -503,7 +503,7 @@ img {
   }
   .image-grid {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth; /* Зменшує різкість прокрутки */
     scrollbar-width: thin; /* Для Firefox */
