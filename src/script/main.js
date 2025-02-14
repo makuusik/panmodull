@@ -107,3 +107,20 @@ window.onload = function () {
     });
   };
 };
+window.onload = function () {
+  const container = document.querySelector('.image-grid');
+
+  // Ініціалізуємо прокрутку, щоб браузер "розбудив" скролл
+  container.scrollLeft = 1;
+  setTimeout(() => {
+    container.scrollLeft = 0;
+  }, 50);
+
+  window.scrollGallery = function (direction) {
+    const scrollAmount = container.clientWidth * 0.5;
+    container.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+};
