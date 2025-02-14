@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
     let opacity = Math.min(scrollTop / 300, 0.8); // Обмежуємо прозорість до 0.8
 
     navbar.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
-    dropdownMenu.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+    if (window.innerWidth > 768) {
+      dropdownMenu.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+    } else {
+      dropdownMenu.style.backgroundColor = ''; // Видаляємо зміну для мобільних
+    }
   }
 
   // Викликаємо функцію при завантаженні сторінки для врахування поточного прокрутки
