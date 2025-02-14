@@ -233,21 +233,20 @@ img {
   display: block;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Три колонки */
-  grid-template-rows: repeat(2, auto); /* Два рядки */
-  gap: 10px; /* Відступ між великою картинкою і сіткою */
-  align-items: start;
-}
-.image-wrapper {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  height: 100%;
-}
-
 @media (min-width: 769px) {
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Три колонки */
+    grid-template-rows: repeat(2, auto); /* Два рядки */
+    gap: 10px; /* Відступ між великою картинкою і сіткою */
+    align-items: start;
+  }
+  .image-wrapper {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 100%;
+  }
   .scroll-btn {
     display: none;
   }
@@ -508,8 +507,10 @@ img {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth; /* Зменшує різкість прокрутки */
     scrollbar-width: thin; /* Для Firefox */
+    -webkit-overflow-scrolling: touch;
     gap: 2px;
     padding: 0;
+    white-space: nowrap;
   }
 
   .image-wrapper {
