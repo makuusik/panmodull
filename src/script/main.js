@@ -96,17 +96,24 @@ document.addEventListener('DOMContentLoaded', function () {
   updateImageOpacity();
 });
 
-window.onload = function () {
-  window.scrollGallery = function (direction) {
-    const container = document.querySelector('.image-grid');
-    const scrollAmount = container.clientWidth * 0.5;
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.image-grid');
 
+  window.scrollGallery = direction => {
+    if (!container) return;
+    const scrollAmount = container.clientWidth * 0.5;
     container.scrollBy({
       left: direction * scrollAmount,
       behavior: 'smooth',
     });
   };
-};
+
+  // Форсуємо оновлення стану після завантаження
+  setTimeout(() => {
+    container.scrollLeft += 1;
+    container.scrollLeft -= 1;
+  }, 100);
+});
 window.onload = function () {
   const container = document.querySelector('.image-grid');
 
