@@ -155,6 +155,9 @@ a {
   .language-phone {
     display: none;
   }
+  hr {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   * {
