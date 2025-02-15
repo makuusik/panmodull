@@ -136,6 +136,8 @@ function switchLanguage(toEnglish) {
     }
     if (isRootPage) {
       newUrl = 'https://makuusik.github.io/panmodull/index_en.html';
+    } else if (currentUrl.includes('content')) {
+      newUrl = currentUrl.replace('content', 'content_en');
     } else {
       newUrl = currentUrl.replace(/(\.\w+)?$/, '_en$1');
     }
@@ -145,6 +147,8 @@ function switchLanguage(toEnglish) {
     }
     if (isRootPage) {
       newUrl = 'https://makuusik.github.io/panmodull/index.html';
+    } else if (currentUrl.includes('content_en')) {
+      newUrl = currentUrl.replace('content_en', 'content');
     } else {
       newUrl = currentUrl.replace('_en', '');
     }

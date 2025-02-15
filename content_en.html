@@ -1,0 +1,429 @@
+html
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="./img/media/icons/Panmodul.svg"
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+    />
+    <link
+      href="./img/media/icons/Panmodul white.svg"
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+    />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Panmodul</title>
+    <link href="./css/content.css" rel="stylesheet" />
+    <link href="./css/header.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <load src="./partials/header_en.html"></load>
+    <section class="hero">
+      <h1 id="title"></h1>
+    </section>
+    <section class="main-info">
+      <div class="wrapper">
+        <div class="container">
+          <div class="scroll-images">
+            <img class="image1" onclick="changeMainImage(this.src)" />
+            <img id="image2" onclick="changeMainImage(this.src)" />
+          </div>
+          <img class="main-image image1" id="main-image" />
+          <table class="data-table" id="table-body"></table>
+        </div>
+        <div class="text-box">
+          <h2 id="title2"></h2>
+          <p id="text"></p>
+        </div>
+      </div>
+    </section>
+    <section class="details">
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1">
+          <div class="details">
+            <summary>Standard</summary>
+            <p>Insulated bases: 150 mm</p>
+            <p>External wall insulation: 150 mm</p>
+            <p>Roof insulation: 150 mm</p>
+            <p>Fasada: metal</p>
+            <p>Interior finish: pine paneling</p>
+          </div>
+          <div class="details">
+            <summary>1. base structure (floor)</summary>
+            <p><strong>FLOORING (linoleum)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Plate - 45x145 mm</p>
+            <p>3. insulation - 150 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. linoleum</p>
+            <img alt="" src="./img/details/10005.png" width="200px" />
+            <p><strong>FLOOR (tile)</strong></p>
+            <p>1. OSB - 10 mm</p>
+            <p>2. Plate - 45x145 mm</p>
+            <p>3. insulation - 150 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. fiber cement board 2 layers - 20 mm</p>
+            <p>6. waterproofing</p>
+            <p>7. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details/10006.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2 External wall construction</summary>
+            <p><strong>WALL (external)</strong></p>
+            <p>1. matellofasad (color according to RAL)</p>
+            <p>2 Ventilation slot - 20x40 mm</p>
+            <p>3 Ventilation slot - 20x40 mm</p>
+            <p>4. wind protection</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. Plate - 45x145 mm</p>
+            <p>7. insulation - 150 mm</p>
+            <p>8. vapor barrier</p>
+            <p>9. OSB - 10 mm</p>
+            <p>10. rafter - 45x45 mm</p>
+            <p>11. painted valance (wainscoting)</p>
+            <img alt="" src="./img/details/10001.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3 Interior wall construction</summary>
+            <p><strong>INTERNAL WALL (bathroom)</strong></p>
+            <p>1. painted valance (wainscoting)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Plate - 45x95 mm</p>
+            <p>4. insulation - 100 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. waterproof GKL board</p>
+            <p>7. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details/10002.jpg" width="200px" />
+            <p><strong>INTERNAL WALL</strong></p>
+            <p>1. painted valance (wainscoting)</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. Plate - 45x95 mm</p>
+            <p>4. insulation - 100 mm</p>
+            <p>5. OSB-10 mm</p>
+            <p>6. painted valance (wainscoting)</p>
+            <img alt="" src="./img/details/10003.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. roof construction</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (color according to RAL)</p>
+            <p>2. rafter - 30x100 mm</p>
+            <p>3. ventilation bar - 45x45 mm</p>
+            <p>4. Membrane</p>
+            <p>5. insulation - 150 mm</p>
+            <p>6. Plate - 45x145 mm</p>
+            <p>7. vapor barrier</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. rafter - 45x45 mm</p>
+            <p>10. Falszbrus (boazeria)</p>
+            <img alt="" src="./img/details/10004.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. windows and doors</summary>
+            <p>
+              PVC windows WDS 5S, double glazing, accessories (Turkey), color -.
+              white, PVC doors
+            </p>
+          </div>
+          <div class="details">
+            <summary>6 Electricity</summary>
+            <p>Electric set (China, Ukraine), without external lighting</p>
+          </div>
+          <div class="details">
+            <summary>7 Engineering</summary>
+            <p>
+              A set of pipes for sewer and water supply, as well as distribution
+              and connection (taps)
+            </p>
+          </div>
+        </div>
+        <div class="details-container" id="details-container-2">
+          <div class="details">
+            <summary>Premium</summary>
+            <p>Base insulation: - 200 mm</p>
+            <p>External wall insulation: - 250 mm</p>
+            <p>Roof insulation: - 250 mm</p>
+            <p>Fasada: Termodeska</p>
+            <p>Interior finish: plasterboard</p>
+          </div>
+          <div class="details">
+            <summary>1. base structure (floor)</summary>
+            <p><strong>FLOORING (linoleum)</strong></p>
+            <p>1. laminated plywood - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. linoleum, laminate panels</p>
+            <img alt="" src="./img/details/10005.png" width="200px" />
+            <p><strong>FLOOR (tiles)</strong></p>
+            <p>1. laminated plywood - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. fiber cement board 2 layers - 20 mm</p>
+            <p>6. waterproofing</p>
+            <p>7. ceramic tiles on adhesive</p>
+            <img alt="" src="./img/details/10006.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2 External wall construction</summary>
+            <p><strong>WALL (external)</strong></p>
+            <p>1. thermodesk (color according to RAL)</p>
+            <p>2 Ventilation slot - 20x40 mm</p>
+            <p>3 Ventilation slot - 20x40 mm</p>
+            <p>4. wind protection</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. insulation - 200 mm</p>
+            <p>7. Plate - 45x195 mm</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. vapor barrier</p>
+            <p>10. rafter - 45x45 mm</p>
+            <p>11. insulation - 50 mm</p>
+            <p>12. gypsum board</p>
+            <img alt="" src="./img/details/10007.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3 Interior wall construction</summary>
+            <p><strong>INTERNAL WALL (bathroom)</strong></p>
+            <p>1. gypsum board</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. insulation - 100 mm</p>
+            <p>4. Plate - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. waterproof gypsum board</p>
+            <p>7. ceramic tiles on adhesive</p>
+            <img alt="" src="./img/details/10008.jpg" width="200px" />
+            <p><strong>INTERNAL WALL</strong></p>
+            <p>1. gypsum board</p>
+            <p>2. OSB - 10 mm</p>
+            <p>3. insulation - 100 mm</p>
+            <p>4. Plate - 45x95 mm</p>
+            <p>5. OSB - 10 mm</p>
+            <p>6. gypsum board</p>
+            <img alt="" src="./img/details/10009.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. roof construction</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (color according to RAL), PVC membrane</p>
+            <p>2. rafter - 30x100 mm</p>
+            <p>3. Beam - 45x45 mm</p>
+            <p>4. Membrane</p>
+            <p>5. insulation - 200 mm</p>
+            <p>6. Plate - 45x195 mm</p>
+            <p>7. vapor barrier</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. Beam - 45x45 mm</p>
+            <p>10. insulation - 50 mm</p>
+            <p>11. gypsum board</p>
+            <img alt="" src="./img/details/10010.jpg" width="200px" />
+          </div>
+          <div class="details">
+            <summary>5. windows and doors</summary>
+            <p>
+              PVC windows WDS 7S, five-chambered double glazing, hardware
+              (Germany), color in the mass or lamination, PVC doors, membrane,
+              vapor barrier, PSUL tape
+            </p>
+          </div>
+          <div class="details">
+            <summary>6 Electricity</summary>
+            <p>
+              Electric set (Turkey, Germany), outdoor lighting, outdoor outlets
+            </p>
+          </div>
+          <div class="details">
+            <summary>7 Engineering</summary>
+            <p>
+              Set of pipes for sewer and water supply and distribution and
+              connection of connection of sanitary fittings
+            </p>
+          </div>
+          <div class="details">
+            <summary>8. hydraulics</summary>
+            <p>Shower enclosure 900x900 mm, washbasin, toilet, Grohe faucets</p>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1">
+          <div class="details">
+            <summary>Standard</summary>
+            <p>TO FILL</p>
+          </div>
+          <div class="details">
+            <summary>1. base structure (floor)</summary>
+            <p><strong>FLOORING (linoleum)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation material - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. linoleum</p>
+            <img alt="" src="./img/details_alt/10001.png" width="200px" />
+            <p><strong>FLOOR (tile)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation material - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. fiber cement board 2 layers - 20 mm</p>
+            <p>6. waterproofing</p>
+            <p>7. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details_alt/10002.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2 External wall construction</summary>
+            <p><strong>WALL (external)</strong></p>
+            <p>1. painted valance or metal facade (color according to RAL)</p>
+            <p>2. ventilation space - 20x40 mm</p>
+            <p>3. ventilation space - 20x40 mm</p>
+            <p>4. OSB - 10 mm</p>
+            <p>5. Membrana</p>
+            <p>6. insulation material - 150 mm</p>
+            <p>7. Plate - 45x145 mm</p>
+            <p>8. OSB - 10 mm</p>
+            <p>9. vapor barrier</p>
+            <p>10. insulation material - 50 mm</p>
+            <p>11. Beam - 45x45 mm</p>
+            <p>12. Membrane</p>
+            <p>13. painted valance (wainscoting)</p>
+            <img alt="" src="./img/details_alt/10003.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3 Interior wall construction</summary>
+            <p><strong>WALL (interior)</strong></p>
+            <p>1. falsebrus painted (wainscoting)</p>
+            <p>2. ventilation slot 45×45 mm</p>
+            <p>3. OSB 10 mm</p>
+            <p>4. insulation 100 mm</p>
+            <p>5. deska 45×95 mm</p>
+            <p>6. OSB 10 mm</p>
+            <p>7. Beam 45×45 mm</p>
+            <p>8. waterproof G-K board</p>
+            <p>9. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details_alt/10004.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. roof construction</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. PS 35 (color according to RAL)</p>
+            <p>2. 30×100 mm battens</p>
+            <p>3. Beam 45×45 mm</p>
+            <p>4. Membrane</p>
+            <p>5. insulation 150 mm</p>
+            <p>6. deska 45×145 mm</p>
+            <p>7. OSB 10 mm</p>
+            <p>8. vapor barrier</p>
+            <p>9. Beam 45×45 mm</p>
+            <p>10. wainscoting (falsbrus)</p>
+            <img alt="" src="./img/details_alt/10005.png" width="200px" />
+          </div>
+        </div>
+        <div class="details-container" id="details-container-2">
+          <div class="details">
+            <summary>Premium</summary>
+            <p>TO FILL</p>
+          </div>
+          <div class="details">
+            <summary>1. base structure (floor)</summary>
+            <p><strong>FLOORING (linoleum)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation material - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. OSB - 22 mm</p>
+            <p>6. linoleum</p>
+            <img alt="" src="./img/details_alt/10006.png" width="200px" />
+            <p><strong>FLOOR (tile)</strong></p>
+            <p>1. OSB - 18 mm</p>
+            <p>2. Plate - 45x195 mm</p>
+            <p>3. insulation material - 200 mm</p>
+            <p>4. vapor barrier</p>
+            <p>5. fiber cement board 2 layers - 20 mm</p>
+            <p>6. waterproofing</p>
+            <p>7. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details_alt/10007.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>2 External wall construction</summary>
+            <p><strong>WALL (external)</strong></p>
+            <p>1. thermodesk (color according to RAL)</p>
+            <p>2. ventilation space 20x40 mm</p>
+            <p>3. ventilation space 20x40 mm</p>
+            <p>4. Membrane</p>
+            <p>5 MFP board</p>
+            <p>6. insulation material - 200 mm</p>
+            <p>7. Plate - 45x195 mm</p>
+            <p>8. vapor barrier</p>
+            <p>9. Beam - 45x45 mm</p>
+            <p>10. insulation material - 50 mm</p>
+            <p>11. Membrane</p>
+            <p>12. gypsum board</p>
+            <img alt="" src="./img/details_alt/10008.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>3 Interior wall construction</summary>
+            <p><strong>WALL (interior)</strong></p>
+            <p>1. gypsum board</p>
+            <p>2. ventilation space 45x45 mm</p>
+            <p>3. OSB - 10 mm</p>
+            <p>4. insulation material - 100 mm</p>
+            <p>5. Plate - 45x95 mm</p>
+            <p>6. OSB - 10 mm</p>
+            <p>7. Beam - 45x45 mm</p>
+            <p>8. waterproof gypsum board</p>
+            <p>9. ceramic tile on adhesive</p>
+            <img alt="" src="./img/details_alt/10009.png" width="200px" />
+          </div>
+          <div class="details">
+            <summary>4. roof construction</summary>
+            <p><strong>DACH</strong></p>
+            <p>1. sheet PS 35 (color according to RAL)</p>
+            <p>2. 30x100 mm battens</p>
+            <p>3. Beam 45x45 mm</p>
+            <p>4. Membrane</p>
+            <p>5. insulation material - 200 mm</p>
+            <p>6. Plate - 45x195 mm</p>
+            <p>7. OSB - 10 mm</p>
+            <p>8. vapor barrier</p>
+            <p>9. Beam - 45x45 mm</p>
+            <p>10. insulation material - 50 mm</p>
+            <p>11. gypsum board</p>
+            <img alt="" src="./img/details_alt/10010.png" width="200px" />
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-details">
+        <div class="details-container" id="details-container-1">
+          <div class="details">
+            <summary>5. windows and exterior doors</summary>
+            <p>TO FILL</p>
+          </div>
+          <div class="details">
+            <summary>6. inne</summary>
+            <p>TO FILL</p>
+          </div>
+          <div class="details">
+            <summary>7. additional costs</summary>
+            <p>TO FILL</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <load src="./partials/footer_en.html"></load>
+    <script src="/script/content.js" type="module"></script>
+    <script src="/script//header_script.js" type="module"></script>
+  </body>
+</html>

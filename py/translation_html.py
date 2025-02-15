@@ -18,7 +18,7 @@ def translate_text(text):
         return text
 
 # Завантаження HTML файлу
-with open('faq.html', 'r', encoding='utf-8') as file:
+with open('content.html', 'r', encoding='utf-8') as file:
     html_content = file.read()
 
 # Використовуємо BeautifulSoup для парсингу HTML
@@ -34,7 +34,7 @@ for element in texts_to_translate:
         element.replace_with(translated)  # Заміняємо старий текст на перекладений
 
 # Збереження результату в новий HTML файл
-with open('faq_en.html', 'w', encoding='utf-8') as file:
+with open('content_en.html', 'w', encoding='utf-8') as file:
     file.write(str(soup))
 
 print("✅ Переклад завершено! Збережено у translated_file.html")

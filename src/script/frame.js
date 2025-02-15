@@ -37,16 +37,9 @@ buttons.forEach((button, index) => {
   });
 });
 
-fetch('updated_data.json') // Змініть шлях, якщо JSON у іншому місці
-  .then(response => response.json())
-  .then(jsonData => {
-    generateHouseBlocksForAllGrids(ranges, jsonData);
-  })
-  .catch(error => console.error('Помилка завантаження JSON:', error));
-
-function openPage(pageNumber) {
-  window.location.href = `content.html?page=${pageNumber}`;
-}
-window.openPage = function (pageNumber) {
-  window.location.href = `content.html?page=${pageNumber}`;
-};
+// function openPage(pageNumber) {
+//   window.location.href = `content.html?page=${pageNumber}`;
+// }
+// window.openPage = function (pageNumber) {
+//   window.location.href = `content.html?page=${pageNumber}`;
+// };

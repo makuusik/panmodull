@@ -11,7 +11,9 @@ function getPolishMonthWord(number) {
 async function loadData() {
   // Визначення змінних для div
   try {
-    const response = await fetch('updated_data.json'); // Завантаження JSON
+    const isEnglish = window.location.href.includes('_en');
+    const jsonFile = isEnglish ? 'updated_data_en.json' : 'updated_data.json';
+    const response = await fetch(jsonFile); // Завантаження JSON
     const data = await response.json();
 
     // Отримуємо номер сторінки з URL
@@ -62,16 +64,31 @@ async function loadData() {
       const tableBody = document.getElementById('table-body');
       tableBody.innerHTML = ''; // Очищення таблиці
 
-      const properties_list = [
-        'Powierzchnia',
-        'Powierzchnia mieszkalna',
-        'Rozmiar modułu',
-        'Wysokość',
-        'Sypialnie',
-        'Taras',
-        'Czas budowy',
-      ];
-      const units = ['m²', 'm²', 'm', 'm', '', 'm²', 'months'];
+      const isEnglish = window.location.href.includes('_en');
+
+      const properties_list = isEnglish
+        ? [
+            'Area',
+            'Living area',
+            'Module size',
+            'Height',
+            'Bedrooms',
+            'Terrace',
+            'Construction time',
+          ]
+        : [
+            'Powierzchnia',
+            'Powierzchnia mieszkalna',
+            'Rozmiar modułu',
+            'Wysokość',
+            'Sypialnie',
+            'Taras',
+            'Czas budowy',
+          ];
+
+      const units = isEnglish
+        ? ['m²', 'm²', 'm', 'm', '', 'm²', 'months']
+        : ['m²', 'm²', 'm', 'm', '', 'm²', 'miesiące'];
 
       pageData.characteristics.forEach((item, index) => {
         if (index < properties_list.length) {
@@ -156,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Обчислення прозорості залежно від відстані
       let opacity = Math.max(0.3, 1 - distance / maxDistance);
-      image.style.opacity = opacity;
+      if (window.matchMedia('(max-width: 769px)').matches) {
+        image.style.opacity = opacity;
+      }
     });
   }
 
