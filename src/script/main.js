@@ -107,25 +107,14 @@ window.onload = function () {
     });
   };
 };
-window.onload = function () {
-  const container = document.querySelector('.image-grid');
-
-  // Примусово оновлюємо scrollLeft
-  container.scrollLeft = 1;
-  container.scrollLeft = 0;
-
-  window.scrollGallery = function (direction) {
-    const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth',
-    });
-  };
-};
-
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.image-grid');
+
   if (container) {
+    // Примусово змушуємо контейнер ініціалізувати скрол
+    container.scrollLeft = 1;
+    container.scrollLeft = 0;
+
     // Додаємо стилі динамічно
     Object.assign(container.style, {
       display: 'flex',
@@ -133,17 +122,16 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollSnapType: 'x mandatory',
       scrollBehavior: 'smooth',
     });
-  }
-  window.scrollGallery = function (direction) {
-    const container = document.querySelector('.image-grid');
-    if (!container) return;
 
-    const scrollAmount = container.clientWidth * 0.5;
-    setTimeout(() => {
-      container.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth',
-      });
-    }, 100);
-  };
+    window.scrollGallery = function (direction) {
+      const scrollAmount = container.clientWidth * 0.5;
+
+      setTimeout(() => {
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth',
+        });
+      }, 50);
+    };
+  }
 });
