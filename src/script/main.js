@@ -122,7 +122,18 @@ window.onload = function () {
     });
   };
 };
+
 document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.image-grid');
+  if (container) {
+    // Додаємо стилі динамічно
+    Object.assign(container.style, {
+      display: 'flex',
+      overflowX: 'scroll',
+      scrollSnapType: 'x mandatory',
+      scrollBehavior: 'smooth',
+    });
+  }
   window.scrollGallery = function (direction) {
     const container = document.querySelector('.image-grid');
     if (!container) return;
