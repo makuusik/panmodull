@@ -49,29 +49,13 @@
 // };
 
 document.addEventListener('DOMContentLoaded', function () {
-  const svgObject = document.getElementById('svg-object');
-
-  if (svgObject) {
-    svgObject.addEventListener('load', function () {
-      const svgDoc = svgObject.contentDocument;
-      const paths = svgDoc.querySelectorAll('path');
-
-      paths.forEach(path => {
-        path.style.strokeDasharray = path.getTotalLength();
-        path.style.strokeDashoffset = path.getTotalLength();
-        path.classList.add('draw');
-      });
-    });
-  }
-});
-
-document.addEventListener('DOMContentLoaded', function () {
   const imageGrid = document.querySelector('.image-grid');
   const images = document.querySelectorAll('.image-wrapper');
 
+  // Оновлення прозорості зображень
   function updateImageOpacity() {
     if (window.innerWidth > 768) {
-      // Якщо це НЕ телефон, скидаємо прозорість і виходимо
+      // Якщо не телефон, скидаємо прозорість і виходимо
       images.forEach(image => (image.style.opacity = 1));
       return;
     }
@@ -95,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateImageOpacity();
 });
+
 document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.image-grid');
 
@@ -112,8 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
+    // Функція для прокручування
     window.scrollGallery = function (direction) {
-      const scrollAmount = container.clientWidth * 0.5;
+      const scrollAmount = container.clientWidth * 0.5; // Прокручування на 50% ширини
 
       setTimeout(() => {
         container.scrollBy({
@@ -123,15 +109,21 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 50);
     };
 
-    // Додаємо обробник події для кнопки
+    // Додаємо обробники подій для кнопки
     document.querySelectorAll('.scroll-btn').forEach(btn => {
       const direction = btn.classList.contains('left') ? -1 : 1;
 
+      // Клік на кнопку
       btn.addEventListener('click', () => window.scrollGallery(direction));
+
+      // Для мобільних пристроїв використаємо touchstart
       btn.addEventListener('touchstart', e => {
         e.preventDefault(); // Запобігає дублюванню події
         window.scrollGallery(direction);
       });
+
+      // Додатково можна додати обробник touchend, щоб зменшити дублювання
+      btn.addEventListener('touchend', () => window.scrollGallery(direction));
     });
   }
 });
