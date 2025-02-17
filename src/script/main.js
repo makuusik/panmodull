@@ -122,14 +122,17 @@ window.onload = function () {
     });
   };
 };
-window.scrollGallery = function (direction) {
-  const container = document.querySelector('.image-grid');
-  const scrollAmount = container.clientWidth * 0.5;
+document.addEventListener('DOMContentLoaded', () => {
+  window.scrollGallery = function (direction) {
+    const container = document.querySelector('.image-grid');
+    if (!container) return;
 
-  setTimeout(() => {
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth',
-    });
-  }, 100);
-};
+    const scrollAmount = container.clientWidth * 0.5;
+    setTimeout(() => {
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth',
+      });
+    }, 100);
+  };
+});

@@ -50,12 +50,14 @@ async function loadData() {
       const images = document.getElementsByClassName('image1');
       const imagePath = `img/modular/${pageId}.jpg`;
       const altImagePath = `img/modular_alt/${pageId}_alt.jpg`;
+      const altImagePath2 = `img/modular_alt2/${pageId}.jpg`;
 
       for (let img of images) {
         img.src = imagePath;
       }
 
       document.getElementById('image2').src = altImagePath;
+      document.getElementById('image3').src = altImagePath2;
 
       // Оновлення тексту опису
       document.getElementById('text').innerHTML = pageData.descriptions[4];

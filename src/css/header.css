@@ -158,6 +158,28 @@ a {
   hr {
     display: none;
   }
+  .nav-option {
+    position: relative;
+  }
+  .nav-links .nav-option > a {
+    color: #cfcfcf;
+    transition: 0.2s ease-out;
+  }
+  .nav-links .nav-option > a:hover {
+    color: white;
+  }
+  .underline::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    transition: width 0.2s ease-out;
+  }
+  .underline:hover::before {
+    width: 100%;
+  }
 }
 @media (max-width: 768px) {
   * {
