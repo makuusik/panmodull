@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         container.scrollBy({
-          left: direction * scrollAmount,
+          right: direction * scrollAmount,
           behavior: 'smooth',
         });
       }, 50);
