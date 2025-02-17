@@ -114,14 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Примусово змушуємо контейнер ініціалізувати скрол
     container.scrollRight = 1;
     container.scrollRight = 0;
+    if (window.innerWidth < 768) {
+      Object.assign(container.style, {
+        display: 'flex',
+        overflowX: 'scroll',
+        scrollSnapType: 'x mandatory',
+        scrollBehavior: 'smooth',
+      });
+    }
 
     // Додаємо стилі динамічно
-    Object.assign(container.style, {
-      display: 'flex',
-      overflowX: 'scroll',
-      scrollSnapType: 'x mandatory',
-      scrollBehavior: 'smooth',
-    });
 
     window.scrollGallery = function (direction) {
       const scrollAmount = container.clientWidth * 0.5;
