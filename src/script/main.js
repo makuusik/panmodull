@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (container) {
     // Примусово змушуємо контейнер ініціалізувати скрол
-    container.scrollLeft = 1;
-    container.scrollLeft = 0;
+    container.scrollRight = 1;
+    container.scrollRight = 0;
 
     // Додаємо стилі динамічно
     Object.assign(container.style, {
