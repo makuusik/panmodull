@@ -12,41 +12,41 @@
 //     });
 //   });
 // });
-document.addEventListener('DOMContentLoaded', function () {
-  const imageGrid = document.querySelector('.image-grid');
-  const images = document.querySelectorAll('.image-wrapper');
+// document.addEventListener('DOMContentLoaded', function () {
+//   const imageGrid = document.querySelector('.image-grid');
+//   const images = document.querySelectorAll('.image-wrapper');
 
-  function updateImageOpacity() {
-    const gridRect = imageGrid.getBoundingClientRect();
-    const gridCenter = gridRect.left + gridRect.width / 2;
+//   function updateImageOpacity() {
+//     const gridRect = imageGrid.getBoundingClientRect();
+//     const gridCenter = gridRect.left + gridRect.width / 2;
 
-    images.forEach(image => {
-      const rect = image.getBoundingClientRect();
-      const imageCenter = rect.left + rect.width / 2;
-      const distance = Math.abs(gridCenter - imageCenter);
-      const maxDistance = gridRect.width / 2;
+//     images.forEach(image => {
+//       const rect = image.getBoundingClientRect();
+//       const imageCenter = rect.left + rect.width / 2;
+//       const distance = Math.abs(gridCenter - imageCenter);
+//       const maxDistance = gridRect.width / 2;
 
-      // Обчислення прозорості залежно від відстані
-      let opacity = Math.max(0.3, 1 - distance / maxDistance);
-      image.style.opacity = opacity;
-    });
-  }
+//       // Обчислення прозорості залежно від відстані
+//       let opacity = Math.max(0.3, 1 - distance / maxDistance);
+//       image.style.opacity = opacity;
+//     });
+//   }
 
-  imageGrid.addEventListener('scroll', updateImageOpacity);
-  window.addEventListener('resize', updateImageOpacity);
+//   imageGrid.addEventListener('scroll', updateImageOpacity);
+//   window.addEventListener('resize', updateImageOpacity);
 
-  updateImageOpacity();
-});
-window.onload = function () {
-  window.scrollGallery = function (direction) {
-    const container = document.querySelector('.image-grid');
-    const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth',
-    });
-  };
-};
+//   updateImageOpacity();
+// });
+// window.onload = function () {
+//   window.scrollGallery = function (direction) {
+//     const container = document.querySelector('.image-grid');
+//     const scrollAmount = container.clientWidth * 0.5; // Прокрутка на 50% ширини
+//     container.scrollBy({
+//       left: direction * scrollAmount,
+//       behavior: 'smooth',
+//     });
+//   };
+// };
 
 document.addEventListener('DOMContentLoaded', function () {
   const svgObject = document.getElementById('svg-object');
@@ -95,25 +95,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateImageOpacity();
 });
-
-window.onload = function () {
-  window.scrollGallery = function (direction) {
-    const container = document.querySelector('.image-grid');
-    const scrollAmount = container.clientWidth * 0.5;
-
-    container.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth',
-    });
-  };
-};
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.image-grid');
 
   if (container) {
     // Примусово змушуємо контейнер ініціалізувати скрол
-    container.scrollRight = 1;
-    container.scrollRight = 0;
+    container.scrollLeft = 1;
+    container.scrollLeft = 0;
+
     if (window.innerWidth < 768) {
       Object.assign(container.style, {
         display: 'flex',
@@ -123,17 +112,68 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Додаємо стилі динамічно
-
     window.scrollGallery = function (direction) {
       const scrollAmount = container.clientWidth * 0.5;
 
       setTimeout(() => {
         container.scrollBy({
-          right: direction * scrollAmount,
+          left: direction * scrollAmount, // Використовуємо 'left' для горизонтального скролу
           behavior: 'smooth',
         });
       }, 50);
     };
+
+    // Додаємо обробник події для кнопки
+    document.querySelectorAll('.scroll-btn').forEach(btn => {
+      const direction = btn.classList.contains('left') ? -1 : 1;
+
+      btn.addEventListener('click', () => window.scrollGallery(direction));
+      btn.addEventListener('touchstart', e => {
+        e.preventDefault(); // Запобігає дублюванню події
+        window.scrollGallery(direction);
+      });
+    });
   }
 });
+
+// window.onload = function () {
+//   window.scrollGallery = function (direction) {
+//     const container = document.querySelector('.image-grid');
+//     const scrollAmount = container.clientWidth * 0.5;
+
+//     container.scrollBy({
+//       left: direction * scrollAmount,
+//       behavior: 'smooth',
+//     });
+//   };
+// };
+// document.addEventListener('DOMContentLoaded', () => {
+//   const container = document.querySelector('.image-grid');
+
+//   if (container) {
+//     // Примусово змушуємо контейнер ініціалізувати скрол
+//     container.scrollLeft = 1;
+//     container.scrollLeft = 0;
+//     if (window.innerWidth < 768) {
+//       Object.assign(container.style, {
+//         display: 'flex',
+//         overflowX: 'scroll',
+//         scrollSnapType: 'x mandatory',
+//         scrollBehavior: 'smooth',
+//       });
+//     }
+
+//     // Додаємо стилі динамічно
+
+//     window.scrollGallery = function (direction) {
+//       const scrollAmount = container.clientWidth * 0.5;
+
+//       setTimeout(() => {
+//         container.scrollBy({
+//           left: direction * scrollAmount,
+//           behavior: 'smooth',
+//         });
+//       }, 50);
+//     };
+//   }
+// });
