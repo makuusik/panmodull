@@ -49,6 +49,23 @@
 // };
 
 document.addEventListener('DOMContentLoaded', function () {
+  const svgObject = document.getElementById('svg-object');
+
+  if (svgObject) {
+    svgObject.addEventListener('load', function () {
+      const svgDoc = svgObject.contentDocument;
+      const paths = svgDoc.querySelectorAll('path');
+
+      paths.forEach(path => {
+        path.style.strokeDasharray = path.getTotalLength();
+        path.style.strokeDashoffset = path.getTotalLength();
+        path.classList.add('draw');
+      });
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   const imageGrid = document.querySelector('.image-grid');
   const images = document.querySelectorAll('.image-wrapper');
 
