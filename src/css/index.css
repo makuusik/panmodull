@@ -348,13 +348,12 @@ img {
   line-height: 112px;
   color: white;
   margin: 0;
-  margin-top: 154px;
-  margin-bottom: 154px;
+  padding: 100px 0;
 }
 
 .section-four {
   padding-bottom: 154px;
-  background-image: url(..\img\backgrounds\backgrounds_ornament.png);
+  background-color: #202325;
   background-size: cover;
 }
 
@@ -608,7 +607,6 @@ img {
   }
   .section-four {
     padding: 0;
-    background-image: url(..\img\backgrounds\backgrounds_ornament.png);
     background-size: cover;
   }
 
@@ -620,14 +618,16 @@ img {
     font-weight: 200;
     line-height: normal;
     color: white;
-    margin: 40px 0;
+    padding: 40px 0;
+    margin: 0;
     text-align: center;
   }
   .cards {
     width: 80vw;
+    height: 300px;
     background-color: #a6cfd4;
-    box-shadow: 0px 6px 10px rgb(0 0 0 / 25%);
-    padding: 20px 0px;
+    box-shadow: 7px 12px 13px rgb(0 0 0 / 40%);
+    padding: 30px 0px;
     cursor: pointer;
 
     transition: transform 0.3s ease, box-shadow 0.3s ease,
@@ -637,9 +637,15 @@ img {
     padding: 0;
     gap: 10px;
   }
+  .cards-info-cont {
+    height: 100%;
+  }
   .cards p {
-    padding: 0 15px;
+    padding: 0 25px;
     margin-top: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
   .cards svg {
     width: 48px;
