@@ -18,4 +18,4 @@ const i=document.querySelectorAll(".btn"),l=document.querySelector(".indicator")
           <h2>${a}</h2>
           <p>${y}</p>
         `,A++,w>0&&$+c.childNodes.length+f.length>=M-w?f.push(r):c.appendChild(r)}if(f.length>0){const t=document.createElement("div");t.classList.add("row-last"),f.forEach(a=>t.appendChild(a)),c.appendChild(t)}O?O.after(c):s.prepend(c)})}const I=[[17,38],[40,43],[44,46],[7,16]],H=window.location.href.includes("_en"),W=H?"updated_data_en.json":"updated_data.json";fetch(W).then(e=>e.json()).then(e=>{S(I,e)}).catch(e=>console.error("Помилка завантаження JSON:",e));function U(e){const n=H?`content_en.html?page=${e}`:`content.html?page=${e}`;window.location.href=n}window.openPage=U;
-//# sourceMappingURL=modular-BkT6xGEF.js.map
+//# sourceMappingURL=modular-BQRxZJW7.js.map
