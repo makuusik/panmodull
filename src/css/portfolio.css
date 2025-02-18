@@ -137,7 +137,9 @@ h1 {
   h1 {
     font-size: 28px;
   }
-
+  .button-container {
+    padding: 0 3vw;
+  }
   .portfolio-section {
     padding-top: 0px;
 
@@ -159,7 +161,6 @@ h1 {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    
   }
 
   .portfolio-items {
@@ -167,12 +168,10 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: column;
-
   }
 
   img {
     height: 100%;
     width: 100%;
-
   }
 }

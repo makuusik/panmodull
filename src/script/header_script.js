@@ -186,20 +186,12 @@ if (window.location.pathname.endsWith('.html')) {
   window.history.replaceState(null, '', newUrl);
 }
 document.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelector('.nav-links'); // Контейнер з меню
-  const navOptions = document.querySelectorAll('.nav-option a'); // Всі посилання в меню
-  const menuToggle = document.querySelector('.menu-toggle'); // Якщо є кнопка відкриття меню
+  const navLinks = document.querySelector('.nav-links'); // Контейнер меню
+  const navOptions = document.querySelectorAll('.close'); // Всі посилання в меню за ID
 
   navOptions.forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open'); // Закриваємо меню при кліку на посилання
     });
   });
-
-  // Опціонально: якщо є бургер-кнопка, можна її теж ховати при кліку
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-  }
 });
