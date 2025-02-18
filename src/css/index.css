@@ -521,6 +521,9 @@ img {
     padding-bottom: 70px;
     align-self: center;
     width: 100vw;
+    /* perspective: 500px;
+    transform: translateZ(250px);
+    transform: rotateX(-30deg); */
   }
 
   .image-wrapper img {
