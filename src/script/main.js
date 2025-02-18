@@ -111,18 +111,18 @@ document.addEventListener('DOMContentLoaded', function () {
     container.scrollLeft = 0;
 
     if (window.innerWidth < 768) {
-      Object.assign(container.style, {
-        display: 'flex',
-        overflowX: 'scroll',
-        scrollSnapType: 'x mandatory',
-        scrollBehavior: 'smooth',
-        WebkitOverflowScrolling: 'touch', // Додає підтримку для iOS
-      });
+      // Object.assign(container.style, {
+      //   display: 'flex',
+      //   overflowX: 'scroll',
+      //   scrollSnapType: 'x mandatory',
+      //   scrollBehavior: 'smooth',
+      //   WebkitOverflowScrolling: 'touch', // Додає підтримку для iOS
+      // });
     }
 
     // Функція для прокручування з setTimeout для iOS
     window.scrollGallery = function (direction) {
-      const scrollAmount = container.clientWidth * 1;
+      const scrollAmount = container.clientWidth * 1 + 4;
       setTimeout(() => {
         container.scrollBy({
           left: direction * scrollAmount,
