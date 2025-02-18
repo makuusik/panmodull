@@ -120,23 +120,15 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Функція для прокручування з анімацією через requestAnimationFrame
+    // Функція для прокручування з setTimeout для iOS
     window.scrollGallery = function (direction) {
       const scrollAmount = container.clientWidth * 0.5;
-      const targetScroll = container.scrollLeft + direction * scrollAmount;
-
-      function animateScroll() {
-        const currentScroll = container.scrollLeft;
-        const step = (targetScroll - currentScroll) * 0.2;
-
-        if (Math.abs(step) > 1) {
-          container.scrollLeft += step;
-          requestAnimationFrame(animateScroll);
-        } else {
-          container.scrollLeft = targetScroll;
-        }
-      }
-      animateScroll();
+      setTimeout(() => {
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth',
+        });
+      }, 0);
     };
 
     // Додаємо обробники подій для кнопок
