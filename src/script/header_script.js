@@ -179,3 +179,8 @@ document
   .addEventListener('click', function () {
     switchLanguage(true);
   });
+
+if (window.location.pathname.endsWith('.html')) {
+  var newUrl = window.location.pathname.replace('.html', '');
+  window.history.replaceState(null, '', newUrl);
+}
