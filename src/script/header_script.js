@@ -181,6 +181,7 @@ document
   });
 
 if (window.location.pathname.endsWith('.html')) {
-  var newUrl = window.location.pathname.replace('.html', '');
+  var newPath = window.location.pathname.replace('.html', '');
+  var newUrl = newPath + window.location.search + window.location.hash;
   window.history.replaceState(null, '', newUrl);
 }
