@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Оновлення прозорості зображень
   function updateImageOpacity() {
     if (window.innerWidth > 768) {
-      // Якщо не телефон, скидаємо прозорість і виходимо
       images.forEach(image => (image.style.opacity = 1));
       return;
     }
@@ -101,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   imageGrid.addEventListener('scroll', updateImageOpacity);
   window.addEventListener('resize', updateImageOpacity);
-
   updateImageOpacity();
 });
 
@@ -109,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.image-grid');
 
   if (container) {
-    // Примусово змушуємо контейнер ініціалізувати скрол
     container.scrollLeft = 1;
     container.scrollLeft = 0;
 
@@ -119,36 +116,38 @@ document.addEventListener('DOMContentLoaded', function () {
         overflowX: 'scroll',
         scrollSnapType: 'x mandatory',
         scrollBehavior: 'smooth',
+        WebkitOverflowScrolling: 'touch', // Додає підтримку для iOS
       });
     }
 
-    // Функція для прокручування
+    // Функція для прокручування з анімацією через requestAnimationFrame
     window.scrollGallery = function (direction) {
-      const scrollAmount = container.clientWidth * 0.5; // Прокручування на 50% ширини
+      const scrollAmount = container.clientWidth * 0.5;
+      const targetScroll = container.scrollLeft + direction * scrollAmount;
 
-      setTimeout(() => {
-        container.scrollBy({
-          left: direction * scrollAmount, // Використовуємо 'left' для горизонтального скролу
-          behavior: 'smooth',
-        });
-      }, 50);
+      function animateScroll() {
+        const currentScroll = container.scrollLeft;
+        const step = (targetScroll - currentScroll) * 0.2;
+
+        if (Math.abs(step) > 1) {
+          container.scrollLeft += step;
+          requestAnimationFrame(animateScroll);
+        } else {
+          container.scrollLeft = targetScroll;
+        }
+      }
+      animateScroll();
     };
 
-    // Додаємо обробники подій для кнопки
+    // Додаємо обробники подій для кнопок
     document.querySelectorAll('.scroll-btn').forEach(btn => {
       const direction = btn.classList.contains('left') ? -1 : 1;
 
-      // Клік на кнопку
       btn.addEventListener('click', () => window.scrollGallery(direction));
-
-      // Для мобільних пристроїв використаємо touchstart
       btn.addEventListener('touchstart', e => {
-        e.preventDefault(); // Запобігає дублюванню події
+        e.preventDefault();
         window.scrollGallery(direction);
       });
-
-      // Додатково можна додати обробник touchend, щоб зменшити дублювання
-      btn.addEventListener('touchend', () => window.scrollGallery(direction));
     });
   }
 });
