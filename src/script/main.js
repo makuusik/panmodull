@@ -48,6 +48,14 @@
 //   };
 // };
 
+if (!('scrollBehavior' in document.documentElement.style)) {
+  import(
+    'https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js'
+  ).then(() => {
+    window.__forceSmoothScrollPolyfill__ = true;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const svgObject = document.getElementById('svg-object');
 

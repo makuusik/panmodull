@@ -593,6 +593,10 @@ img {
   }
   .section-three {
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .sec-3-butt {
     margin: 0 0 5vh 0;
