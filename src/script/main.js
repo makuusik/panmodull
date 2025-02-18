@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Функція для прокручування з setTimeout для iOS
     window.scrollGallery = function (direction) {
-      const scrollAmount = container.clientWidth * 0.5;
+      const scrollAmount = container.clientWidth * 1;
       setTimeout(() => {
         container.scrollBy({
           left: direction * scrollAmount,
