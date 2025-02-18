@@ -185,3 +185,13 @@ if (window.location.pathname.endsWith('.html')) {
   var newUrl = newPath + window.location.search + window.location.hash;
   window.history.replaceState(null, '', newUrl);
 }
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelector('.nav-links'); // Контейнер меню
+  const navOptions = document.querySelectorAll('.close'); // Всі посилання в меню за ID
+
+  navOptions.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open'); // Закриваємо меню при кліку на посилання
+    });
+  });
+});
