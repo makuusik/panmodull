@@ -21,7 +21,7 @@ img {
 }
 
 .section-hero {
-  height: 950px; /* Висота блоку на всю висоту екрана */
+  height: 90vh; /* Висота блоку на всю висоту екрана */
   background-image: url('../img/media_d/Modern-Minimalist-Exterior-2014 (1).png'); /* Заміни на своє зображення */
   background-size: cover;
   background-position: center;
@@ -42,7 +42,7 @@ img {
 }
 
 .hero-logo {
-  width: 800px; /* можете налаштувати розміри */
+  width: 50vw; /* можете налаштувати розміри */
   height: auto;
   animation: logoAnimation 3s ease-out forwards;
 }
