@@ -51,7 +51,6 @@ async function loadData() {
       const imagePath = `img/modular/${pageId}.jpg`;
       const altImagePath = `img/modular_alt/${pageId}_alt.jpg`;
       const altImagePath2 = `img/modular_alt2/${pageId}.jpg`;
-
       for (let img of images) {
         img.src = imagePath;
       }
@@ -59,6 +58,16 @@ async function loadData() {
       document.getElementById('image2').src = altImagePath;
       document.getElementById('image3').src = altImagePath2;
 
+      for (let i = 4; i <= 12; i++) {
+        const imgElement = document.getElementById(`image${i}`);
+        if (imgElement) {
+          const imgSrc = `img/modular_alt_frame/${pageId}_${i}.jpg`;
+          const imgTest = new Image();
+          imgTest.src = imgSrc;
+          imgTest.onload = () => (imgElement.src = imgSrc);
+          imgTest.onerror = () => (imgElement.style.display = 'none');
+        }
+      }
       // Оновлення тексту опису
       document.getElementById('text').innerHTML = pageData.descriptions[4];
 

@@ -43,3 +43,11 @@ buttons.forEach((button, index) => {
 // window.openPage = function (pageNumber) {
 //   window.location.href = `content.html?page=${pageNumber}`;
 // };
+function openPage(pageNumber) {
+  const pageUrl = isEnglish
+    ? `content_en.html?page=${pageNumber}`
+    : `content.html?page=${pageNumber}`;
+  window.location.href = pageUrl;
+}
+
+window.openPage = openPage;
